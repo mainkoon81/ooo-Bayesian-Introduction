@@ -1,8 +1,8 @@
-### Bayes Rule
+#### Bayes Rule
 <img src="https://user-images.githubusercontent.com/31917400/34920230-5115b6b6-f967-11e7-9493-5f6662f1ce70.JPG" width="400" height="500" />
 We know the Bayes rule. How does it relate to machine learning? 
 
-### Introduction
+## Introduction
  - Frequentists' probability that doesn’t depend on one’s beliefs: refers to **past events**..   
  - Bayesians' probability as a measure of beliefs: refers to **future events**.. 
 
