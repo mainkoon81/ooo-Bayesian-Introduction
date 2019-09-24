@@ -16,7 +16,7 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
    - Inference should converge to probable `θ` as long as it’s not zero in the prior. 
    - It's a parametrized distribution.
    - why a paricular prior was chosen? 
-     - The reality is that many of these prior distributions are making assumptions about the **type of data** we have.
+     - The reality is that many of these prior distributions are making assumptions about the **`type of data`** we have.
      - There are some distributions used again and again, but the others are special cases of these dozen or can be created through a clever combination of two or three of these simpler distributions.
      - A prior is employed because the assumptions of the prior match what we know about the **parameter generation process**.
      - *Actually, there are multiple effective priors for a particular problem. A particular prior is chosen as some combination of `analytic tractability` + `computationally efficiency`, which makes other recognizable distributions when combined with popular likelihood functions. 
