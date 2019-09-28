@@ -88,7 +88,7 @@ In Bayesian Inference, "Inference" refers to how you learn parameters of your mo
  - **2. Variational inference:** It is designed explicitly to trade some accuracy for speed. It’s drawback is that it’s model-specific, but there’s light at the end of the tunnel...
  
 ### Modeling
-In the settings where data is scarce and precious and hard to obtain, it is difficult to conduct a large-scale controlled experiment, thus we cannot spare any effort to make the best use of available input. With small data, it is important to **quantify uncertainty** and that’s precisely what Bayesian approach is good at. In Bayesian Modeling, there are two main flavours:
+In the settings where data is scarce and precious and hard to obtain, it is difficult to conduct a large-scale controlled experiment, thus we cannot spare any effort to make the best use of available input. `With small data, it is important to **quantify uncertainty**` and that’s precisely what Bayesian approach is good at. In Bayesian Modeling, there are two main flavours:
  - **1. Statistical Modeling:** 
    - Multilevel/Hierarchical Regression Modeling
  - **2. probabilistic ML including non-parametric approaches:** using data for a computer to learn automatically from it.
