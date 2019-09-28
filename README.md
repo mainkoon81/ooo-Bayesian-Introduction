@@ -35,9 +35,9 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
            - Need to give **lower** and **upper** bounds for our values.
            - Not used as often as you’d think, since its rare we want hard boundaries on our values.
        - __Gaussian distribution__
-         - Taking a **center* and **spread** as arguments, it states that 67% of your data is within 1*SD of the center, and 95% is within 2*SD. 
+         - Taking a **center** and **spread** as arguments, it states that 67% of your data is within 1*SD of the center, and 95% is within 2*SD. 
            - No need to check our value boundaries. 
-         - coming up a lot because if you have multiple signals that come from any distribution, with enough signals their average converges to the normal distribution. `hist(np.array([np.mean(your_distribution) for i in range(your_samples)]))`.
+         - coming up a lot because if you have multiple signals that come from any distribution (with enough signals), their average always converges to the normal distribution. `hist(np.array([np.mean(your_distribution) for i in range(your_samples)]))`.
        - __Bernoulli distribution__
          - It is handy since you can define a bunch of distributions in terms of them???
          - The multinomial can be used to encode our beliefs about each vocabulary.
