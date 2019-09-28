@@ -90,15 +90,17 @@ In Bayesian Inference, "Inference" refers to how you learn parameters of your mo
 ### Modeling
 In the settings where data is scarce and precious and hard to obtain, it is difficult to conduct a large-scale controlled experiment, thus we cannot spare any effort to make the best use of available input. `With small data, it is important to **quantify uncertainty**` and that’s precisely what Bayesian approach is good at. In Bayesian Modeling, there are two main flavours:
  - **1. Statistical Modeling:** 
-   - Multilevel/Hierarchical Regression Modeling
+   - Multilevel/Hierarchical Modeling(Regression?)
  - **2. probabilistic ML including non-parametric approaches:** using data for a computer to learn automatically from it.
    - it outputs probabilistic predictions...that's why probabilistic.. also these probabilities are only statements of belief from a classifier.
    - __Generative modeling:__ One can sample or generate examples from it. Compare with classifiers(discriminative model to model `P(y|x)` to discriminate between classes based on x), **a generative model is concerned with joint distribution `P(y,x)`**. It’s more difficult to estimate that distribution, but **it allows sampling** and of course one can get `P(y|x)` from `P(y,x)`.
      - **LDA:** You start with a matrix where `rows` are **documents**, `columns` are **words** and `each element` is a **count of a given word** in a given document. LDA “factorizes” this matrix of size n x d into two matrices, documents/topics (n x k) and topics/words (k x d). you can’t multiply those two matrices to get the original, but since the appropriate rows/columns sum to one, **you can “generate” a document**. 
    - __Bayesian non-parametrics Modeling:__ the number of parameters in a model can grow as more data become available. This is similar to SVM, for example, where the algorithm chooses support vectors from the training points. Nonparametrics include **Hierarchical Dirichlet Process** version of LDA(where the number of topics chooses itself automatically), and **Gaussian Processes**.
      - **Gaussian Processes:** It is somewhat similar to SVM - both use **kernels** and have similar **scalability**(which has been vastly improved throughout the years by using approximations). 
-     - A natural formulation for GP is **`regression`**, with **classification** as an afterthought. For SVM, it’s the other way around. As most “normal” methods provide **point estimates**, Bayesian counterparts, like Gaussian processes, also output **uncertainty estimates** while SVM are not. Even a sophisticated method like GP normally operates on an **assumption of homoscedasticity**, that is, uniform noise levels. In reality, noise might differ across input space (be heteroscedastic). 
-       - Gaussian Distribution is 
+       - A natural formulation for GP is **`regression`**, with **classification** as an afterthought. For SVM, it’s the other way around. As most “normal” methods provide **point estimates**, Bayesian counterparts, like Gaussian processes, also output **uncertainty estimates** while SVM are not. Even a sophisticated method like GP normally operates on an **assumption of homoscedasticity**, that is, uniform noise levels. In reality, noise might differ across input space (be heteroscedastic). 
+       - Gaussian Distribution is ...
+
+
 
 
 
