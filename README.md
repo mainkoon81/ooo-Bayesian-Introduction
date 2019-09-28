@@ -10,7 +10,7 @@ We know the Bayes rule. How does it relate to machine learning? Bayesian inferen
  - **Epistemic uncertainty** is the scientific uncertainty in the model of the process; it is supposedly **reducible** with better knowledge, since it is not inherent in the real-world process under consideration (due to lack of knowledge and limited data..This can be reduced in time, if more data are collected and new models are developed). 
 
 
-## Introduction
+# 1> Introduction
  - Frequentists' probability that doesn’t depend on one’s beliefs refers to **past events**..Do experiment and that's it.   
  - Bayesians' probability as a measure of beliefs refers to **future events**..posterior 
 
