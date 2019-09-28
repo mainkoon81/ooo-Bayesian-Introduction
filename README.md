@@ -14,7 +14,7 @@ We know the Bayes rule. How does it relate to machine learning? Bayesian inferen
  - Frequentists' probability that doesn’t depend on one’s beliefs refers to **past events**..Do experiment and that's it.   
  - Bayesians' probability as a measure of beliefs refers to **future events**..posterior 
 
-As Bayesians, we start with a belief, called a prior. Then we obtain some data and use it to update our belief. The outcome is called a posterior. Should we obtain even more data, the old posterior becomes a new prior and the cycle repeats.
+As Bayesians, we start with a belief, called a prior. Then we obtain some data and use it to update our belief. The outcome is called a posterior. Should we obtain even more data, the old posterior becomes a new prior and the cycle repeats. It's very honest. We cannot 100% rely on the experiment result. There is always a discrepency and there is no guarantee that the relative frequency of an event will match the true underlying probability of the event. That’s why we are approximating the probability by the long-run relative frequency in Bayesian. It's like calibrating your frequentist's subjective belief.  
 <img src="https://user-images.githubusercontent.com/31917400/64063569-a9533100-cbed-11e9-89d6-a8cc6203b886.jpg"/>
 
 `P( θ | Data ) = P( Data | θ ) * P( θ ) / P( data )`
@@ -102,6 +102,7 @@ In the settings where data is scarce and precious and hard to obtain, it is diff
 
 
 
+# 1. Knowledge
 
 
 
