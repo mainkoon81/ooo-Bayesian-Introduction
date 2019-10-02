@@ -96,6 +96,8 @@ Let's train data points X and Y. We want predict the new Y at the end. In Bayesi
 <img src="https://user-images.githubusercontent.com/31917400/66065180-c0fc3d00-e53e-11e9-89ed-2dc98835b11b.jpg"/>
 
 ### Modeling
+ - The Bayesian Network!! (Probabilistic Graphical Model?????)
+ 
 In the settings where data is scarce and precious and hard to obtain, it is difficult to conduct a large-scale controlled experiment, thus we cannot spare any effort to make the best use of available input. `With small data, it is important to **quantify uncertainty**` and that’s precisely what Bayesian approach is good at. In Bayesian Modeling, there are two main flavours:
  - **1. Statistical Modeling:** 
    - Multilevel/Hierarchical Modeling(Regression?)
