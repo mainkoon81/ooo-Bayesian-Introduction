@@ -21,6 +21,7 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
 
 ### Prior
  - `P( θ )` is a prior, our belief of what the model parameters might be. 
+   - Prior is a weigth or regularizor. 
    - Most often our opinion in this matter is rather vague and if we have enough data, we simply don’t care. 
    - Inference should converge to probable `θ` as long as it’s not zero in the prior. 
    - It's a parametrized distribution.
@@ -92,7 +93,7 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
 
 ### Evidence: Prediction(Data value Prediction)
 Let's train data points X and Y. We want predict the new Y at the end. In Bayesian Prediction, the predicted value is a **weighted average** of output of our model for all possible values of parameters. 
-<img src="https://user-images.githubusercontent.com/31917400/66063680-cd32cb00-e53b-11e9-8521-dd5870d89915.jpg"/>
+<img src="https://user-images.githubusercontent.com/31917400/66065180-c0fc3d00-e53e-11e9-89ed-2dc98835b11b.jpg"/>
 
 ### Modeling
 In the settings where data is scarce and precious and hard to obtain, it is difficult to conduct a large-scale controlled experiment, thus we cannot spare any effort to make the best use of available input. `With small data, it is important to **quantify uncertainty**` and that’s precisely what Bayesian approach is good at. In Bayesian Modeling, there are two main flavours:
