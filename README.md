@@ -88,9 +88,8 @@ In Bayesian Inference, "Inference" refers to how you learn parameters of your mo
  - **2. Variational inference:** It is designed explicitly to trade some accuracy for speed. It’s drawback is that it’s model-specific, but there’s light at the end of the tunnel...
 
 ### Prediction(Data value Prediction)
-In Bayesian Prediction, it is a **weighted average** of output of our model for all possible values of parameters. 
- - Let's train data points X and Y. We want predict the Y at the end. 
- <img src="https://user-images.githubusercontent.com/31917400/66063173-c192d480-e53a-11e9-977e-5261d697e93b.jpg"/>
+Let's train data points X and Y. We want predict the new Y at the end. In Bayesian Prediction, the predicted value is a **weighted average** of output of our model for all possible values of parameters. 
+<img src="https://user-images.githubusercontent.com/31917400/66063377-25b59880-e53b-11e9-9905-cf1ba420a205.jpg"/>
 
 ### Modeling
 In the settings where data is scarce and precious and hard to obtain, it is difficult to conduct a large-scale controlled experiment, thus we cannot spare any effort to make the best use of available input. `With small data, it is important to **quantify uncertainty**` and that’s precisely what Bayesian approach is good at. In Bayesian Modeling, there are two main flavours:
