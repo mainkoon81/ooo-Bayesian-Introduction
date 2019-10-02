@@ -18,6 +18,8 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
 <img src="https://user-images.githubusercontent.com/31917400/66057262-52b07e00-e530-11e9-8a97-3eac1d67d76e.jpg"/>
 
 `P( θ | Data ) = P( Data | θ ) * P( θ ) / P( data )`
+
+### Prior
  - `P( θ )` is a prior, our belief of what the model parameters might be. 
    - Most often our opinion in this matter is rather vague and if we have enough data, we simply don’t care. 
    - Inference should converge to probable `θ` as long as it’s not zero in the prior. 
@@ -71,9 +73,15 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
            - The parameter `ν` lets you state how large you believe this subpopulation to be.
          - `Laplace-distribution` as an interesting modification to the normal distribution(replacing `exp(L2-norm)` with `exp(L1-norm)` in the formula). A laplace centered on 0 can be used to put a strong **sparsity prior** on a variable while leaving a heavy-tail for it if the value has strong support for another value. 
    
+### Posterior: Inference(Parameter Estimation)
  - `P( θ | Data )`, a posterior, is what we’re after. 
    - It’s a parametrized distribution over model parameters obtained from prior beliefs and data.
+   
+In Bayesian Inference, "Inference" refers to how you learn parameters of your model. There are two main flavours:   
+ - **1. Inference using Monte Carlo sampling:** a gold standard, but slow. 
+ - **2. Variational inference:** It is designed explicitly to trade some accuracy for speed. It’s drawback is that it’s model-specific, but there’s light at the end of the tunnel...  
 
+### Likelihood(Frequentist's pride)
  - `P( Data | θ )` is called likelihood of data given model parameters. 
    <img src="https://user-images.githubusercontent.com/31917400/65486881-8c80e500-de9d-11e9-9d6b-e8d7b8af1d09.jpg"/>
    - **The formula for likelihood is model-specific**. 
@@ -82,12 +90,7 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
    - If one also takes the prior into account, then it’s maximum a posteriori estimation (MAP). 
    - MLE and MAP are the same if the **prior is uniform**.
 
-### Inference(Parameter Estimation)
-In Bayesian Inference, "Inference" refers to how you learn parameters of your model. There are two main flavours:   
- - **1. Inference using Monte Carlo sampling:** a gold standard, but slow. 
- - **2. Variational inference:** It is designed explicitly to trade some accuracy for speed. It’s drawback is that it’s model-specific, but there’s light at the end of the tunnel...
-
-### Prediction(Data value Prediction)
+### Evidence: Prediction(Data value Prediction)
 Let's train data points X and Y. We want predict the new Y at the end. In Bayesian Prediction, the predicted value is a **weighted average** of output of our model for all possible values of parameters. 
 <img src="https://user-images.githubusercontent.com/31917400/66063680-cd32cb00-e53b-11e9-8521-dd5870d89915.jpg"/>
 
