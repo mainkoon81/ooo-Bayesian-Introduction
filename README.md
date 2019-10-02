@@ -76,15 +76,15 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
 ### Posterior: Inference(Parameter Estimation in Bayesian way)
  - `P( θ | Data )`, a posterior, is what we’re after. 
    - It’s a parametrized distribution over model parameters obtained from prior beliefs and data.
-   
-In Bayesian Inference, "Inference" refers to how you learn parameters of your model. There are two main flavours:   
- - **1. Inference using Monte Carlo sampling:** a gold standard, but slow. 
- - **2. Variational inference:** It is designed explicitly to trade some accuracy for speed. It’s drawback is that it’s model-specific, but there’s light at the end of the tunnel...  
+   - In Bayesian Inference, "Inference" refers to how you learn parameters of your model. There are two main flavours:   
+     - **1. Inference using Monte Carlo sampling:** a gold standard, but slow. 
+     - **2. Variational inference:** It is designed explicitly to trade some accuracy for speed. It’s drawback is that it’s model-specific, but there’s light at the end of the tunnel...  
 
 ### Maximum Likelihood(Parameter Estimation with Frequentist's pride)
  - `P( Data | θ )` is called likelihood of data given model parameters. 
  <img src="https://user-images.githubusercontent.com/31917400/65486881-8c80e500-de9d-11e9-9d6b-e8d7b8af1d09.jpg"/>
-   - **The formula for likelihood is model-specific**. 
+  
+ - **The formula for likelihood is model-specific**. 
    - People often use likelihood for evaluation of models: a model that gives higher likelihood to real data is better.
    - When one uses likelihood to get point estimates of model parameters, it’s called  MLE. 
    - If one also takes the prior into account, then it’s maximum a posteriori estimation (MAP). 
