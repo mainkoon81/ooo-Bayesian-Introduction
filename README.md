@@ -90,7 +90,7 @@ In Bayesian Inference, "Inference" refers to how you learn parameters of your mo
 ### Prediction(Data value Prediction)
 In Bayesian Prediction, it is a **weighted average** of output of our model for all possible values of parameters. 
  - Let's train data points X and Y. We want predict the Y at the end. 
- <img src="https://user-images.githubusercontent.com/31917400/66063037-7bd60c00-e53a-11e9-962f-4c92357a5172.jpg"/>
+ <img src="https://user-images.githubusercontent.com/31917400/66063173-c192d480-e53a-11e9-977e-5261d697e93b.jpg"/>
 
 ### Modeling
 In the settings where data is scarce and precious and hard to obtain, it is difficult to conduct a large-scale controlled experiment, thus we cannot spare any effort to make the best use of available input. `With small data, it is important to **quantify uncertainty**` and that’s precisely what Bayesian approach is good at. In Bayesian Modeling, there are two main flavours:
