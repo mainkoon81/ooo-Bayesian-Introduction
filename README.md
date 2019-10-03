@@ -119,13 +119,14 @@ In the settings where data is scarce and precious and hard to obtain, it is diff
  - Frequentist LM Diagnose: 
    - typically go through the process of checking the 1.`residuals against a set of assumptions`, 2.`adjusting/selecting features`, 3.`rerunning the model`, 4.`checking the assumptions again`.... 
      - Frequentist diagnose is based on the `fitted model` using **MLE** of the model parameters.
-     - investigate: `L(x,x,x,x|β)` by fitting a distribution to the certain **data** so...product them, then **differentiate** to get the best `β`.
+     - investigate: `L(x,x,x,x|β)` by fitting a distribution to the certain **data** so...product them, then **differentiate** to get the best `β`. But the result is just a **point estimate** and subject to the overfitting issue...so risky. 
  - Bayesian LM(using MCMC) Diagnose: 
    - First, specify a prior `π(β)`, then **integrate** β out with respect to the posterior distribution.
      - `P(β|x,x,x,x)` = **∫**`L(x,x,x,x|β)*π(β)`**d`β`** to get `β`'s distribution (the posterior).....` __whyyyyy?__the integral is not an evidence?` I don't get it...
    - then **take advantage of having access to the full posterior distribution**: we can either obtain a point estimator from this distribution (e.g. posterior mean, posterior median, ...) or conduct the same analysis using this estimate. 
    - Check the goodness of fit of the estimated model based on the predictive residuals. It is possible to conduct the same type of analysis of Frequentist's LM. 
 <img src="https://user-images.githubusercontent.com/31917400/66155521-b8c40080-e617-11e9-9db3-d83438b2ed5f.jpg"/>
+
 
 
 ### b) Prior (conjugate/non-conjugate)
