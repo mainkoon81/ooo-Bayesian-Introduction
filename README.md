@@ -19,7 +19,7 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
 
 `P( θ | Data ) = P( Data | θ ) * P( θ ) / P( data )`
 
-### Prior
+### a) Prior
  - `P( θ )` is a prior, our belief of what the model parameters might be. 
    - Prior is a weigth or regularizor. 
    - Most often our opinion in this matter is rather vague and if we have enough data, we simply don’t care. 
@@ -74,14 +74,14 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
            - The parameter `ν` lets you state how large you believe this subpopulation to be.
          - `Laplace-distribution` as an interesting modification to the normal distribution(replacing `exp(L2-norm)` with `exp(L1-norm)` in the formula). A laplace centered on 0 can be used to put a strong **sparsity prior** on a variable while leaving a heavy-tail for it if the value has strong support for another value. 
    
-### Posterior: Inference(Parameter Estimation in Bayesian way)
+### b) Posterior Inference(Parameter Estimation in Bayesian way)
  - `P( θ | Data )`, a posterior, is what we’re after. 
    - It’s a parametrized distribution over model parameters obtained from prior beliefs and data.
    - In Bayesian Inference, "Inference" refers to how you learn parameters of your model. There are two main flavours:   
      - **1. Inference using Monte Carlo sampling:** a gold standard, but slow. 
      - **2. Variational inference:** It is designed explicitly to trade some accuracy for speed. It’s drawback is that it’s model-specific, but there’s light at the end of the tunnel...  
 
-### Maximum Likelihood(Parameter Estimation with Frequentist's pride)
+### c) Likelihood Inference(Parameter Estimation with Frequentist's pride)
  - `P( Data | θ )` is called likelihood of data given model parameters. 
  <img src="https://user-images.githubusercontent.com/31917400/65486881-8c80e500-de9d-11e9-9d6b-e8d7b8af1d09.jpg"/>
   
@@ -91,11 +91,11 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
    - If one also takes the prior into account, then it’s maximum a posteriori estimation (MAP). 
    - MLE and MAP are the same if the **prior is uniform**.
 
-### Evidence: Prediction(Data value Prediction)
+### d) Evidence Prediction(Data value Prediction)
 Let's train data points X and Y. We want predict the new Y at the end. In Bayesian Prediction, the predicted value is a **weighted average** of output of our model for all possible values of parameters. 
 <img src="https://user-images.githubusercontent.com/31917400/66065180-c0fc3d00-e53e-11e9-89ed-2dc98835b11b.jpg"/>
 
-### Modeling
+## [Modeling]
  - **0. Bayesian Network as PGM**
    - Bayesian Network is "Directed" and "Acyclic". It cannot have **interdependent** variables. 
    <img src="https://user-images.githubusercontent.com/31917400/66124100-7381dd80-e5db-11e9-9d5d-c37b07d2f447.jpg"/>
