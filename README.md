@@ -115,19 +115,16 @@ In the settings where data is scarce and precious and hard to obtain, it is diff
 
 
 # 1. Knowledge
-### a) Find the P(y) ??? Bayesian LM
-Bayesian and Frequentist's Likelihood-based approaches only differ in that the former requires the specification of a **prior**. If...the predictors in LM display traits of both **multi-colinearity**(so.. inflated coefficients estimation) and **heteroskedasticity**....
- - Frequentist LM
-   - Diagnose: typically go through the process of checking the residuals against a set of assumptions, adjusting/removing variables, rerunning the model, checking the assumptions again, and again. 
-     - Frequentist Model diagnose is based on the fitted model using maximum likelihood estimation of coeff.
-     - Fit distribution to the certain **data** we investigate: `P(x,x,x,x|θ)` to get population parameter
-       - `Likelihood(β;data)` = `f(x,x,x,x|β)` so...multiply them, then **differentiate** to get `β`.
- - Bayesian LM, using MCMC
-   - Diagnose: 
-     - First, specify a prior for θ such as `π(θ)`, then **integrate** θ out with respect to the posterior distribution.
-       - `P(β|x,x,x,x)` = **∫**`L(x,x,x,x|β)*π(β)`**d`β`** to get `β`'s distribution (the posterior) then take advantage of having access to the full posterior distribution. 
-         - You can either obtain a point estimator from this distribution (e.g. posterior mean, posterior median, ...) and conduct the same analysis using this estimate. 
-       -  Check the goodness of fit of the estimated model based on the predictive residuals. It is possible to conduct the same type of analysis of Frequentist's LM. 
+### a) Bayesian LM
+ - Frequentist LM Diagnose: 
+   - typically go through the process of checking the 1.`residuals against a set of assumptions`, 2.`adjusting/selecting features`, 3.`rerunning the model`, 4.`checking the assumptions again`.... 
+     - Frequentist diagnose is based on the `fitted model` using **MLE** of the model parameters.
+     - investigate: `L(x,x,x,x|β)` by fitting a distribution to the certain **data** so...product them, then **differentiate** to get the best `β`.
+ - Bayesian LM(using MCMC) Diagnose: 
+   - First, specify a prior `π(β)`, then **integrate** β out with respect to the posterior distribution.
+     - `P(β|x,x,x,x)` = **∫**`L(x,x,x,x|β)*π(β)`**d`β`** to get `β`'s distribution (the posterior).....` __whyyyyy?__the integral is not an evidence?`
+   - then **take advantage of having access to the full posterior distribution**: we can either obtain a point estimator from this distribution (e.g. posterior mean, posterior median, ...) or conduct the same analysis using this estimate. 
+   - Check the goodness of fit of the estimated model based on the predictive residuals. It is possible to conduct the same type of analysis of Frequentist's LM. 
 <img src="https://user-images.githubusercontent.com/31917400/66147993-d7ba9680-e607-11e9-8923-38d06c9657fa.jpg"/>
 
 
