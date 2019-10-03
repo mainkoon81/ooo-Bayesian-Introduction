@@ -128,7 +128,7 @@ Bayesian and Frequentist's Likelihood-based approaches only differ in that the f
        - `P(β|x,x,x,x)` = **∫**`L(x,x,x,x|β)*π(β)`**d`β`** to get `β`'s distribution (the posterior) then take advantage of having access to the full posterior distribution. 
          - You can either obtain a point estimator from this distribution (e.g. posterior mean, posterior median, ...) and conduct the same analysis using this estimate. 
        -  Check the goodness of fit of the estimated model based on the predictive residuals. It is possible to conduct the same type of analysis of Frequentist's LM. 
-
+<img src="https://user-images.githubusercontent.com/31917400/66147738-582cc780-e607-11e9-8603-61a58870c8b9.jpg"/>
 
 
 
