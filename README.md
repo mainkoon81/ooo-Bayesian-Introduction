@@ -115,7 +115,7 @@ In the settings where data is scarce and precious and hard to obtain, it is diff
 
 
 # 1. Knowledge
-### a) Bayesian LM
+### a) Bayesian LM intro
  - Frequentist LM Diagnose: 
    - typically go through the process of checking the 1.`residuals against a set of assumptions`, 2.`adjusting/selecting features`, 3.`rerunning the model`, 4.`checking the assumptions again`.... 
      - Frequentist diagnose is based on the `fitted model` using **MLE** of the model parameters.
@@ -128,6 +128,7 @@ In the settings where data is scarce and precious and hard to obtain, it is diff
 <img src="https://user-images.githubusercontent.com/31917400/66155521-b8c40080-e617-11e9-9db3-d83438b2ed5f.jpg"/>
 
 
+### b) Prior (conjugate/non-conjugate)
 
 
 
