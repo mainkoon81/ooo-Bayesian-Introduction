@@ -22,9 +22,11 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
 ### a) Prior
  - `P( θ )` is a prior, our belief of what the model parameters might be. 
    - Prior is a weigth or regularizor. 
-   - Most often our opinion in this matter is rather vague and if we have enough data, we simply don’t care. 
-   - Inference should converge to probable `θ` as long as it’s not zero in the prior. 
-   - It's a parametrized distribution.
+   - Inference should converge to probable `θ` as long as it’s not zero in the prior.
+   - Two aspects of your prior selection:
+     - Subjective: your belief based Prior
+     - Objective: Non-Informative Prior
+
    - why a paricular prior was chosen? 
      - The reality is that many of these prior distributions are making assumptions about the **`type of data`** we have.
      - There are some distributions used again and again, but the others are special cases of these dozen or can be created through a clever combination of two or three of these simpler distributions.
