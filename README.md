@@ -140,6 +140,7 @@ In the settings where data is scarce and precious and hard to obtain, it is diff
    - then **take advantage of having access to the full posterior distribution**: we can either obtain a point estimator from this distribution (e.g. posterior mean, posterior median, ...) or conduct the same analysis using this estimate...now we can say **`Uncertainty`**.  
    - Check the goodness of fit of the estimated model based on the predictive residuals. It is possible to conduct the same type of diagnose analysis of Frequentist's LM. 
    - **This is MAP** for LM parameter matrix `w`.
+     - The result says it's the traditional **MLE** value + `L2 regularization` term (because of the prior)
 <img src="https://user-images.githubusercontent.com/31917400/66155521-b8c40080-e617-11e9-9db3-d83438b2ed5f.jpg"/>
 
 
