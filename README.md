@@ -92,12 +92,13 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
  <img src="https://user-images.githubusercontent.com/31917400/66209863-49e6b600-e6b0-11e9-8668-aa2ccb4501e0.jpg"/>
 
    - we assume the model - Joint: `P(θ, Data)` which is `P(Data|θ)` x `P(θ)`
-   - MAP can unlike MLE, avoid overfitting. MAP gives you the Ridge regression.  
+   - MAP can unlike MLE, avoid overfitting. MAP gives you the **`L2 Regularization`** term.  
+   - 
  
  
  
  
- - But we anyhow prefer Full Distribution rather than just point estimate. 
+ - But we still anyhow prefer Full Distribution rather than just point estimate. We want to address the uncertainty.
 
 ### *c-1) Posterior: Bayesian `Inference` (Parameter Distribution Estimation)
  - "Inference" refers to how you learn parameters of your model. There are two main flavours:   
@@ -138,7 +139,7 @@ In the settings where data is scarce and precious and hard to obtain, it is diff
      - `P(β|x,x,x,x)` = **∫**`L(x,x,x,x|β)*π(β)`**d`β`** to get `β`'s distribution (the posterior).....` __whyyyyy?__the integral is not an evidence?` I don't get it...
    - then **take advantage of having access to the full posterior distribution**: we can either obtain a point estimator from this distribution (e.g. posterior mean, posterior median, ...) or conduct the same analysis using this estimate...now we can say **`Uncertainty`**.  
    - Check the goodness of fit of the estimated model based on the predictive residuals. It is possible to conduct the same type of diagnose analysis of Frequentist's LM. 
-   - **This is MAP** !!!
+   - **This is MAP** for LM parameter!!!
 <img src="https://user-images.githubusercontent.com/31917400/66155521-b8c40080-e617-11e9-9db3-d83438b2ed5f.jpg"/>
 
 
