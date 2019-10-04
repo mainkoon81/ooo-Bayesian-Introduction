@@ -82,7 +82,7 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
  - `P( Data | θ )` is called likelihood of data given model parameters. 
  <img src="https://user-images.githubusercontent.com/31917400/65486881-8c80e500-de9d-11e9-9d6b-e8d7b8af1d09.jpg"/>
   
- - **The formula for likelihood is model-specific**. 
+   - **The formula for likelihood is model-specific**. 
    - People often use likelihood for evaluation of models: a model that gives higher likelihood to real data is better.
    - When one uses likelihood to get point estimates of model parameters, it’s called  MLE. 
    - If one also takes the prior into account, then it’s maximum a posteriori estimation (MAP). 
@@ -90,6 +90,10 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
 
 ### c) Posterior: MAP (Parameter Point Estimation)
  - `P( θ | Data )`, a posterior, is what we’re after. It’s a parametrized distribution over model parameters obtained from prior beliefs and data.
+ <img src="https://user-images.githubusercontent.com/31917400/66209863-49e6b600-e6b0-11e9-8668-aa2ccb4501e0.jpg"/>
+
+   - 1st, we assume the model - Joint: `P(θ, Data)`
+   - 2nd, our goal is to choose the best θ.  
  
  
  
