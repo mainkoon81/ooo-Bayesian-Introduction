@@ -93,11 +93,6 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
 
    - we assume the model - Joint: `P(θ, Data)` which is `P(Data|θ)` x `P(θ)`
    - MAP can unlike MLE, avoid overfitting. MAP gives you the **`L2 Regularization`** term.  
-   - 
- 
- 
- 
- 
  - But we still anyhow prefer Full Distribution rather than just point estimate. We want to address the uncertainty.
 
 ### *c-1) Posterior: Bayesian `Inference` (Parameter Distribution Estimation)
@@ -130,18 +125,23 @@ In the settings where data is scarce and precious and hard to obtain, it is diff
 
 # 1. Knowledge
 ### a) Bayesian LM intro
- - Frequentist LM Diagnose: 
+ - Frequentist LM  
    - typically go through the process of checking the 1.`residuals against a set of assumptions`, 2.`adjusting/selecting features`, 3.`rerunning the model`, 4.`checking the assumptions again`.... 
      - Frequentist diagnose is based on the `fitted model` using **MLE** of the model parameters.
      - investigate: `L(x,x,x,x|β)` by fitting a distribution to the certain **data** so...product them, then **differentiate** to get the best `β`. But the result is just a **point estimate**(also subject to the overfitting issue)...it cannot address **`Uncertainty`**!
- - Bayesian LM(using MCMC) Diagnose: 
+     - subject to overfitting!
+     
+ - Bayesian LM(using MCMC)  
    - First, specify a prior `π(β)`, then **integrate** β out with respect to the posterior distribution.
-     - `P(β|x,x,x,x)` = **∫**`L(x,x,x,x|β)*π(β)`**d`β`** to get `β`'s distribution (the posterior).....` __whyyyyy?__the integral is not an evidence?` I don't get it...
+     - `P(β|x,x,x,x)` = **∫**`L(x,x,x,x|β)*π(β)`**d`β`** to get `β`'s distribution (the posterior).....` __whyyyyy?__the integral is not an evidence?` I don't get it...??????????????????????
    - then **take advantage of having access to the full posterior distribution**: we can either obtain a point estimator from this distribution (e.g. posterior mean, posterior median, ...) or conduct the same analysis using this estimate...now we can say **`Uncertainty`**.  
    - Check the goodness of fit of the estimated model based on the predictive residuals. It is possible to conduct the same type of diagnose analysis of Frequentist's LM. 
-   - **This is MAP** for LM parameter matrix `w`.
-     - The result says it's the traditional **MLE** value + `L2 regularization` term (because of the prior)
-<img src="https://user-images.githubusercontent.com/31917400/66155521-b8c40080-e617-11e9-9db3-d83438b2ed5f.jpg"/>
+   - **This is MAP** for LM parameter vector `w`.
+     - The result says it's the traditional **MLE** value + `L2 regularization` term (because of the prior) that fix overfitting.
+     - But it still does not have any representation of **Uncertainty**!
+<img src="https://user-images.githubusercontent.com/31917400/66238186-e29c2680-e6ee-11e9-940c-3544c2a8ff91.jpg"/>
+
+   - 
 
 
 
