@@ -79,26 +79,25 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
          - `Laplace-distribution` as an interesting modification to the normal distribution(replacing `exp(L2-norm)` with `exp(L1-norm)` in the formula). A laplace centered on 0 can be used to put a strong **sparsity prior** on a variable while leaving a heavy-tail for it if the value has strong support for another value. 
 
 ### b) Likelihood: MLE (Parameter Point Estimation)
- - `P( Data | θ )` is called likelihood of data given model parameters. 
+ - `P( Data | θ )` is called likelihood of data given model parameters. The goal is to maximize the `likelihood probability` to choose the best θ.
  <img src="https://user-images.githubusercontent.com/31917400/65486881-8c80e500-de9d-11e9-9d6b-e8d7b8af1d09.jpg"/>
   
    - **The formula for likelihood is model-specific**. 
    - People often use likelihood for evaluation of models: a model that gives higher likelihood to real data is better.
-   - When one uses likelihood to get point estimates of model parameters, it’s called  MLE. 
-   - If one also takes the prior into account, then it’s maximum a posteriori estimation (MAP). 
+   - If one also takes the prior into account, then it’s maximum a posteriori estimation (MAP). `P(Data|θ)` x `P(θ)`
    - MLE and MAP are the same if the **prior is uniform**.
 
 ### c) Posterior: MAP (Parameter Point Estimation)
- - `P( θ | Data )`, a posterior, is what we’re after. It’s a parametrized distribution over model parameters obtained from prior beliefs and data.
+ - `P( θ | Data )`, a posterior, is what we’re after. It’s a parametrized distribution over model parameters obtained from prior beliefs and data. The goal is to maximize the `posterior probability` to choose the best θ.
  <img src="https://user-images.githubusercontent.com/31917400/66209863-49e6b600-e6b0-11e9-8668-aa2ccb4501e0.jpg"/>
 
-   - 1st, we assume the model - Joint: `P(θ, Data)`
-   - 2nd, our goal is to choose the best θ.  
+   - 1st, we assume the model - Joint: `P(θ, Data)` which is `P(Data|θ)` x `P(θ)`
+   - 
  
  
  
  
- - But we prefer Full Distribution rather than just point estimate. 
+ - But we anyhow prefer Full Distribution rather than just point estimate. 
 
 ### *c-1) Posterior: Bayesian `Inference` (Parameter Distribution Estimation)
  - "Inference" refers to how you learn parameters of your model. There are two main flavours:   
