@@ -91,8 +91,8 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
  - `P( θ | Data )`, a posterior, is what we’re after. It’s a parametrized distribution over model parameters obtained from prior beliefs and data. The goal is to maximize the `posterior probability` to choose the best θ.
  <img src="https://user-images.githubusercontent.com/31917400/66209863-49e6b600-e6b0-11e9-8668-aa2ccb4501e0.jpg"/>
 
-   - 1st, we assume the model - Joint: `P(θ, Data)` which is `P(Data|θ)` x `P(θ)`
-   - 
+   - we assume the model - Joint: `P(θ, Data)` which is `P(Data|θ)` x `P(θ)`
+   - MAP can unlike MLE, avoid overfitting. MAP gives you the Ridge regression.  
  
  
  
