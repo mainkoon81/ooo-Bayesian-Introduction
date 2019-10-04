@@ -78,7 +78,7 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
            - The parameter `ν` lets you state how large you believe this subpopulation to be.
          - `Laplace-distribution` as an interesting modification to the normal distribution(replacing `exp(L2-norm)` with `exp(L1-norm)` in the formula). A laplace centered on 0 can be used to put a strong **sparsity prior** on a variable while leaving a heavy-tail for it if the value has strong support for another value. 
 
-### b) Likelihood MLE (Parameter Point Estimation)
+### b) Likelihood: MLE (Parameter Point Estimation)
  - `P( Data | θ )` is called likelihood of data given model parameters. 
  <img src="https://user-images.githubusercontent.com/31917400/65486881-8c80e500-de9d-11e9-9d6b-e8d7b8af1d09.jpg"/>
   
@@ -88,7 +88,7 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
    - If one also takes the prior into account, then it’s maximum a posteriori estimation (MAP). 
    - MLE and MAP are the same if the **prior is uniform**.
 
-### c) Posterior MAP (Parameter Point Estimation)
+### c) Posterior: MAP (Parameter Point Estimation)
  - `P( θ | Data )`, a posterior, is what we’re after. It’s a parametrized distribution over model parameters obtained from prior beliefs and data.
  
  
@@ -96,12 +96,12 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
  
  - But we prefer Full Distribution rather than just point estimate. 
 
-### c-1) Posterior Bayesian INFERENCE (Parameter Distribution Estimation)
+### *c-1) Posterior: Bayesian `Inference` (Parameter Distribution Estimation)
  - "Inference" refers to how you learn parameters of your model. There are two main flavours:   
    - **1. Inference using Monte Carlo sampling:** a gold standard, but slow. 
    - **2. Variational inference:** It is designed explicitly to trade some accuracy for speed. It’s drawback is that it’s model-specific, but there’s light at the end of the tunnel...  
 
-### d) Evidence PREDICTION (Data value Prediction)
+### *d) Evidence: Bayesian `Prediction` (Data value Prediction)
 Let's train data points X and Y. We want predict the new Y at the end. In Bayesian Prediction, the predicted value is a **weighted average** of output of our model for all possible values of parameters. 
 <img src="https://user-images.githubusercontent.com/31917400/66065180-c0fc3d00-e53e-11e9-89ed-2dc98835b11b.jpg"/>
 
