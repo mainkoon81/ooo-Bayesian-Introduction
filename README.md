@@ -25,7 +25,9 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
    - Inference should converge to probable `θ` as long as it’s not zero in the prior.
    - Two aspects of your prior selection:
      - Subjective: your belief based Prior
+       - conjugate prior
      - Objective: Non-Informative Prior
+       - improper prior
 
    - why a paricular prior was chosen? 
      - The reality is that many of these prior distributions are making assumptions about the **`type of data`** we have.
@@ -75,14 +77,8 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
            - The t-distribution can also be generalized to not be centered at 0.
            - The parameter `ν` lets you state how large you believe this subpopulation to be.
          - `Laplace-distribution` as an interesting modification to the normal distribution(replacing `exp(L2-norm)` with `exp(L1-norm)` in the formula). A laplace centered on 0 can be used to put a strong **sparsity prior** on a variable while leaving a heavy-tail for it if the value has strong support for another value. 
-   
-### b) Posterior MAP Inference(Parameter Estimation in Bayesian way)
- - `P( θ | Data )`, a posterior, is what we’re after. It’s a parametrized distribution over model parameters obtained from prior beliefs and data.
- - In Bayesian Inference, "Inference" refers to how you learn parameters of your model. There are two main flavours:   
-   - **1. Inference using Monte Carlo sampling:** a gold standard, but slow. 
-   - **2. Variational inference:** It is designed explicitly to trade some accuracy for speed. It’s drawback is that it’s model-specific, but there’s light at the end of the tunnel...  
 
-### c) Likelihood MLE Inference(`Parameter Point Estimation` with Frequentist's pride)
+### b) Likelihood MLE (Parameter Point Estimation)
  - `P( Data | θ )` is called likelihood of data given model parameters. 
  <img src="https://user-images.githubusercontent.com/31917400/65486881-8c80e500-de9d-11e9-9d6b-e8d7b8af1d09.jpg"/>
   
@@ -92,7 +88,20 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
    - If one also takes the prior into account, then it’s maximum a posteriori estimation (MAP). 
    - MLE and MAP are the same if the **prior is uniform**.
 
-### d) Evidence Prediction(Data value Prediction)
+### c) Posterior MAP (Parameter Point Estimation)
+ - `P( θ | Data )`, a posterior, is what we’re after. It’s a parametrized distribution over model parameters obtained from prior beliefs and data.
+ 
+ 
+ 
+ 
+ - But we prefer Full Distribution rather than just point estimate. 
+
+### c-1) Posterior Bayesian INFERENCE (Parameter Distribution Estimation)
+ - "Inference" refers to how you learn parameters of your model. There are two main flavours:   
+   - **1. Inference using Monte Carlo sampling:** a gold standard, but slow. 
+   - **2. Variational inference:** It is designed explicitly to trade some accuracy for speed. It’s drawback is that it’s model-specific, but there’s light at the end of the tunnel...  
+
+### d) Evidence PREDICTION (Data value Prediction)
 Let's train data points X and Y. We want predict the new Y at the end. In Bayesian Prediction, the predicted value is a **weighted average** of output of our model for all possible values of parameters. 
 <img src="https://user-images.githubusercontent.com/31917400/66065180-c0fc3d00-e53e-11e9-89ed-2dc98835b11b.jpg"/>
 
@@ -131,7 +140,10 @@ In the settings where data is scarce and precious and hard to obtain, it is diff
 
 
 ### b) Prior (conjugate/non-conjugate)
-
+Conjugate `Prior` is as a member of certain family distributions, is conjugate to a `likelihood` if the resulting posterior is also the member of the family. 
+ - Beta is conjugate to Bernoulli.
+ - Gaussian is conjugate to Gaussian.
+ - If the likelihood is a member of **Exponential-family**, it always guarantees the presence of the conjugate prior. 
 
 
 
