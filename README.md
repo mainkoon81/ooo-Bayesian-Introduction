@@ -139,7 +139,7 @@ In the settings where data is scarce and precious and hard to obtain, it is diff
      - `P(β|x,x,x,x)` = **∫**`L(x,x,x,x|β)*π(β)`**d`β`** to get `β`'s distribution (the posterior).....` __whyyyyy?__the integral is not an evidence?` I don't get it...
    - then **take advantage of having access to the full posterior distribution**: we can either obtain a point estimator from this distribution (e.g. posterior mean, posterior median, ...) or conduct the same analysis using this estimate...now we can say **`Uncertainty`**.  
    - Check the goodness of fit of the estimated model based on the predictive residuals. It is possible to conduct the same type of diagnose analysis of Frequentist's LM. 
-   - **This is MAP** for LM parameter!!!
+   - **This is MAP** for LM parameter matrix `w`.
 <img src="https://user-images.githubusercontent.com/31917400/66155521-b8c40080-e617-11e9-9db3-d83438b2ed5f.jpg"/>
 
 
