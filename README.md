@@ -148,17 +148,15 @@ In the settings where data is scarce and precious and hard to obtain, it is diff
        - maximize `likelihood x Prior`
      - For Evidence....
      
-   - then **take advantage of having access to the full posterior distribution**: we can either obtain a point estimator from this distribution (e.g. posterior mean, posterior median, ...) or conduct the same analysis using this estimate...now we can say **`Uncertainty`**.  
-   - Check the goodness of fit of the estimated model based on the predictive residuals. It is possible to conduct the same type of diagnose analysis of Frequentist's LM. 
 
 
- - __Posterior Computation:__ 
- How to avoid computing the Evidence?
+
+ - __Posterior Computation:__ How to avoid computing the Evidence?
    - When we want to get the model parameter, the Evidence is always a trouble. There is a way to avoid `computing the **Evidence**`. (But if we knew the Evidence, we would be able to generate samples?) This is **MAP**. But the problem is that we cannot use its result as a prior for the next step. 
      - Below is MAP for LM parameter vector `w`.
      - The result says it's the traditional **MLE** value + `L2 regularization` term (because of the prior) that fix overfitting.
      - But it still does not have any representation of **Uncertainty**!
-<img src="https://user-images.githubusercontent.com/31917400/66239444-ca79d680-e6f1-11e9-8e3d-c8d009647fac.jpg"/>
+   <img src="https://user-images.githubusercontent.com/31917400/66239444-ca79d680-e6f1-11e9-8e3d-c8d009647fac.jpg"/>
 
    - There is another way to avoid `computing the **Evidence**` - Use **Conjugate prior**.  
      - Conjugate `Prior` as a member of certain family distributions, is conjugate to a `likelihood` if the resulting posterior is also the member of the same family. 
@@ -167,12 +165,16 @@ In the settings where data is scarce and precious and hard to obtain, it is diff
        - If the likelihood is a member of **Exponential-family**, it always guarantees the presence of the conjugate prior. 
      - We used to choose the prior by MLE and MAP...(but its' impossible to update new information)
      - But now we choose the prior by the conjugation method. 
-<img src="https://user-images.githubusercontent.com/31917400/66254604-8da0f480-e770-11e9-88d4-b5686ba7c91d.jpg"/>
+   - Gaussian Prior     
+   <img src="https://user-images.githubusercontent.com/31917400/66254604-8da0f480-e770-11e9-88d4-b5686ba7c91d.jpg"/>
+
+   - Gamma Prior
 
 
 
 
-
+   - Now we can **take advantage of having access to the full posterior distribution**: we can either obtain a point estimator from this distribution (e.g. posterior mean, posterior median, ...) or conduct the same analysis using this estimate...now we can say **`Uncertainty`**.  
+   - Check the goodness of fit of the estimated model based on the predictive residuals. It is possible to conduct the same type of diagnose analysis of Frequentist's LM. 
 
 
 
