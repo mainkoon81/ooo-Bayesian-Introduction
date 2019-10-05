@@ -27,7 +27,7 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
      - Subjective: your belief based Prior
        - conjugate prior
      - Objective: Non-Informative Prior
-       - improper prior
+       - improper prior (uniform, normal with huge variance, etc.)
 
    - why a paricular prior was chosen? 
      - The reality is that many of these prior distributions are making assumptions about the **`type of data`** we have.
