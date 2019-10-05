@@ -95,12 +95,13 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
    - MAP can unlike MLE, avoid overfitting. MAP gives you the **`L2 Regularization`** term.  
  - But we still anyhow prefer Full Distribution rather than just point estimate. We want to address the uncertainty.
 
-### *c-1) Posterior: Bayesian `Inference` (Parameter Distribution Estimation)
+### *c-1) Posterior: Bayesian `Inference` (Parameter Distribution Estimation) to UNDERSTANDING purpose
  - "Inference" refers to how you learn parameters of your model. There are two main flavours:   
    - **1. Inference using Monte Carlo sampling:** a gold standard, but slow. 
    - **2. Variational inference:** It is designed explicitly to trade some accuracy for speed. It’s drawback is that it’s model-specific, but there’s light at the end of the tunnel...  
 
-### *d) Evidence: Bayesian `Prediction` (Data value Prediction)
+### *d) Bayesian `Prediction` (Data value Prediction) to prediction purpose. 
+[Note:] Evidence is discussed in the process of inference. not the prediction. 
 Let's train data points X and Y. We want predict the new Y at the end. In Bayesian Prediction, the predicted value is a **weighted average** of output of our model for all possible values of parameters. 
 <img src="https://user-images.githubusercontent.com/31917400/66065180-c0fc3d00-e53e-11e9-89ed-2dc98835b11b.jpg"/>
 
