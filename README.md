@@ -127,13 +127,14 @@ In the settings where data is scarce and precious and hard to obtain, it is diff
 
 # 1. Knowledge
 ### Bayesian LM intro
- - Frequentist LM  
+ - a) Frequentist LM  
    - typically go through the process of checking the 1.`residuals against a set of assumptions`, 2.`adjusting/selecting features`, 3.`rerunning the model`, 4.`checking the assumptions again`.... 
      - Frequentist diagnose is based on the `fitted model` using **MLE** of the model parameters.
-     - investigate: `L(x,x,x,x|β)` by fitting a distribution to the certain **data** so...product them, then **differentiate** to get the best `β`. But the result is just a **point estimate**(also subject to the overfitting issue)...it cannot address **`Uncertainty`**!
-     - subject to overfitting!
+       - "likelihood": `f(x|β)`
+       - "likelihood function": `L(x,x,x,x|β)` by fitting a distribution to the certain **data** so...producting them, then **differentiating** to get the best `β`. But the result is just a **point estimate**(also subject to the overfitting issue)...it cannot address **`Uncertainty`**!
+       - subject to overfitting!
      
- - Bayesian LM(using MCMC)  
+ - b) Bayesian LM (using MCMC)  
    - First, specify a prior `π(β)`, then **integrate** β out with respect to the posterior distribution.
      - `P(β|x,x,x,x)` = **∫**`L(x,x,x,x|β)*π(β)`**d`β`** to get `β`'s distribution (the posterior).....` __whyyyyy?__the integral is not an evidence?` I don't get it...??????????????????????
      
@@ -153,7 +154,7 @@ In the settings where data is scarce and precious and hard to obtain, it is diff
 
  - __Posterior Computation:__ How to avoid computing the Evidence?
    - When we want to get the model parameter, the Evidence is always a trouble. There is a way to avoid `computing the **Evidence**`. (But if we knew the Evidence, we would be able to generate samples?) This is **MAP**. But the problem is that we cannot use its result as a prior for the next step. 
-     - Below is MAP for LM parameter vector `w`.
+   - Below is MAP for LM parameter vector `w`.
      - The result says it's the traditional **MLE** value + `L2 regularization` term (because of the prior) that fix overfitting.
      - But it still does not have any representation of **Uncertainty**!
    <img src="https://user-images.githubusercontent.com/31917400/66239444-ca79d680-e6f1-11e9-8e3d-c8d009647fac.jpg"/>
@@ -169,6 +170,7 @@ In the settings where data is scarce and precious and hard to obtain, it is diff
    <img src="https://user-images.githubusercontent.com/31917400/66254604-8da0f480-e770-11e9-88d4-b5686ba7c91d.jpg"/>
 
    - Gamma Prior
+     - 
 
 
 
