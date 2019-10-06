@@ -140,7 +140,7 @@ In the settings where data is scarce and precious and hard to obtain, it is diff
      - **2.Dirichlet Process:**  
 
 
-### > model_01. Bayesian LM
+### > Model_01. Bayesian LM
  - a) Frequentist LM  
    - typically go through the process of checking the 1.`residuals against a set of assumptions`, 2.`adjusting/selecting features`, 3.`rerunning the model`, 4.`checking the assumptions again`.... 
      - Frequentist diagnose is based on the `fitted model` using **MLE** of the model parameters.
