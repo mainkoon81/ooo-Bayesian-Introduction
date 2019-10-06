@@ -89,7 +89,7 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
    - People often use likelihood for evaluation of models: a model that gives higher likelihood to real data is better.
    - If one also takes the prior into account, then it’s maximum a posteriori estimation (MAP). `P(Data|θ)` x `P(θ)`. What it means is that, the likelihood is now weighted with some weight coming from the prior. MLE and MAP are the same if the **prior is uniform**.
 
-### c) Posterior: MAP (Parameter Point Estimation) - Understand your posterior model
+### c) Posterior: MAP (Parameter Point Estimation) 
  - `P( θ | Data )`, a posterior, is what we’re after. It’s a parametrized distribution over model parameters obtained from prior beliefs and data. The goal is to maximize the **posterior probability** `L(x,x,x,x..|θ)*P(θ)` that is the `value x Distribution` to choose the best θ.
  <img src="https://user-images.githubusercontent.com/31917400/66209863-49e6b600-e6b0-11e9-8668-aa2ccb4501e0.jpg"/>
 
@@ -98,7 +98,7 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
  - But we still anyhow prefer to obtain Full Distribution rather than just point estimate. We want to address the uncertainty.
  - They are similar, as they compute a single estimate, instead of a full distribution.
 
-### *c-1) Bayesian `Inference` (Parameter Full Distribution Estimation) - Understand your posterior model
+### *c-1) Bayesian `Inference` (Parameter Full Distribution Estimation) 
  - "Inference" refers to how you learn parameters of your model. Unlike MLE and MAP, **Bayesian inference** means that it fully calculates the posterior probability distribution, hence the output is not a `single value` but a `pdf or pmf`.   
  - It's complex since we now have to deal with the **Evidence**(with the integral computation). But if we are allowed to use conjugation method, we can do **Bayesian inference** since it's easy. However, it’s not always the case in real-world applications. We then need to use MCMC or other algorithms as a substitute for the direct integral computation.
  - There are three main flavours: 
@@ -106,8 +106,8 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
    - **1. MCMC:** a gold standard, but slow. 
    - **2. Variational inference:** It is designed explicitly to trade some accuracy for speed. It’s drawback is that it’s model-specific, but there’s light at the end of the tunnel...  
 
-### *d) Bayesian `Prediction` (Data value Prediction) - Use your posterior model 
-[Note] Evidence is discussed in the process of inference. not the prediction. 
+### *d) Bayesian `Prediction` (Data value Prediction) 
+[Note] Evidence is discussed in the process of inference. not the prediction...? 
 
 Let's train data points X and Y. We want predict the new Y at the end. In Bayesian Prediction, the predicted value is a **weighted average** of output of our model for all possible values of parameters. 
 <img src="https://user-images.githubusercontent.com/31917400/66065180-c0fc3d00-e53e-11e9-89ed-2dc98835b11b.jpg"/>
