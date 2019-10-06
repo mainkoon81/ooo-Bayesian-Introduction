@@ -119,7 +119,7 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
 Let's train data points X and Y. We want predict the new Y at the end. In Bayesian Prediction, the predicted value is a **weighted average** of output of our model for all possible values of parameters. 
 <img src="https://user-images.githubusercontent.com/31917400/66065180-c0fc3d00-e53e-11e9-89ed-2dc98835b11b.jpg"/>
 
-## [Modeling]
+# 2. Modeling
  - **0. Bayesian Network as PGM**
    - Bayesian Network is "Directed" and "Acyclic". It cannot have **interdependent** variables. 
    <img src="https://user-images.githubusercontent.com/31917400/66124100-7381dd80-e5db-11e9-9d5d-c37b07d2f447.jpg"/>
@@ -140,7 +140,7 @@ In the settings where data is scarce and precious and hard to obtain, it is diff
      - **2.Dirichlet Process:**  
 
 
-### model_01. Bayesian LM
+### > model_01. Bayesian LM
  - a) Frequentist LM  
    - typically go through the process of checking the 1.`residuals against a set of assumptions`, 2.`adjusting/selecting features`, 3.`rerunning the model`, 4.`checking the assumptions again`.... 
      - Frequentist diagnose is based on the `fitted model` using **MLE** of the model parameters.
@@ -191,7 +191,7 @@ In the settings where data is scarce and precious and hard to obtain, it is diff
      - 3. Have a MCMC algorithm draw samples from the posterior distributions for the parameters. 
      
 
-
+### > Model_02.
 
 
 
