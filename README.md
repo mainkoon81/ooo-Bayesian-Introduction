@@ -179,11 +179,11 @@ In the settings where data is scarce and precious and hard to obtain, it is diff
          - `Gamma prior` is conjugate to **Exponential likelihood**.
        - If the likelihood is a member of **Exponential-family**, it always guarantees the presence of the conjugate prior. 
 
-   - Gaussian Prior for **Gaussian likelihood + known SD**     
-   <img src="https://user-images.githubusercontent.com/31917400/66254604-8da0f480-e770-11e9-88d4-b5686ba7c91d.jpg"/>
+     - Gaussian Prior for **Gaussian likelihood + known SD**     
+     <img src="https://user-images.githubusercontent.com/31917400/66254604-8da0f480-e770-11e9-88d4-b5686ba7c91d.jpg"/>
   
-   - Now we can **take advantage of having access to the full posterior distribution of the model parameter(Coefficient)**: we can either obtain a point estimator from this distribution (e.g. posterior mean, posterior median, ...) or conduct the same analysis using this estimate...now we can say **`Uncertainty`**.  
-   - Check the goodness of fit of the estimated model based on the predictive residuals. It is possible to conduct the same type of diagnose analysis of Frequentist's LM. 
+     - Now we can **take advantage of having access to the full posterior distribution of the model parameter(Coefficient)**: we can either obtain a point estimator from this distribution (e.g. posterior mean, posterior median, ...) or conduct the same analysis using this estimate...now we can say **`Uncertainty`**.  
+     - Check the goodness of fit of the estimated model based on the predictive residuals. It is possible to conduct the same type of diagnose analysis of Frequentist's LM. 
 
    - C> To approximate the posterior, we use the technique of drawing random samples from a posterior distribution as one application of Monte Carlo methods. 
      - 1. Specify a prior `π(β)`.
