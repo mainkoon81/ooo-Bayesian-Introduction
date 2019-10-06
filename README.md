@@ -9,10 +9,13 @@ We know the Bayes rule. How does it relate to machine learning? Bayesian inferen
    - Homoscedastic: model variance? you assumes identical observation noise for every input point x? Instead of having a variance being dependent on the input x, we must determine a so-called model precision **`τ`** and multiply it by the identity matrix I, such that all outputs y have the same variance and no co-variance among them exists. This model precision **`τ`** is the inverse observation standard deviation.
  - **Epistemic uncertainty** is the scientific uncertainty in the model of the process; it is supposedly **reducible** with better knowledge, since it is not inherent in the real-world process under consideration (due to lack of knowledge and limited data..This can be reduced in time, if more data are collected and new models are developed). 
 
+## [Inference & Prediction]
+ - Inference for **θ** aims to understand the model.
+ - Prediction for **Data** aims to utilize the model you discovered.
 
 # 1> Introduction
- - Frequentists' probability that doesn’t depend on one’s beliefs refers to **past events**..Do experiment and that's it.   
- - Bayesians' probability as a measure of beliefs refers to **future events**..posterior..Do update !  
+ - Frequentists' probability refers to **past events**..Do experiment and that's it.   
+ - Bayesians' probability refers to **future events**..Do update !  
 
 As Bayesians, we start with a belief, called a prior. Then we obtain some data and use it to update our belief. The outcome is called a posterior. Should we obtain even more data, the old posterior becomes a new prior and the cycle repeats. It's very honest. We cannot 100% rely on the experiment result. There is always a discrepency and there is no guarantee that the relative frequency of an event will match the true underlying probability of the event. That’s why we are approximating the probability by the long-run relative frequency in Bayesian. It's like calibrating your frequentist's subjective belief.  
 <img src="https://user-images.githubusercontent.com/31917400/66057262-52b07e00-e530-11e9-8a97-3eac1d67d76e.jpg"/>
@@ -22,18 +25,18 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
 ### a) Prior
  - `P( θ )` is a prior, our belief of what the model parameters might be. 
    - Prior is a weigth or regularizor. 
-   - Inference should converge to probable `θ` as long as it’s not zero in the prior.
+   - The final inference should converge to probable `θ` as long as it’s not zero in the prior.
    - Two aspects of your prior selection:
      - Subjective: your belief based Prior
        - conjugate prior
      - Objective: Non-Informative Prior
        - improper prior (uniform, normal with huge variance, etc.)
+       - Non-conjugate prior
+       - prior frm MCMC
 
    - why a paricular prior was chosen? 
      - The reality is that many of these prior distributions are making assumptions about the **`type of data`** we have.
-     - There are some distributions used again and again, but the others are special cases of these dozen or can be created through a clever combination of two or three of these simpler distributions.
-     - A prior is employed because the assumptions of the prior match what we know about the **parameter generation process**.
-     - *Actually, there are multiple effective priors for a particular problem. A particular prior is chosen as some combination of `analytic tractability` + `computationally efficiency`, which makes other recognizable distributions when combined with popular likelihood functions. 
+     - There are some distributions used again and again, but the others are special cases of these dozen or can be created through a clever combination of two or three of these simpler distributions. A prior is employed because the assumptions of the prior match what we know about the **parameter generation process**. *Actually, there are multiple effective priors for a particular problem. A particular prior is chosen as some combination of `analytic tractability` + `computationally efficiency`, which makes other recognizable distributions when combined with popular likelihood functions. 
      - Examplary Distributions
        - __Uniform distribution__
          - Whether you use this one in its continuous case or its discrete case, it is used for the same thing: 
@@ -79,29 +82,33 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
          - `Laplace-distribution` as an interesting modification to the normal distribution(replacing `exp(L2-norm)` with `exp(L1-norm)` in the formula). A laplace centered on 0 can be used to put a strong **sparsity prior** on a variable while leaving a heavy-tail for it if the value has strong support for another value. 
 
 ### b) Likelihood: MLE (Parameter Point Estimation)
- - `P( Data | θ )` is called likelihood of data given model parameters. The goal is to maximize the `likelihood probability` to choose the best θ.
+ - `P( Data | θ )` is called likelihood of data given model parameters. The goal is to maximize the **likelihood function probability** `L(x,x,x,x..|θ)` to choose the best θ.
  <img src="https://user-images.githubusercontent.com/31917400/65486881-8c80e500-de9d-11e9-9d6b-e8d7b8af1d09.jpg"/>
   
    - **The formula for likelihood is model-specific**. 
    - People often use likelihood for evaluation of models: a model that gives higher likelihood to real data is better.
-   - If one also takes the prior into account, then it’s maximum a posteriori estimation (MAP). `P(Data|θ)` x `P(θ)`
-   - MLE and MAP are the same if the **prior is uniform**.
+   - If one also takes the prior into account, then it’s maximum a posteriori estimation (MAP). `P(Data|θ)` x `P(θ)`. What it means is that, the likelihood is now weighted with some weight coming from the prior. MLE and MAP are the same if the **prior is uniform**.
 
-### c) Posterior: MAP (Parameter Point Estimation)
- - `P( θ | Data )`, a posterior, is what we’re after. It’s a parametrized distribution over model parameters obtained from prior beliefs and data. The goal is to maximize the `posterior probability` to choose the best θ.
+### c) Posterior: MAP (Parameter Point Estimation) - Understand your posterior model
+ - `P( θ | Data )`, a posterior, is what we’re after. It’s a parametrized distribution over model parameters obtained from prior beliefs and data. The goal is to maximize the **posterior probability** `L(x,x,x,x..|θ)*P(θ)` that is the `value x Distribution` to choose the best θ.
  <img src="https://user-images.githubusercontent.com/31917400/66209863-49e6b600-e6b0-11e9-8668-aa2ccb4501e0.jpg"/>
 
    - we assume the model - Joint: `P(θ, Data)` which is `P(Data|θ)` x `P(θ)`
    - MAP can unlike MLE, avoid overfitting. MAP gives you the **`L2 Regularization`** term.  
- - But we still anyhow prefer Full Distribution rather than just point estimate. We want to address the uncertainty.
+ - But we still anyhow prefer to obtain Full Distribution rather than just point estimate. We want to address the uncertainty.
+ - They are similar, as they compute a single estimate, instead of a full distribution.
 
-### *c-1) Posterior: Bayesian `Inference` (Parameter Distribution Estimation) - UNDERSTANDING purpose
- - "Inference" refers to how you learn parameters of your model. There are two main flavours:   
-   - **1. Inference using Monte Carlo sampling:** a gold standard, but slow. 
+### *c-1) Bayesian `Inference` (Parameter Full Distribution Estimation) - Understand your posterior model
+ - "Inference" refers to how you learn parameters of your model. Unlike MLE and MAP, **Bayesian inference** means that it fully calculates the posterior probability distribution, hence the output is not a `single value` but a `pdf or pmf`.   
+ - It's complex since we now have to deal with the **Evidence**(with the integral computation). But if we are allowed to use conjugation method, we can do **Bayesian inference** since it's easy. However, it’s not always the case in real-world applications. We then need to use MCMC or other algorithms as a substitute for the direct integral computation.
+ - There are three main flavours: 
+   - **0. Conjugation method**
+   - **1. MCMC:** a gold standard, but slow. 
    - **2. Variational inference:** It is designed explicitly to trade some accuracy for speed. It’s drawback is that it’s model-specific, but there’s light at the end of the tunnel...  
 
-### *d) Bayesian `Prediction` (Data value Prediction) - PREDICTION purpose. 
-[Note:] Evidence is discussed in the process of inference. not the prediction. 
+### *d) Bayesian `Prediction` (Data value Prediction) - Use your posterior model 
+[Note] Evidence is discussed in the process of inference. not the prediction. 
+
 Let's train data points X and Y. We want predict the new Y at the end. In Bayesian Prediction, the predicted value is a **weighted average** of output of our model for all possible values of parameters. 
 <img src="https://user-images.githubusercontent.com/31917400/66065180-c0fc3d00-e53e-11e9-89ed-2dc98835b11b.jpg"/>
 
@@ -135,7 +142,7 @@ In the settings where data is scarce and precious and hard to obtain, it is diff
        - "likelihood function": `L(x,x,x,x|β)` by fitting a distribution to the certain **data** so...producting them, then **differentiating** to get the best `β`. But the result is just a **point estimate**(also subject to the overfitting issue)...it cannot address **`Uncertainty`**!
        - subject to overfitting!
      
- - b) Bayesian LM (using MCMC)  
+ - b) Bayesian LM   
    - First, specify a prior `π(β)`, then **integrate** β out with respect to the posterior distribution.
      - `P(β|x,x,x,x)` = **∫**`L(x,x,x,x|β)*π(β)`**d`β`** to get `β`'s distribution (the posterior).....` __whyyyyy?__the integral is not an evidence?` I don't get it...??????????????????????
      
@@ -153,8 +160,8 @@ In the settings where data is scarce and precious and hard to obtain, it is diff
 
 
 
- - __Posterior Computation:__ How to avoid computing the Evidence?
-   - When we want to get the model parameter, the Evidence is always a trouble. There is a way to avoid `computing the **Evidence**`. (But if we knew the Evidence, we would be able to generate samples?) This is **MAP**. But the problem is that we cannot use its result as a prior for the next step. 
+ - __Posterior Computation by Bayesian Inference:__ How to avoid computing the Evidence?
+   - When we want to get the model parameter, the Evidence is always a trouble. There is a way to avoid `computing the **Evidence**`. In **MAP**, we don't need the "Evidence". But the problem is that we cannot use its result as a prior for the next step since the output is a single point estimate. 
    - Below is MAP for LM parameter vector `w`.
      - The result says it's the traditional **MLE** value + `L2 regularization` term (because of the prior) that fix overfitting.
      - But it still does not have any representation of **Uncertainty**!
@@ -163,6 +170,7 @@ In the settings where data is scarce and precious and hard to obtain, it is diff
    - There is another way to avoid `computing the **Evidence**` - Use **Conjugate prior**.  
      - Conjugate `Prior` as a member of certain family distributions, is conjugate to a `likelihood` if the resulting posterior is also the member of the same family. 
        - `Beta prior` is conjugate to Bernoulli likelihood. (so Bernoulli model? then choose Beta)
+       - `Gamma prior` is conjugate to Binomial likelihood. (so Binomial model? then choose Gamma)
        - `Gaussian prior` is conjugate to Gaussian likelihood. (so Gaussian model? then choose Gaussian)
        - If the likelihood is a member of **Exponential-family**, it always guarantees the presence of the conjugate prior. 
      - We used to choose the prior by MLE and MAP...(but its' impossible to update new information)
