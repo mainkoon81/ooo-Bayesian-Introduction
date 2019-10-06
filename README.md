@@ -37,21 +37,22 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
    - why a paricular prior was chosen? 
      - The reality is that many of these prior distributions are making assumptions about the **`type of data`** we have.
      - There are some distributions used again and again, but the others are special cases of these dozen or can be created through a clever combination of two or three of these simpler distributions. A prior is employed because the assumptions of the prior match what we know about the **parameter generation process**. *Actually, there are multiple effective priors for a particular problem. A particular prior is chosen as some combination of `analytic tractability` + `computationally efficiency`, which makes other recognizable distributions when combined with popular likelihood functions. 
-     - Examplary Distributions
-       - __Uniform distribution__
+     - Examplary Prior Distributions
+       - __Uniform Prior__
          - Whether you use this one in its continuous case or its discrete case, it is used for the same thing: 
            - `You have a set of events that are equally likely`.
          - Note, the uniform distribution from ∞ to −∞ is not a probability distribution. 
            - Need to give **lower** and **upper** bounds for our values.
            - Not used as often as you’d think, since its rare we want hard boundaries on our values.
-       - __Gaussian distribution__
+           
+       - __Gaussian Prior__
          - Taking a **center** and **spread** as arguments, it states that 67% of your data is within 1*SD of the center, and 95% is within 2*SD. 
            - No need to check our value boundaries. 
          - coming up a lot because if you have multiple signals that come from any distribution (with enough signals), their average always converges to the normal distribution. `hist(np.array([np.mean(your_distribution) for i in range(your_samples)]))`.
-       - __Bernoulli distribution__
-         - It is handy since you can define a bunch of distributions in terms of them???
-         - The multinomial can be used to encode our beliefs about each vocabulary.
-       - __Gamma distribution__
+
+       - __Beta Prior__ [0,1]
+       
+       - __Gamma Prior__ [0,∞]
          - It comes up all over the place. The intuition for the gamma is that it is the prior on **positive real numbers**. 
            - Now there are many ways to get a distribution over positive numbers.
              - take the `absolute-value of a normal distribution` and get what’s called a **Half-Normal distribution**. 
@@ -167,22 +168,27 @@ In the settings where data is scarce and precious and hard to obtain, it is diff
      - But it still does not have any representation of **Uncertainty**!
    <img src="https://user-images.githubusercontent.com/31917400/66239444-ca79d680-e6f1-11e9-8e3d-c8d009647fac.jpg"/>
 
-   - There is another way to avoid `computing the **Evidence**` - Use **Conjugate prior**.  
+   - There is another way to avoid `computing the **Evidence**` - Use **Conjugate prior**. We can, but do not need to compute the Evidence.  
      - Conjugate `Prior` as a member of certain family distributions, is conjugate to a `likelihood` if the resulting posterior is also the member of the same family. 
-       - `Beta prior` is conjugate to Bernoulli likelihood. (so Bernoulli model? then choose Beta)
-       - `Gamma prior` is conjugate to Binomial likelihood. (so Binomial model? then choose Gamma)
-       - `Gaussian prior` is conjugate to Gaussian likelihood. (so Gaussian model? then choose Gaussian)
+       - Discrete Likelihood
+         - `Beta prior` is conjugate to Bernoulli likelihood. (so Bernoulli model? then choose Beta)
+         - `Beta prior` is conjugate to Binomial likelihood. (so Binomial model? then choose Beta)
+         - `Dirichlet prior` is conjugate to Muiltinomial likelihood. (so Multinomial model? then choose Dirichlet)
+         - `Gamma prior` is conjugate to Poisson likelihood. (so Possion model? then choose Gamma)
+         - `Beta prior` is conjugate to Geometric likelihood. (so Geometric model? then choose Beta)
+       - Continous Likelihood
+         - `Gaussian prior` is conjugate to **Gaussian likelihood + known SD**. 
+         - `Inverse Gamma prior` is conjugate to **Gaussian likelihood + Known μ**. 
+         - `Pareto prior` is conjugate to **Uniform likelihood**.
+         - `Gamma prior` is conjugate to **Pareto likelihood**.
+         - `Gamma prior` is conjugate to **Exponential likelihood**.
        - If the likelihood is a member of **Exponential-family**, it always guarantees the presence of the conjugate prior. 
-     - We used to choose the prior by MLE and MAP...(but its' impossible to update new information)
-     - But now we choose the prior by the conjugation method. 
-   - Gaussian Prior     
+
+   - Gaussian Prior for **Gaussian likelihood + known SD**     
    <img src="https://user-images.githubusercontent.com/31917400/66254604-8da0f480-e770-11e9-88d4-b5686ba7c91d.jpg"/>
-
-   - Gamma Prior
-     - 
-
-
-
+   
+   - Beta Prior for **Binomial likelihood**
+   <img src="https://user-images.githubusercontent.com/31917400/66270492-50119980-e84c-11e9-8457-69185a482f60.jpg"/>
 
    - Now we can **take advantage of having access to the full posterior distribution**: we can either obtain a point estimator from this distribution (e.g. posterior mean, posterior median, ...) or conduct the same analysis using this estimate...now we can say **`Uncertainty`**.  
    - Check the goodness of fit of the estimated model based on the predictive residuals. It is possible to conduct the same type of diagnose analysis of Frequentist's LM. 
