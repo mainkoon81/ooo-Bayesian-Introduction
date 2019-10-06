@@ -81,7 +81,7 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
                  return(samples)
              ```
              - If we want to a prior on "categorical", which takes as an argument a list of numbers that sum to 1, we can use a gamma to generate k-numbers and then normalize. This is precisely the definition of the Dirichlet distribution. 
-       - __Heavy-tailed distribution__
+       - __Heavy-tailed Prior__
          - The major advantage of using a heavy-tail distribution is it’s more robust towards outliers (we cannot be too optimistic about how close a value stays near the mean..)..let's start to care outliers..
          - `t-distribution` can be interpretted as the distribution over a **sub-sampled population** from the normal distribution sample. Since here our sample size is so small, atypical values can occur more often than they do in the general population. As our sub-population grows, the t-distribution becomes the normal distribution. 
            - The t-distribution can also be generalized to not be centered at 0.
