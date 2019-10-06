@@ -162,13 +162,13 @@ In the settings where data is scarce and precious and hard to obtain, it is diff
 
 
  - __Posterior Computation by Bayesian Inference:__ How to avoid computing the Evidence?
-   - When we want to get the model parameter, the Evidence is always a trouble. There is a way to avoid `computing the **Evidence**`. In **MAP**, we don't need the "Evidence". But the problem is that we cannot use its result as a prior for the next step since the output is a single point estimate. 
-   - Below is MAP for LM parameter vector `w`.
+   - A> When we want to get the model parameter, the Evidence is always a trouble. There is a way to avoid `computing the **Evidence**`. In **MAP**, we don't need the "Evidence". But the problem is that we cannot use its result as a prior for the next step since the output is a single point estimate. 
+     - Below is MAP for LM parameter vector `w`.
      - The result says it's the traditional **MLE** value + `L2 regularization` term (because of the prior) that fix overfitting.
      - But it still does not have any representation of **Uncertainty**!
    <img src="https://user-images.githubusercontent.com/31917400/66239444-ca79d680-e6f1-11e9-8e3d-c8d009647fac.jpg"/>
 
-   - There is another way to avoid `computing the **Evidence**` - Use **Conjugate prior**. We can, but do not need to compute the Evidence.  
+   - B> There is another way to avoid `computing the **Evidence**` - Use **Conjugate prior**. We can, but do not need to compute the Evidence.  
      - Conjugate `Prior` as a member of certain family distributions, is conjugate to a `likelihood` if the resulting posterior is also the member of the same family. 
        - Discrete Likelihood
          - `Beta prior` is conjugate to Bernoulli likelihood. (so Bernoulli model? then choose Beta)
