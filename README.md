@@ -27,13 +27,19 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
    - Prior is a weigth or regularizor. 
    - The final inference should converge to probable `θ` as long as it’s not zero in the prior.
    - Two aspects of your prior selection:
-     - Subjective: your belief based Prior
-       - conjugate prior
-     - Objective: Non-Informative Prior
-       - improper prior (uniform, normal with huge variance, etc.)
-       - Non-conjugate prior
-       - prior frm MCMC
-
+     - Subjective: **Informative Prior** ... your belief based Prior
+       - __conjugate prior__
+         - a class of distributions that present the same parametric form of the likelihood and their choice is frequently related to mathematical convenience and the likelihood. 
+         
+     - Objective: **Non-Informative Prior** when there is no information about the problem at hand. 
+       - __Flat prior__
+         - Uniform, Normal with huge variance, etc. The use of a flat prior typically yields results which are not too different from conventional statistical analysis.
+       - __Improper prior__ 
+         - It, in their parametric space, does not integrate to 1. For instance, in some cases Jeffery's priors are improper, but the posterior distribution is proper.
+         - Jeffery's prior is proportional to the Fisher Information, which is the expected value of the second derivative of the log-likelihood function with respect to the parameter. Although it is non-informative, improper prior, the Fisher Information quantifies the variability of the parameter based on the available data. That is, the higher the value of the Fisher Information, the more concave is the log-likelihood, thus evidencing that the data helps to estimate the quantity of interest.
+       - __Non-conjugate prior__ 
+         - When the posterior distribution does not appear as a distribution that we can simulate or integrate. 
+         - It makes the posterior to have an Open-form, but Metropolis-Hasting of MCMC solves the problem. 
    - why a paricular prior was chosen? 
      - The reality is that many of these prior distributions are making assumptions about the **`type of data`** we have.
      - There are some distributions used again and again, but the others are special cases of these dozen or can be created through a clever combination of two or three of these simpler distributions. A prior is employed because the assumptions of the prior match what we know about the **parameter generation process**. *Actually, there are multiple effective priors for a particular problem. A particular prior is chosen as some combination of `analytic tractability` + `computationally efficiency`, which makes other recognizable distributions when combined with popular likelihood functions. 
@@ -80,7 +86,7 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
          - `t-distribution` can be interpretted as the distribution over a **sub-sampled population** from the normal distribution sample. Since here our sample size is so small, atypical values can occur more often than they do in the general population. As our sub-population grows, the t-distribution becomes the normal distribution. 
            - The t-distribution can also be generalized to not be centered at 0.
            - The parameter `ν` lets you state how large you believe this subpopulation to be.
-         - `Laplace-distribution` as an interesting modification to the normal distribution(replacing `exp(L2-norm)` with `exp(L1-norm)` in the formula). A laplace centered on 0 can be used to put a strong **sparsity prior** on a variable while leaving a heavy-tail for it if the value has strong support for another value. 
+         - `Laplace-distribution` as an interesting modification to the normal distribution(replacing `exp(L2-norm)` with `exp(L1-norm)` in the formula). A Laplace centered on 0 can be used to put a strong **sparsity prior** on a variable while leaving a heavy-tail for it if the value has strong support for another value. 
 
 ### b) Likelihood: MLE (Parameter Point Estimation)
  - `P( Data | θ )` is called likelihood of data given model parameters. The goal is to maximize the **likelihood function probability** `L(x,x,x,x..|θ)` to choose the best θ.
@@ -134,8 +140,7 @@ In the settings where data is scarce and precious and hard to obtain, it is diff
      - **2.Dirichlet Process:**  
 
 
-# 1. Knowledge
-### Bayesian LM intro
+### model_01. Bayesian LM
  - a) Frequentist LM  
    - typically go through the process of checking the 1.`residuals against a set of assumptions`, 2.`adjusting/selecting features`, 3.`rerunning the model`, 4.`checking the assumptions again`.... 
      - Frequentist diagnose is based on the `fitted model` using **MLE** of the model parameters.
@@ -143,23 +148,13 @@ In the settings where data is scarce and precious and hard to obtain, it is diff
        - "likelihood function": `L(x,x,x,x|β)` by fitting a distribution to the certain **data** so...producting them, then **differentiating** to get the best `β`. But the result is just a **point estimate**(also subject to the overfitting issue)...it cannot address **`Uncertainty`**!
        - subject to overfitting!
      
- - b) Bayesian LM   
-   - First, specify a prior `π(β)`, then **integrate** β out with respect to the posterior distribution.
-     - `P(β|x,x,x,x)` = **∫**`L(x,x,x,x|β)*π(β)`**d`β`** to get `β`'s distribution (the posterior).....` __whyyyyy?__the integral is not an evidence?` I don't get it...??????????????????????
-     
-    
-   - B-LM helps optimize the LOSS function. 
-     - What we want in the end is `P(y|X,Data)` where `Data = c{(x_1, y_1),...(x_n, y_n)}`
-     - Replace `x_i` with `φ(x_i) = c{φ_1(x_1),...φ_n(x_1)}` for non-linearity in X.
-     
-   - B-LM computation(find the parameter of the LM)  
-     - For Posterior, Compute MAP
-       - For Prior, Compute MLE, using likelihood?  
-       - maximize `likelihood x Prior`
-     - For Evidence....
-     
-
-
+ - b) Bayesian LM ??????????????
+   - It allows a useful mechanism to deal with insufficient data, or poorly distributed data. If we have fewer data points, the posterior distribution will be more spread out. As the amount of data points increases, the likelihood washes out the prior.  
+   - It puts a prior on the coeffients and on the noise so that in the absence of data, the **priors can take over**??
+   - Once fitting it to our data, we can ask:
+     - What is the estimated `linear relationship`, what is the conﬁdence on that relation, and what is the full posterior distribution on that relation?
+     - What is the estimated `noise` and the full posterior distribution on that noise?
+     - What is the estimated `gradient` and the full posterior distribution on that gradient?
 
  - __Posterior Computation by Bayesian Inference:__ How to avoid computing the Evidence?
    - A> When we want to get the model parameter, the Evidence is always a trouble. There is a way to avoid `computing the **Evidence**`. In **MAP**, we don't need the "Evidence". But the problem is that we cannot use its result as a prior for the next step since the output is a single point estimate. 
@@ -186,18 +181,15 @@ In the settings where data is scarce and precious and hard to obtain, it is diff
 
    - Gaussian Prior for **Gaussian likelihood + known SD**     
    <img src="https://user-images.githubusercontent.com/31917400/66254604-8da0f480-e770-11e9-88d4-b5686ba7c91d.jpg"/>
-   
+  
    - Now we can **take advantage of having access to the full posterior distribution of the model parameter(Coefficient)**: we can either obtain a point estimator from this distribution (e.g. posterior mean, posterior median, ...) or conduct the same analysis using this estimate...now we can say **`Uncertainty`**.  
    - Check the goodness of fit of the estimated model based on the predictive residuals. It is possible to conduct the same type of diagnose analysis of Frequentist's LM. 
 
-
-
-
-
-
-
-
-
+   - C> To approximate the posterior, we use the technique of drawing random samples from a posterior distribution as one application of Monte Carlo methods. 
+     - 1. Specify a prior `π(β)`.
+     - 2. Create a model mapping the training inputs to the training outputs.
+     - 3. Have a MCMC algorithm draw samples from the posterior distributions for the parameters. 
+     
 
 
 
