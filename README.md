@@ -119,6 +119,32 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
 Let's train data points X and Y. We want predict the new Y at the end. In Bayesian Prediction, the predicted value is a **weighted average** of output of our model for all possible values of parameters. 
 <img src="https://user-images.githubusercontent.com/31917400/66065180-c0fc3d00-e53e-11e9-89ed-2dc98835b11b.jpg"/>
 
+### [Note] c-2) Variational Inference
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # 2. Modeling
  - **0. Bayesian Network as PGM**
    - Bayesian Network is "Directed" and "Acyclic". It cannot have **interdependent** variables. 
