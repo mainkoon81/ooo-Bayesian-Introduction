@@ -124,7 +124,7 @@ As an approximation inference, it helps us compute the posterior probability **a
  - Step_01: Select the family distribution **Q** called a "variational family".
  - Step_02: Try to approximate the **full posterior** `P*(z)` with some variational distribution `Q(z)` by searching the best matching distribution, using "KL-divergence method".
    - minimizing KL-divergence value between `Q(z)` and `P*(z)`
-<img src="https://user-images.githubusercontent.com/31917400/67203503-27200580-f403-11e9-9eb4-5db6ea626cbf.jpg"/>
+<img src="https://user-images.githubusercontent.com/31917400/67205070-d3afb680-f406-11e9-9caa-b53cfef79f97.jpg"/>
  
 
 
