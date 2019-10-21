@@ -120,8 +120,11 @@ Let's train data points X and Y. We want predict the new Y at the end. In Bayesi
 <img src="https://user-images.githubusercontent.com/31917400/66065180-c0fc3d00-e53e-11e9-89ed-2dc98835b11b.jpg"/>
 
 ### [Note] c-2) Variational Inference
-
-
+As an approximation inference, it helps us compute the posterior probability **approximately**.   
+ - Step_01: Select the family distribution **Q** called a "variational family".
+ - Step_02: Try to approximate the full posterior 
+<img src="https://user-images.githubusercontent.com/31917400/67203140-45d1cc80-f402-11e9-8152-d8d6f85ac134.jpg"/>
+ 
 
 
 
