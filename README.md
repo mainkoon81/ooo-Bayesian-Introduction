@@ -124,14 +124,19 @@ As an approximation inference, it helps us compute the posterior probability **a
 > **Tool:** Kullback Leibler-Divergence measures the difference(distance) b/w two distributions. 
 <img src="https://user-images.githubusercontent.com/31917400/67218692-b686e200-f41e-11e9-8759-cedef5e08620.jpg"/>
 
+# so we minimize the difference!
+
 A> General KL-Divergence Approximation
  - Step_01: Select the family distribution **Q** called a "variational family".
- - Step_02: Try to approximate the **full posterior** `P*(z)` with some variational distribution `Q(z)` by searching the best matching distribution, using "KL-divergence method".
+ - Step_02: Try to approximate the **full posterior** `P*(z)` with some variational distribution `Q(z)` by searching the best matching distribution, minimizing "KL-divergence" value.
    - minimizing KL-divergence value(Q log Q over P) between `Q(z)` and `P*(z)`
 <img src="https://user-images.githubusercontent.com/31917400/67205620-fee6d580-f407-11e9-978f-00426b122086.jpg"/>
  
 B> Mean field Approximation
-
+ - Step_01: Select the family distribution **Q** called a "variational family" by **product of** `Q(z1)`, `Q(z2)`,...where z is the latent variable.  
+ - Step_02: Try to approximate the **full posterior** `P*(z)` with some variational distribution `Q(z)` by searching the best matching distribution, minimizing "KL-divergence" value.
+   - minimizing KL-divergence value(Q log Q over P) between `Q(z)` and `P*(z)`
+<img src="https://user-images.githubusercontent.com/31917400/67224682-ab857f00-f429-11e9-9c21-af5503ea8c3a.jpg"/>
 
 
 
