@@ -122,8 +122,9 @@ Let's train data points X and Y. We want predict the new Y at the end. In Bayesi
 ### [Note] c-2) Variational Inference
 As an approximation inference, it helps us compute the posterior probability **approximately**.   
  - Step_01: Select the family distribution **Q** called a "variational family".
- - Step_02: Try to approximate the full posterior 
-<img src="https://user-images.githubusercontent.com/31917400/67203140-45d1cc80-f402-11e9-8152-d8d6f85ac134.jpg"/>
+ - Step_02: Try to approximate the **full posterior** `P*(z)` with some variational distribution `Q(z)` by searching the best matching distribution, using "KL-divergence method".
+   - minimizing KL-divergence value between `Q(z)` and `P*(z)`
+<img src="https://user-images.githubusercontent.com/31917400/67203503-27200580-f403-11e9-9eb4-5db6ea626cbf.jpg"/>
  
 
 
