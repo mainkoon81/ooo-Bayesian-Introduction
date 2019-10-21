@@ -120,13 +120,17 @@ Let's train data points X and Y. We want predict the new Y at the end. In Bayesi
 <img src="https://user-images.githubusercontent.com/31917400/66065180-c0fc3d00-e53e-11e9-89ed-2dc98835b11b.jpg"/>
 
 ### [Note] c-2) Variational Inference
-As an approximation inference, it helps us compute the posterior probability **approximately**.   
+As an approximation inference, it helps us compute the posterior probability **approximately**.
+> **Kullback Leibler-Divergence:** It measures the difference(distance) b/w two distributions. 
+<img src="https://user-images.githubusercontent.com/31917400/67218692-b686e200-f41e-11e9-8759-cedef5e08620.jpg"/>
+
+A> General KL-Divergence Approximation
  - Step_01: Select the family distribution **Q** called a "variational family".
  - Step_02: Try to approximate the **full posterior** `P*(z)` with some variational distribution `Q(z)` by searching the best matching distribution, using "KL-divergence method".
    - minimizing KL-divergence value between `Q(z)` and `P*(z)`
 <img src="https://user-images.githubusercontent.com/31917400/67205620-fee6d580-f407-11e9-978f-00426b122086.jpg"/>
  
-
+B> Mean field Approximation
 
 
 
