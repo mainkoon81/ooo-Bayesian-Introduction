@@ -120,7 +120,16 @@ Let's train data points X and Y. We want predict the new Y at the end. In Bayesi
 <img src="https://user-images.githubusercontent.com/31917400/66065180-c0fc3d00-e53e-11e9-89ed-2dc98835b11b.jpg"/>
 
 ### [Note] c-2) Variational Inference
-As an approximation inference, it helps us compute the posterior probability **approximately**. Variational inference seeks to approximate the true posterior with an **approximate variational distribution**, which we can calculate more easily. Typically, in the true posterior distribution, the latent variables are not independent given the data, but `if we restrict our family of variational distributions to a distribution that factorizes over each variable in Z` (this is called a **mean field approximation**), our problem becomes a lot easier. We can easily pick each variational distribution(V_i) when measured by Kullback Leibler (KL) divergence. When you write out the formula for KL divergence, you'll notice that we now have a sum of terms involving V, which we can minimize. So now our estimation procedure turns into an optimization problem. Once we arrive at a V*, we can use Q(Z|V*) as our best guess at the posterior. 
+As an approximation inference, it helps us compute the posterior probability **approximately**. Variational inference seeks to approximate the true posterior with an **approximate variational distribution**, which we can calculate more easily. The posterior links the data and a model.
+> [Note]: How to compute the posterior is just one of general problems that **variational inference** solves. 
+
+### Set up
+<img src="https://user-images.githubusercontent.com/31917400/67479371-d05e3a00-f655-11e9-8249-b2fcee5489f7.jpg"/>
+
+The main idea behind variational methods is to pick a **family of distributions** over the `latent variables` with **its own variational parameters**. 
+<img src="https://user-images.githubusercontent.com/31917400/67479952-0b14a200-f657-11e9-9daa-6f3ad2f78a55.jpg"/> Then, ﬁnd the setting of the parameters that makes `q` close to the posterior of interest. Use `q` with the **fitted parameters** as a proxy for the posterior (to predict about future data or to investigate the posterior distribution of the hidden variables). Typically, the true posterior is not in the variational family. 
+
+Typically, in the true posterior distribution, the **latent variables** are not independent given the data, but if we **restrict our family of variational distributions** to a distribution that **`factorizes over each variable in Z`** (this is called a **mean field approximation**), our problem becomes a lot easier. We can easily pick each variational distribution(V_i) when measured by Kullback Leibler (KL) divergence. When you write out the formula for KL divergence, you'll notice that we now have a sum of terms involving V, which we can minimize. So now our estimation procedure turns into an optimization problem. Once we arrive at a V*, we can use Q(Z|V*) as our best guess at the posterior. 
 <img src="https://user-images.githubusercontent.com/31917400/67227869-07eb9d00-f430-11e9-8ccd-e9a8b8c5227d.jpg"/>
 
 > **Tool:** Kullback Leibler-Divergence measures the difference(distance) b/w two distributions. 
