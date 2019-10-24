@@ -121,7 +121,9 @@ Let's train data points X and Y. We want predict the new Y at the end. In Bayesi
 
 ### [Note] c-2) Variational Inference
 As an approximation inference, it helps us compute the posterior probability **approximately**. Variational inference seeks to approximate the true posterior with an **approximate variational distribution**, which we can calculate more easily. The posterior links the data and a model.
-> [Note]: How to compute the posterior is just one of general problems that **variational inference** solves. 
+> [Note]: The difference of EM-algorithm and Variational-Inference is the kind of results they provide; **`EM is just a point while VI is a distribution`.** However, they also have similarities. EM and VI can both be interpreted as minimizing some sort of distance between the true value and our estimate, which is the **Kullback-Leibler divergence**.
+
+> The term variational comes from the field of variational calculus. Variational calculus is just calculus over functionals instead of functions. Functionals are just a function of function(inputs a function and outputs a value). For example, the KL-divergence are functionals. The variational inference algorithms are simply optimizing functionals which is how they got the name variational Bayes.
 
 ### Set up
 <img src="https://user-images.githubusercontent.com/31917400/67479371-d05e3a00-f655-11e9-8249-b2fcee5489f7.jpg"/>
@@ -135,15 +137,16 @@ Typically, in the true posterior distribution, the **latent variables** are not 
 > **Tool:** Kullback Leibler-Divergence measures the difference(distance) b/w two distributions. 
 <img src="https://user-images.githubusercontent.com/31917400/67218692-b686e200-f41e-11e9-8759-cedef5e08620.jpg"/>
 
-# so we minimize the difference!
+# so we minimize the KL-divergence value between your variational distribution and the posterior. 
 
-A> General KL-Divergence Approximation
+A> General Approximation with KL-Divergence 
  - Step_01: Select the family distribution **Q** called a "variational family".
  - Step_02: Try to approximate the **full posterior** `P*(z)` with some variational distribution `Q(z)` by searching the best matching distribution, minimizing "KL-divergence" value.
    - minimizing KL-divergence value(Q log Q over P) between `Q(z)` and `P*(z)`
 <img src="https://user-images.githubusercontent.com/31917400/67205620-fee6d580-f407-11e9-978f-00426b122086.jpg"/>
  
 B> Mean field Approximation
+If you additionally require that the **variational distribution factors completely over your parameters**, then this is called the variational mean-field approximation. 
  - Step_01: Select the family distribution **Q** called a "variational family" by **product of** `Q(z1)`, `Q(z2)`,...where z is the latent variable.  
  - Step_02: Try to approximate the **full posterior** `P*(z)` with some variational distribution `Q(z)` by searching the best matching distribution, minimizing "KL-divergence" value.
    - minimizing KL-divergence value(Q log Q over P) between `Q(z)` and `P*(z)`
