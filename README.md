@@ -127,11 +127,14 @@ Variational inference seeks to approximate the true posterior with an **approxim
 ### Set up
 <img src="https://user-images.githubusercontent.com/31917400/67643780-febc6d80-f912-11e9-9c2c-155158e79e86.jpg"/> 
 
- - The main idea behind variational methods is to pick a **family of distributions** over the `latent variables` with **its own variational parameters**. 
- - Then,find the **setting of the best parameters** that makes `q` close to the posterior of interest.
-<img src="https://user-images.githubusercontent.com/31917400/67643910-47c0f180-f914-11e9-9f01-81355bfdeea6.jpg"/> Use `q` with the **fitted parameters** as a proxy for the posterior (to predict about future data or to investigate the posterior distribution of the hidden variables). Typically, the true posterior is not in the variational family. 
+ - We have perfect likelihood and prior. But we don't have Evidence. 
+ - The main idea behind variational methods is to pick a fake? posterior `q(z)` as a **family of distributions** over the `latent variables` with **its own variational parameters**. Go with the exponential family in general?  
+ - Then,find the **setting of the best parameters** that makes `q(z)` close to the posterior of interest.
+<img src="https://user-images.githubusercontent.com/31917400/67643910-47c0f180-f914-11e9-9f01-81355bfdeea6.jpg"/> Use `q(z)` with the **fitted parameters** as a proxy for the posterior (to predict about future data or to investigate the posterior distribution of the hidden variables). 
+ - Typically, the true posterior is not in the variational family.... 
 
-Typically, in the true posterior distribution, the **latent variables** are not independent given the data, but if we **restrict our family of variational distributions** to a distribution that **`factorizes over each variable in Z`** (this is called a **mean field approximation**), our problem becomes a lot easier. We can easily pick each variational distribution(V_i) when measured by Kullback Leibler (KL) divergence. When you write out the formula for KL divergence, you'll notice that we now have a sum of terms involving V, which we can minimize. So now our estimation procedure turns into an optimization problem. Once we arrive at a V*, we can use Q(Z|V*) as our best guess at the posterior. 
+Typically, in the true posterior distribution, the **latent variables** are not independent given the data, but if we **restrict our family of variational distributions** to a distribution that **`factorizes over each variable in Z`** (this is called a **mean field approximation**), our problem becomes a lot easier. 
+ - We can easily pick each variational distribution(V_i) when measured by Kullback Leibler (KL) divergence. When you write out the formula for KL divergence, you'll notice that we now have a sum of terms involving V, which we can minimize. So now our estimation procedure turns into an optimization problem. Once we arrive at a V*, we can use Q(Z|V*) as our best guess at the posterior. 
 <img src="https://user-images.githubusercontent.com/31917400/67227869-07eb9d00-f430-11e9-8ccd-e9a8b8c5227d.jpg"/>
 
 > **Tool:** Kullback Leibler-Divergence measures the difference(distance) b/w two distributions. 
