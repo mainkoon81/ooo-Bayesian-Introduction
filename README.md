@@ -120,16 +120,16 @@ Let's train data points X and Y. We want predict the new Y at the end. In Bayesi
 <img src="https://user-images.githubusercontent.com/31917400/66065180-c0fc3d00-e53e-11e9-89ed-2dc98835b11b.jpg"/>
 
 ### [Note] c-2) Variational Inference
-As an approximation inference, it helps us compute the posterior probability **approximately**. Variational inference seeks to approximate the true posterior with an **approximate variational distribution**, which we can calculate more easily. The posterior links the data and a model.
-> [Note]: The difference of EM-algorithm and Variational-Inference is the kind of results they provide; **`EM is just a point while VI is a distribution`.** However, they also have similarities. EM and VI can both be interpreted as minimizing some sort of distance between the true value and our estimate, which is the **Kullback-Leibler divergence**.
+Variational inference seeks to approximate the true posterior with an **approximate variational distribution**, which we can calculate more easily. The difference of EM-algorithm and Variational-Inference is the kind of results they provide; **`EM is just a point while VI is a distribution`.** However, they also have similarities. EM and VI can both be interpreted as minimizing some sort of **distance** between the true value and our estimate, which is the **`Kullback-Leibler divergence`**.
 
-> The term variational comes from the field of variational calculus. Variational calculus is just calculus over functionals instead of functions. Functionals are just a function of function(inputs a function and outputs a value). For example, the KL-divergence are functionals. The variational inference algorithms are simply optimizing functionals which is how they got the name variational Bayes.
+> The term **variational** comes from the field of variational calculus. Variational calculus is just calculus over functionals instead of functions. Functionals are just a function of function(inputs a function and outputs a value). For example, the KL-divergence are functionals. The variational inference algorithms are simply optimizing functionals which is how they got the name "variational Bayes".
 
 ### Set up
-<img src="https://user-images.githubusercontent.com/31917400/67479371-d05e3a00-f655-11e9-8249-b2fcee5489f7.jpg"/>
+<img src="https://user-images.githubusercontent.com/31917400/67643780-febc6d80-f912-11e9-9c2c-155158e79e86.jpg"/> 
 
-The main idea behind variational methods is to pick a **family of distributions** over the `latent variables` with **its own variational parameters**. Then,find the setting of the best parameters that makes `q` close to the posterior of interest.
-<img src="https://user-images.githubusercontent.com/31917400/67479952-0b14a200-f657-11e9-9daa-6f3ad2f78a55.jpg"/> Use `q` with the **fitted parameters** as a proxy for the posterior (to predict about future data or to investigate the posterior distribution of the hidden variables). Typically, the true posterior is not in the variational family. 
+ - The main idea behind variational methods is to pick a **family of distributions** over the `latent variables` with **its own variational parameters**. 
+ - Then,find the **setting of the best parameters** that makes `q` close to the posterior of interest.
+<img src="https://user-images.githubusercontent.com/31917400/67643910-47c0f180-f914-11e9-9f01-81355bfdeea6.jpg"/> Use `q` with the **fitted parameters** as a proxy for the posterior (to predict about future data or to investigate the posterior distribution of the hidden variables). Typically, the true posterior is not in the variational family. 
 
 Typically, in the true posterior distribution, the **latent variables** are not independent given the data, but if we **restrict our family of variational distributions** to a distribution that **`factorizes over each variable in Z`** (this is called a **mean field approximation**), our problem becomes a lot easier. We can easily pick each variational distribution(V_i) when measured by Kullback Leibler (KL) divergence. When you write out the formula for KL divergence, you'll notice that we now have a sum of terms involving V, which we can minimize. So now our estimation procedure turns into an optimization problem. Once we arrive at a V*, we can use Q(Z|V*) as our best guess at the posterior. 
 <img src="https://user-images.githubusercontent.com/31917400/67227869-07eb9d00-f430-11e9-8ccd-e9a8b8c5227d.jpg"/>
