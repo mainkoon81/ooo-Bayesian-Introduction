@@ -135,13 +135,13 @@ Variational inference seeks to approximate the true posterior with an **approxim
  - We can easily pick each variational distribution(V_i) when measured by Kullback Leibler (KL) divergence. When you write out the formula for KL divergence, you'll notice that we now have a sum of terms involving V, which we can minimize. So now our estimation procedure turns into an optimization problem. Once we arrive at a V*, we can use Q(Z|V*) as our best guess at the posterior. 
 <img src="https://user-images.githubusercontent.com/31917400/67644238-9c19a080-f917-11e9-8672-c90ada227cac.jpg"/>
 
-Kullback Leibler-Divergence measures the difference(distance) b/w two distributions, so we minimize the KL-divergence value between your variational distribution and the posterior. 
+Kullback Leibler-Divergence measures the difference(distance) b/w two distributions, so we minimize the KL-divergence value between your **variational distribution choice** and the **un-normalized posterior**. 
 <img src="https://user-images.githubusercontent.com/31917400/67218692-b686e200-f41e-11e9-8759-cedef5e08620.jpg"/>
 
 A> How KL-Divergence works? 
  - Step_01: Select the family distribution **Q** called a "variational family".
  - Step_02: Try to approximate the **full posterior** `P*(z)` with some variational distribution `Q(z)` by searching the best matching distribution, minimizing "KL-divergence" value.
-   - minimizing KL-divergence value(Q log Q over P) between `Q(z)` and `P*(z)`
+   - minimizing KL-divergence value(E[log Q over P]) between `Q(z)` and `P*(z)`
 <img src="https://user-images.githubusercontent.com/31917400/67205620-fee6d580-f407-11e9-978f-00426b122086.jpg"/>
  
 B> Mean field Approximation in practice
