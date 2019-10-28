@@ -127,7 +127,7 @@ Variational inference seeks to approximate the true posterior with an **approxim
 ### Set up
 <img src="https://user-images.githubusercontent.com/31917400/67643780-febc6d80-f912-11e9-9c2c-155158e79e86.jpg"/> 
 
- - We have perfect likelihood and prior. But we don't have Evidence. 
+ - We have perfect likelihood and prior. But we don't have Evidence. So the un-normalized posterior(joint) is always the starting point. 
  - The main idea behind variational methods is to pick a fake? posterior `q(z)` as a **family of distributions** over the `latent variables` with **its own variational parameters**. Go with the exponential family in general?  
  - Then,find the **setting of the best parameters** that makes `q(z)` close to the posterior of interest.
 <img src="https://user-images.githubusercontent.com/31917400/67643910-47c0f180-f914-11e9-9f01-81355bfdeea6.jpg"/> Use `q(z)` with the **fitted parameters** as a proxy for the posterior to predict about future data or to investigate the posterior distribution of the hidden variables (Typically, the true posterior is not in the variational family). 
