@@ -130,25 +130,21 @@ Variational inference seeks to approximate the true posterior with an **approxim
  - We have perfect likelihood and prior. But we don't have Evidence. 
  - The main idea behind variational methods is to pick a fake? posterior `q(z)` as a **family of distributions** over the `latent variables` with **its own variational parameters**. Go with the exponential family in general?  
  - Then,find the **setting of the best parameters** that makes `q(z)` close to the posterior of interest.
-<img src="https://user-images.githubusercontent.com/31917400/67643910-47c0f180-f914-11e9-9f01-81355bfdeea6.jpg"/> Use `q(z)` with the **fitted parameters** as a proxy for the posterior (to predict about future data or to investigate the posterior distribution of the hidden variables). 
- - Typically, the true posterior is not in the variational family.... 
-
-Typically, in the true posterior distribution, the **latent variables** are not independent given the data, but if we **restrict our family of variational distributions** to a distribution that **`factorizes over each variable in Z`** (this is called a **mean field approximation**), our problem becomes a lot easier. 
+<img src="https://user-images.githubusercontent.com/31917400/67643910-47c0f180-f914-11e9-9f01-81355bfdeea6.jpg"/> Use `q(z)` with the **fitted parameters** as a proxy for the posterior to predict about future data or to investigate the posterior distribution of the hidden variables (Typically, the true posterior is not in the variational family). 
+ - Typically, in the true posterior distribution, the **latent variables** are not independent given the data, but if we **restrict our family of variational distributions** to a distribution that **`factorizes over each variable in Z`** (this is called a **mean field approximation**), our problem becomes a lot easier. 
  - We can easily pick each variational distribution(V_i) when measured by Kullback Leibler (KL) divergence. When you write out the formula for KL divergence, you'll notice that we now have a sum of terms involving V, which we can minimize. So now our estimation procedure turns into an optimization problem. Once we arrive at a V*, we can use Q(Z|V*) as our best guess at the posterior. 
-<img src="https://user-images.githubusercontent.com/31917400/67227869-07eb9d00-f430-11e9-8ccd-e9a8b8c5227d.jpg"/>
+<img src="https://user-images.githubusercontent.com/31917400/67644238-9c19a080-f917-11e9-8672-c90ada227cac.jpg"/>
 
-> **Tool:** Kullback Leibler-Divergence measures the difference(distance) b/w two distributions. 
+Kullback Leibler-Divergence measures the difference(distance) b/w two distributions, so we minimize the KL-divergence value between your variational distribution and the posterior. 
 <img src="https://user-images.githubusercontent.com/31917400/67218692-b686e200-f41e-11e9-8759-cedef5e08620.jpg"/>
 
-# so we minimize the KL-divergence value between your variational distribution and the posterior. 
-
-A> General Approximation with KL-Divergence 
+A> How KL-Divergence works? 
  - Step_01: Select the family distribution **Q** called a "variational family".
  - Step_02: Try to approximate the **full posterior** `P*(z)` with some variational distribution `Q(z)` by searching the best matching distribution, minimizing "KL-divergence" value.
    - minimizing KL-divergence value(Q log Q over P) between `Q(z)` and `P*(z)`
 <img src="https://user-images.githubusercontent.com/31917400/67205620-fee6d580-f407-11e9-978f-00426b122086.jpg"/>
  
-B> Mean field Approximation
+B> Mean field Approximation in practice
 If you additionally require that the **variational distribution factors completely over your parameters**, then this is called the variational mean-field approximation. 
  - Step_01: Select the family distribution **Q** called a "variational family" by **product of** `Q(z1)`, `Q(z2)`,...where z is the latent variable.  
  - Step_02: Try to approximate the **full posterior** `P*(z)` with some variational distribution `Q(z)` by searching the best matching distribution, minimizing "KL-divergence" value.
