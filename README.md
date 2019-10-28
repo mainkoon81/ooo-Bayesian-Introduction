@@ -110,8 +110,8 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
  - It's complex since we now have to deal with the **Evidence**(with the integral computation). But if we are allowed to use conjugation method, we can do **Bayesian inference** since it's easy. However, it’s not always the case in real-world applications. We then need to use MCMC or other algorithms as a substitute for the direct integral computation.
  - There are three main flavours: 
    - **0. Conjugation method**
-   - **1. MCMC:** a gold standard, but slow. 
-   - **2. Variational inference:** It is designed explicitly to trade some accuracy for speed. It’s drawback is that it’s model-specific, but there’s light at the end of the tunnel...  
+   - **1. MCMC:** a gold standard, but slow. (use when likelihood & prior is not clear) 
+   - **2. Variational inference:** It is designed explicitly to trade some accuracy for speed. It’s drawback is that it’s model-specific..(use when likelihood & prior is clear)
 
 ### *d) Bayesian `Prediction` (Data value Prediction) 
 [Note] Evidence is discussed in the process of inference. not the prediction...? 
