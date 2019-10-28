@@ -148,28 +148,8 @@ B> Mean field Approximation in practice
 If you additionally require that the **variational distribution factors completely over your parameters**, then this is called the variational mean-field approximation. 
  - Step_01: Select the family distribution **Q** called a "variational family" by **product of** `Q(z1)`, `Q(z2)`,...where z is the latent variable.  
  - Step_02: Try to approximate the **full posterior** `P*(z)` with some variational distribution `Q(z)` by searching the best matching distribution, minimizing "KL-divergence" value.
-   - minimizing KL-divergence value(Q log Q over P) between `Q(z)` and `P*(z)`
+   - minimizing KL-divergence value(E[log Q over P*]) between `Q(z)` and `P*(z)`
 <img src="https://user-images.githubusercontent.com/31917400/67224682-ab857f00-f429-11e9-9c21-af5503ea8c3a.jpg"/>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 # 2. Modeling
  - **0. Bayesian Network as PGM**
