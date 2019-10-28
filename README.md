@@ -132,10 +132,10 @@ Variational inference seeks to approximate the true posterior with an **approxim
  - Then,find the **setting of the best parameters** that makes `q(z)` close to the posterior of interest.
 <img src="https://user-images.githubusercontent.com/31917400/67643910-47c0f180-f914-11e9-9f01-81355bfdeea6.jpg"/> Use `q(z)` with the **fitted parameters** as a proxy for the posterior to predict about future data or to investigate the posterior distribution of the hidden variables (Typically, the true posterior is not in the variational family). 
  - Typically, in the true posterior distribution, the **latent variables** are not independent given the data, but if we **restrict our family of variational distributions** to a distribution that **`factorizes over each variable in Z`** (this is called a **mean field approximation**), our problem becomes a lot easier. 
- - We can easily pick each variational distribution(V_i) when measured by Kullback Leibler (KL) divergence. When you write out the formula for KL divergence, you'll notice that we now have a sum of terms involving V, which we can minimize. So now our estimation procedure turns into an optimization problem. Once we arrive at a V*, we can use Q(Z|V*) as our best guess at the posterior. 
+ - We can easily pick each variational distribution(V_i) when measured by Kullback Leibler (KL) divergence because we compare this `Q(Z)` with our `un-normalized posterior` that we already have (KL divergence formula has a sum of terms involving V, which we can minimize...So the estimation procedure turns into an optimization problem). Once we arrive at the best `V*`, **we can use `Q(Z|V*)` as our best guess at the posterior**.  
 <img src="https://user-images.githubusercontent.com/31917400/67644689-9f169000-f91b-11e9-88e7-55bde74becbf.jpg"/>
 
-Kullback Leibler-Divergence measures the difference(distance) b/w two distributions, so we minimize this value between your **variational distribution choice** and the **un-normalized posterior** (not differ from normalized posterior...coz the evidence would become a constant...in the end.) 
+Kullback Leibler-Divergence measures the difference(distance) b/w two distributions, so we minimize this value between your **variational distribution choice** and the **un-normalized posterior** (not differ from normalized real posterior...coz the evidence would become a constant...in the end.) 
 <img src="https://user-images.githubusercontent.com/31917400/67644497-e8fe7680-f919-11e9-9dbb-224ca93bbe26.jpg"/>
 
 A> How KL-Divergence works? 
