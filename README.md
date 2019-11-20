@@ -112,6 +112,7 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
    - **0. Conjugation method**
    - **1. MCMC:** a gold standard, but slow. (use when likelihood & prior is not clear) 
    - **2. Variational inference:** It is designed explicitly to trade some accuracy for speed. It’s drawback is that it’s model-specific..(use when likelihood & prior is clear)
+   - If you have a truly infinite computational budget, MCMC should give more accurate solution than Variational inference. With a finite budget (say 1 year of computation), Variational inference can be more accurate for very large models, but if the budget is large enough MCMC should give a better solution for any model of reasonable size.
 
 ### *d) Bayesian `Prediction` (Data value Prediction) 
 [Note] Evidence is discussed in the process of inference. not the prediction...? 
