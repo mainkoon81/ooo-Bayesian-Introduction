@@ -120,7 +120,7 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
 Let's train data points X and Y. We want predict the new Y at the end. In Bayesian Prediction, the predicted value is a **weighted average** of output of our model for all possible values of parameters. 
 <img src="https://user-images.githubusercontent.com/31917400/66065180-c0fc3d00-e53e-11e9-89ed-2dc98835b11b.jpg"/>
 
-### [Note] c-2) Variational Inference
+### c-2) Variational Inference
 Variational inference seeks to approximate the true posterior with an **approximate variational distribution**, which we can calculate more easily. The difference of EM-algorithm and Variational-Inference is the kind of results they provide; **`EM is just a point while VI is a distribution`.** However, they also have similarities. EM and VI can both be interpreted as minimizing some sort of **distance** between the true value and our estimate, which is the **`Kullback-Leibler divergence`**.
 
 > The term **variational** comes from the field of variational calculus. Variational calculus is just calculus over functionals instead of functions. Functionals are just a function of function(inputs a function and outputs a value). For example, the KL-divergence are functionals. The variational inference algorithms are simply optimizing functionals which is how they got the name "variational Bayes".
@@ -151,6 +151,20 @@ If you additionally require that the **variational distribution factors complete
    - minimizing KL-divergence value(E[log Q over P*]) between `Q(z)` and `P*(z)`
 <img src="https://user-images.githubusercontent.com/31917400/67224682-ab857f00-f429-11e9-9c21-af5503ea8c3a.jpg"/>
 
+### c-3) Bayesian Inference + Neural Network
+10 years ago, people used to think that Bayesian methods are mostly suited for small datasets because it's computationally expensive. In the era of Big data, our Bayesian methods met deep learning, and people started to make some mixture models that has neural networks inside of a probabilistic model. 
+
+
+
+
+
+
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------
 # 2. Modeling
  - **A. Bayesian Network as PGM**
    - Bayesian Network is "Directed" and "Acyclic". It cannot have **interdependent** variables. 
