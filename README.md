@@ -110,9 +110,11 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
  - It's complex since we now have to deal with the **Evidence**(with the integral computation). But if we are allowed to use conjugation method, we can do **Bayesian inference** since it's easy. However, it’s not always the case in real-world applications. We then need to use MCMC or other algorithms as a substitute for the direct integral computation.
  - There are three main flavours: 
    - **0. Conjugation method**
-   - **1. MCMC:** a gold standard, but slow. (use when likelihood & prior is not clear) 
-   - **2. Variational inference:** It is designed explicitly to trade some accuracy for speed. It’s drawback is that it’s model-specific..(use when likelihood & prior is clear)
-   - If you have a truly infinite computational budget, MCMC should give more accurate solution than Variational inference. With a finite budget (say 1 year of computation), Variational inference can be more accurate for very large models, but if the budget is large enough MCMC should give a better solution for any model of reasonable size.
+   - **1. MCMC:** a gold standard, but slow. (use when likelihood & prior is `not clear`)
+     - Obtain a posterior by sampling from the "Envelop".
+   - **2. Variational inference:** faster but less accurate. It’s drawback is that it’s model-specific..(use when likelihood & prior is `clear`)
+     - Obtain a posterior by appropriating other distribution.
+ - If you have a truly infinite computational budget, MCMC should give more accurate solution than Variational Inference that trades some accuracy for speed. With a finite budget (say 1 year of computation), Variational Inference can be more accurate for very large models, but if the budget is large enough MCMC should give a better solution for any model of reasonable size.
 
 ### *d) Bayesian `Prediction` (Data value Prediction) 
 [Note] Evidence is discussed in the process of inference. not the prediction...? 
@@ -155,8 +157,13 @@ If you additionally require that the **variational distribution factors complete
 10 years ago, people used to think that Bayesian methods are mostly suited for small datasets because it's computationally expensive. In the era of Big data, our Bayesian methods met deep learning, and people started to make some mixture models that has neural networks inside of a probabilistic model. 
 
 how to scale Bayesian methods to `large datasets`? 
- - __1. Variational Dropout:__ 
+<img src="https://user-images.githubusercontent.com/31917400/67224682-ab857f00-f429-11e9-9c21-af5503ea8c3a.jpg"/>
+
+ - __1. Variational Dropout:__ The situation has changed with the development of **stochastic Variational Inference**, trying to solve the inference problem exactly without the help of sampling. 
+   - We first pick a fake? posterior `q(z|v)` as a **family of distributions** over the `latent variables` with **its own variational parameters**`v`. KL-divergence method helps us to minimize the distance between `P(z)` and `q(z)`, and in its optimization process, we can use `mini-batching` training strategy(since its likelihood can be split into many pieces of log sum), which means we don't need to compute the whole training of the likelihood. ELBO supports mini-batching.    
+   - We can use MonteCarlo estimates for computing stochastic gradient, which is especially useful when the reparameterization trick for `q(z|v)` is applicable. 
  
+????????????????????????????????????????????????????????????????? 
  
  
  
@@ -166,7 +173,7 @@ how to scale Bayesian methods to `large datasets`?
 
 
 
-
+?????????????????????????????????????????????????????????????????
 
 
 
