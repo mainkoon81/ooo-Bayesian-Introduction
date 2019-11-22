@@ -154,7 +154,14 @@ If you additionally require that the **variational distribution factors complete
 ### c-3) Bayesian Inference + Neural Network
 10 years ago, people used to think that Bayesian methods are mostly suited for small datasets because it's computationally expensive. In the era of Big data, our Bayesian methods met deep learning, and people started to make some mixture models that has neural networks inside of a probabilistic model. 
 
-
+how to scale Bayesian methods to `large datasets`? 
+ - __1. Variational Dropout:__ 
+ 
+ 
+ 
+ 
+ 
+ - __2. Variational Autoencoder:__ 
 
 
 
