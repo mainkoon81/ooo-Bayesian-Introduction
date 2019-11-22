@@ -153,7 +153,7 @@ If you additionally require that the **variational distribution factors complete
    - minimizing KL-divergence value(E[log Q over P*]) between `Q(z)` and `P*(z)`
 <img src="https://user-images.githubusercontent.com/31917400/67224682-ab857f00-f429-11e9-9c21-af5503ea8c3a.jpg"/>
 
-### c-3) Bayesian Inference + Neural Network
+### c-3) Variational Inference + Neural Network
 10 years ago, people used to think that Bayesian methods are mostly suited for small datasets because it's computationally expensive. In the era of Big data, our Bayesian methods met deep learning, and people started to make some mixture models that has neural networks inside of a probabilistic model. 
 
 how to scale Bayesian methods to `large datasets`? 
