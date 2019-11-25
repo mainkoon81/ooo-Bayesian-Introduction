@@ -31,12 +31,15 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
        - __conjugate prior__
          - a class of distributions that present the same parametric form of the likelihood and their choice is frequently related to mathematical convenience and the likelihood. 
          
-     - Objective: **Non-Informative Prior** when there is no information about the problem at hand. 
+     - Objective: **Non-Informative (vague) Prior** when there is no information about the problem at hand.  
        - __Flat prior__
          - Uniform, Normal with huge variance, etc. The use of a flat prior typically yields results which are not too different from conventional statistical analysis.
        - __Improper prior__ 
-         - It, in their parametric space, does not integrate to 1. For instance, in some cases Jeffery's priors are improper, but the posterior distribution is proper.
+         - It, in their parametric space, **does not integrate to 1**. For instance, in some cases Jeffery's priors are improper, but the posterior distribution is proper.
          - Jeffery's prior is proportional to the Fisher Information, which is the expected value of the second derivative of the log-likelihood function with respect to the parameter. Although it is non-informative, improper prior, the Fisher Information quantifies the variability of the parameter based on the available data. That is, the higher the value of the Fisher Information, the more concave is the log-likelihood, thus evidencing that the data helps to estimate the quantity of interest.
+           - *He argues that any "non-informative prior" should be invariant to the parameterization(transformation) that we are using. If we create a `prior` that is proportional to the `Sqrt(FisherInf)` then the `prior` is **invariant** to the parameterization used.  
+           <img src="https://user-images.githubusercontent.com/31917400/69545638-17f42080-0f8a-11ea-9d69-b686a3bfda57.jpg"/>
+
        - __Non-conjugate prior__ 
          - When the posterior distribution does not appear as a distribution that we can simulate or integrate. 
          - It makes the posterior to have an Open-form, but Metropolis-Hasting of MCMC solves the problem. 
@@ -45,8 +48,10 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
      - There are some distributions used again and again, but the others are special cases of these dozen or can be created through a clever combination of two or three of these simpler distributions. A prior is employed because the assumptions of the prior match what we know about the **parameter generation process**. *Actually, there are multiple effective priors for a particular problem. A particular prior is chosen as some combination of `analytic tractability` + `computationally efficiency`, which makes other recognizable distributions when combined with popular likelihood functions. 
      - Examplary Prior Distributions
        - __Uniform Prior__
+         - `Beta(1,1)` = Unif(0,1)
          - Whether you use this one in its continuous case or its discrete case, it is used for the same thing: 
-           - `You have a set of events that are equally likely`.
+           - `You have a set of events that are equally likely`. 
+             - ex) see "binomial likelihood" case. Unif(0,1) says `θ` can be any value (ranging from 0 to 1) for any X.  
          - Note, the uniform distribution from ∞ to −∞ is not a probability distribution. 
            - Need to give **lower** and **upper** bounds for our values.
            - Not used as often as you’d think, since its rare we want hard boundaries on our values.
