@@ -191,9 +191,9 @@ how to scale Bayesian methods to `large datasets`? The situation has changed wit
  - [2.RNN]: how to represent these `conditional probabilities` is with **RNN** which basically will read your image pixel by pixel, and then outputs your prediction for the next pixel - Using proximity, Prediction for brightness for next pixel for example! And this approach makes modeling much easier because now normalization constant has to think only about 1D distribution.
    - The problem with this approach is that you have to generate your new images one pixel at a time. So, if you want to generate a new image you have to first generate X1 from the marginal distribution X1, then you will feed this into the RNN, and it will output your distribution on the next pixel and etc. So, no matter how many computers you have, one high resolution image can take like minutes which is really long...
  - [3.Infinite continuous GMM]: We can try an **infinite mixture of Gaussians** which can represent any probability distribution! Each object (image X) has a corresponding latent variable "T", and the image X is caused by this "T", so we can marginalize out w.r.t "T". And the conditional distribution `P(X|T)` is Gaussian. We can have a mixture of infinitely many Gaussians, for each value of "T", there's `one Gaussian` and we mix them with weights.
- <img src="https://user-images.githubusercontent.com/31917400/71100997-e435a080-21ad-11ea-861c-719cbdb0817f.jpg"/>
+   <img src="https://user-images.githubusercontent.com/31917400/71100997-e435a080-21ad-11ea-861c-719cbdb0817f.jpg"/>
  
-   - How to get `w`?
+     - How to get `w`?
 
 
 
