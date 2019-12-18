@@ -182,8 +182,16 @@ how to scale Bayesian methods to `large datasets`? The situation has changed wit
      - ex> For example, you have some images with obscured parts, and you want to do predictions. In this case, if you have P(X) - probability distribution of your data -, it will help you greatly to deal with it. 
    - __Represent highly structured data in low dimensional embeddings__
      - ex> For example, people sometimes build these kind of latent codes for molecules and then try to discover new drugs by exploring this space of molecules in this latent space.....?? 
+
+> Let's model the image!
+<img src="https://user-images.githubusercontent.com/31917400/71097550-0c220580-21a8-11ea-80b3-a9f83ca1fa8e.jpg"/>
+
+ - [CNN]: Let's say that **CNN** will actually return your **logarithm of probability**. 
+   - The problem with this approach is that you have to normalize your distribution. You have to make your distribution to sum up to one, with respect to sum according to all possible images in the world, and there are billions of them. So, this normalization constant is very expensive to compute, and you have to compute it to do the training or inference in the proper manner. HOW? You can use the chain rule. `Any probabilistic distribution can be decomposed into a product of some conditional distributions`, then we build these kind of conditional probability models to model our `overall joint probability`. 
+ - [RNN]: how to represent these `conditional probabilities` is with **RNN** which basically will read your image pixel by pixel, and then outputs your prediction for the next pixel - Using proximity, Prediction for brightness for next pixel for example! And this approach makes modeling much easier because now normalization constant has to think only about 1D distribution.
+   - The problem with this approach is that you have to generate your new images one pixel at a time. So, if you want to generate a new image you have to first generate X1 from the marginal distribution X1, then you will feed this into the RNN, and it will output your distribution on the next pixel and etc. So, no matter how many computers you have, one high resolution image can take like minutes which is really long...
+ - [Infinite continuous GMM]: We can try an **infinite mixture of Gaussians** which can represent any probability distribution! Each object (image X) has a corresponding latent variable "T", and the image X is caused by this "T", so we can marginalize out w.r.t "T". And the conditional distribution `P(X|T)` is Gaussian. We can have a mixture of infinitely many Gaussians, for each value of T, there's one Gaussian and we mix them with weights. 
  
-Dealing with images? Let's say that CNN will actually return your logarithm of probability. The problem with this approach is that you have to normalize your distribution. You have to make your distribution to sum up to one, with respect to sum according to all possible images in the world, and there are billions of them. So, this normalization constant is very expensive to compute, and you have to compute it to do the training or inference in the proper manner. HOW? You can use the chain rule. Any probabilistic distribution can be decomposed into a product of some conditional distributions, then we build these kind of conditional probability models to model our overall joint probability.
 
 
 
@@ -201,11 +209,11 @@ Dealing with images? Let's say that CNN will actually return your logarithm of p
 
 ?????????????????????????????????????????????????????????????????
 
- - __EX> Scalable BNN: Variational Dropout 
- Compress NN, then fight severe overfitting on some complicated datasets. 
+### EX> Scalable BNN: Variational Dropout 
+Compress NN, then fight severe overfitting on some complicated datasets. 
  
- We first pick a fake? posterior `q(z|v)` as a **family of distributions** over the `latent variables` with **its own variational parameters**`v`. KL-divergence method helps us to minimize the distance between `P(z)` and `q(z)`, and in its optimization process, we can use `mini-batching` training strategy(since its likelihood can be split into many pieces of log sum), which means we don't need to compute the whole training of the likelihood. ELBO supports mini-batching.    
-   - We can use MonteCarlo estimates for computing stochastic gradient, which is especially useful when the reparameterization trick for `q(z|v)` is applicable. 
+We first pick a fake? posterior `q(z|v)` as a **family of distributions** over the `latent variables` with **its own variational parameters**`v`. KL-divergence method helps us to minimize the distance between `P(z)` and `q(z)`, and in its optimization process, we can use `mini-batching` training strategy(since its likelihood can be split into many pieces of log sum), which means we don't need to compute the whole training of the likelihood. ELBO supports mini-batching.    
+ - We can use MonteCarlo estimates for computing stochastic gradient, which is especially useful when the reparameterization trick for `q(z|v)` is applicable. 
  
 ????????????????????????????????????????????????????????????????? 
 
