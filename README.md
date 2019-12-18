@@ -168,24 +168,22 @@ If you additionally require that the **variational distribution factors complete
 how to scale Bayesian methods to `large datasets`? The situation has changed with the development of **stochastic Variational Inference**, trying to solve the inference problem exactly without the help of sampling. 
 <img src="https://user-images.githubusercontent.com/31917400/69436481-5b0b8500-0d39-11ea-8e3d-1d565674042e.jpg"/>
 
- - __EX> Variational Autoencoder:__ 
-   - for Dimensionality Reduction
-   - for Information Retrieval
+### EX> Variational Autoencoder: 
+ - for Dimensionality Reduction
+ - for Information Retrieval
    
- > Why fitting a certain distribution into the disgusting DATA (**why do you want to model it**)?
-   - if you have super complicated objects like natural images, you may want to build a probability distribution such as "GMM" based on the dataset of your natural images then try to generate **new complicated data**...
-   
-   1. __Detect anomalies, sth suspicious__ 
-   - ex> For example, you have a bank and you have a sequence of transactions, and then, if you fit your probabilistic model into this sequence of transactions, for a new transaction you can predict how probable this transaction is according to our model, our current training data-set, and if this particular transaction is not very probable, then we may say that it's kind of suspicious and we may ask humans to check it.
-   - ex> For example, if you have security camera footage, you can train the model on your normal day security camera, and then, if something suspicious happens then you can detect that by seeing that some images from your cameras have a low probability of your image according to your model. 
-   
-   2. __Deal with N/A__
-   - ex> For example, you have some images with obscured parts, and you want to do predictions. In this case, if you have P(X) - probability distribution of your data -, it will help you greatly to deal with it. 
-   
-   3. __Represent highly structured data in low dimensional embeddings__
-   - ex> For example, people sometimes build these kind of latent codes for molecules and then try to discover new drugs by exploring this space of molecules in this latent space.....?? 
+> Why fitting a certain distribution into the disgusting DATA (**why do you want to model it**)?
+ - If you have super complicated objects like natural images, you may want to build a probability distribution such as "GMM" based on the dataset of your natural images then try to generate **new complicated data**...
+ - Application?
+   - __Detect anomalies, sth suspicious__ 
+     - ex> For example, you have a bank and you have a sequence of transactions, and then, if you fit your probabilistic model into this sequence of transactions, for a new transaction you can predict how probable this transaction is according to our model, our current training data-set, and if this particular transaction is not very probable, then we may say that it's kind of suspicious and we may ask humans to check it.
+     - ex> For example, if you have security camera footage, you can train the model on your normal day security camera, and then, if something suspicious happens then you can detect that by seeing that some images from your cameras have a low probability of your image according to your model. 
+   - __Deal with N/A__
+     - ex> For example, you have some images with obscured parts, and you want to do predictions. In this case, if you have P(X) - probability distribution of your data -, it will help you greatly to deal with it. 
+   - __Represent highly structured data in low dimensional embeddings__
+     - ex> For example, people sometimes build these kind of latent codes for molecules and then try to discover new drugs by exploring this space of molecules in this latent space.....?? 
  
-   Dealing with images? Let's say that CNN will actually return your logarithm of probability. The problem with this approach is that you have to normalize your distribution. You have to make your distribution to sum up to one, with respect to sum according to all possible images in the world, and there are billions of them. So, this normalization constant is very expensive to compute, and you have to compute it to do the training or inference in the proper manner. HOW? You can use the chain rule. Any probabilistic distribution can be decomposed into a product of some conditional distributions, then we build these kind of conditional probability models to model our overall joint probability.
+Dealing with images? Let's say that CNN will actually return your logarithm of probability. The problem with this approach is that you have to normalize your distribution. You have to make your distribution to sum up to one, with respect to sum according to all possible images in the world, and there are billions of them. So, this normalization constant is very expensive to compute, and you have to compute it to do the training or inference in the proper manner. HOW? You can use the chain rule. Any probabilistic distribution can be decomposed into a product of some conditional distributions, then we build these kind of conditional probability models to model our overall joint probability.
 
 
 
