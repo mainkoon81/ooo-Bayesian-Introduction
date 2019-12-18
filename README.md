@@ -172,7 +172,7 @@ how to scale Bayesian methods to `large datasets`? The situation has changed wit
  - for Dimensionality Reduction
  - for Information Retrieval
    
-> Why fitting a certain distribution into the disgusting DATA (**why do you want to model it**)?
+> [INTRO]: Why fitting a certain distribution into the disgusting DATA (**why do you want to model it**)?
  - If you have super complicated objects like natural images, you may want to build a probability distribution such as "GMM" based on the dataset of your natural images then try to generate **new complicated data**...
  - Application?
    - __Detect anomalies, sth suspicious__ 
