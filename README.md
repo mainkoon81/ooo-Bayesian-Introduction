@@ -121,7 +121,7 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
      - It implies the **integral of the `joint`** is an **open form**!
      - Obtain a posterior by sampling from the "Envelop".
    - **2. Variational inference:** faster but less accurate. It’s drawback is that it’s model-specific..(use when likelihood & prior is `clear`)
-     - It implies the integral of the `joint` is an **open form**!
+     - It implies the **integral of the `joint`** is an **open form**!
      - Obtain a posterior by appropriating other distribution.
  - If you have a truly infinite computational budget, MCMC should give more accurate solution than Variational Inference that trades some accuracy for speed. With a finite budget (say 1 year of computation), Variational Inference can be more accurate for very large models, but if the budget is large enough MCMC should give a better solution for any model of reasonable size.
 
