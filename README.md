@@ -184,7 +184,7 @@ how to scale Bayesian methods to `large datasets`? The situation has changed wit
      - ex> For example, people sometimes build these kind of latent codes for molecules and then try to discover new drugs by exploring this space of molecules in this latent space.....?? 
 
 > Let's model the image!
-<img src="https://user-images.githubusercontent.com/31917400/71097550-0c220580-21a8-11ea-80b3-a9f83ca1fa8e.jpg"/>
+<img src="https://user-images.githubusercontent.com/31917400/71101742-24495300-21af-11ea-9821-a14e07c54148.jpg"/>
 
  - [1.CNN]: Let's say that **CNN** will actually return your **logarithm of probability**. 
    - The problem with this approach is that you have to normalize your distribution. You have to make your distribution to sum up to one, with respect to sum according to all possible images in the world, and there are billions of them. So, this normalization constant is very expensive to compute, and you have to compute it to do the training or inference in the proper manner. HOW? You can use the chain rule. `Any probabilistic distribution can be decomposed into a product of some conditional distributions`, then we build these kind of conditional probability models to model our `overall joint probability`. 
