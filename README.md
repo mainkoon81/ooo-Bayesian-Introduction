@@ -115,12 +115,13 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
  - It's complex since we now have to deal with the **Evidence**(with the integral computation). But if we are allowed to use conjugation method, we can do **Bayesian inference** since it's easy. However, it’s not always the case in real-world applications. We then need to use MCMC or other algorithms as a substitute for the direct integral computation.
  - There are three main flavours: 
    - **0. Conjugation method**
-     - Find a conjugate prior(very clear) then compute posterior using sampling or math, etc..??????? Bruna! help...no it simply implies the integral of the `joint` is a closed form! 
-   - **1. MCMC:** a gold standard, but slow. (use when likelihood & prior is `not clear`)..but still need a prior??? Yes! even fake prior!
-     - we still need the `joint`!
+     - Find a conjugate prior(very clear) then compute posterior using math...??????? Bruna! help...coz 
+     - It simply implies the **integral of the `joint`** is a **closed form**! 
+   - **1. MCMC:** a gold standard, but slow. (use when likelihood & prior is `not clear`)..but still need a prior??? Yes! even fake prior!..we still need the `joint`!
+     - It implies the **integral of the `joint`** is an **open form**!
      - Obtain a posterior by sampling from the "Envelop".
    - **2. Variational inference:** faster but less accurate. It’s drawback is that it’s model-specific..(use when likelihood & prior is `clear`)
-     - It implies the integral of the `joint` is a open form!
+     - It implies the integral of the `joint` is an **open form**!
      - Obtain a posterior by appropriating other distribution.
  - If you have a truly infinite computational budget, MCMC should give more accurate solution than Variational Inference that trades some accuracy for speed. With a finite budget (say 1 year of computation), Variational Inference can be more accurate for very large models, but if the budget is large enough MCMC should give a better solution for any model of reasonable size.
 
