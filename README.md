@@ -162,41 +162,61 @@ If you additionally require that the **variational distribution factors complete
    - minimizing KL-divergence value(E[log Q over P*]) between `Q(z)` and `P*(z)`
 <img src="https://user-images.githubusercontent.com/31917400/67224682-ab857f00-f429-11e9-9c21-af5503ea8c3a.jpg"/>
 
-### c-3) Variational Inference + Neural Network
+### c-3) Variational Inference + Neural Network = Scalable VI
 10 years ago, people used to think that Bayesian methods are mostly suited for small datasets because it's computationally expensive. In the era of Big data, our Bayesian methods met deep learning, and people started to make some mixture models that has neural networks inside of a probabilistic model. 
 
 how to scale Bayesian methods to `large datasets`? The situation has changed with the development of **stochastic Variational Inference**, trying to solve the inference problem exactly without the help of sampling. 
 <img src="https://user-images.githubusercontent.com/31917400/69436481-5b0b8500-0d39-11ea-8e3d-1d565674042e.jpg"/>
 
-
- - __1. Variational Dropout:__ 
-   - We first pick a fake? posterior `q(z|v)` as a **family of distributions** over the `latent variables` with **its own variational parameters**`v`. KL-divergence method helps us to minimize the distance between `P(z)` and `q(z)`, and in its optimization process, we can use `mini-batching` training strategy(since its likelihood can be split into many pieces of log sum), which means we don't need to compute the whole training of the likelihood. ELBO supports mini-batching.    
-   - We can use MonteCarlo estimates for computing stochastic gradient, which is especially useful when the reparameterization trick for `q(z|v)` is applicable. 
- 
-????????????????????????????????????????????????????????????????? 
- 
- 
- 
- 
- - __2. Variational Autoencoder:__ 
- 
- Why fitting a certain distribution into the DATA(too complicated, structured)?
-   - if Gaussian or Gaussian mixture model on the probabilistic PC, are not enough to capture the complicated objects like images, like natural images, you may want to fit your dataset of natural images into a probabilistic distribution, for example, to generate new data.
+ - __EX> Variational Autoencoder:__ 
+   - for Dimensionality Reduction
+   - for Information Retrieval
    
-   1. Detect anomalies, sth suspicious 
+ > Why fitting a certain distribution into the disgusting DATA (**why do you want to model it**)?
+   - if you have super complicated objects like natural images, you may want to build a probability distribution such as "GMM" based on the dataset of your natural images then try to generate **new complicated data**...
+   
+   1. __Detect anomalies, sth suspicious__ 
    - ex> For example, you have a bank and you have a sequence of transactions, and then, if you fit your probabilistic model into this sequence of transactions, for a new transaction you can predict how probable this transaction is according to our model, our current training data-set, and if this particular transaction is not very probable, then we may say that it's kind of suspicious and we may ask humans to check it.
    - ex> For example, if you have security camera footage, you can train the model on your normal day security camera, and then, if something suspicious happens then you can detect that by seeing that some images from your cameras have a low probability of your image according to your model. 
    
-   2. Deal with N/A
-   - ex> For example, you have some images with obscured parts, and you want to do predictions. In this case, if you have P of X, so probability of your data, it will help you greatly to deal with it. 
+   2. __Deal with N/A__
+   - ex> For example, you have some images with obscured parts, and you want to do predictions. In this case, if you have P(X) - probability distribution of your data -, it will help you greatly to deal with it. 
    
-   3. Represent highly structured data in low dimensional embeddings.
-   - ex> For example, people sometimes build these kind of latent codes for molecules and then try to discover new drugs by exploring this space of molecules in this latent space. 
+   3. __Represent highly structured data in low dimensional embeddings__
+   - ex> For example, people sometimes build these kind of latent codes for molecules and then try to discover new drugs by exploring this space of molecules in this latent space.....?? 
  
    Dealing with images? Let's say that CNN will actually return your logarithm of probability. The problem with this approach is that you have to normalize your distribution. You have to make your distribution to sum up to one, with respect to sum according to all possible images in the world, and there are billions of them. So, this normalization constant is very expensive to compute, and you have to compute it to do the training or inference in the proper manner. HOW? You can use the chain rule. Any probabilistic distribution can be decomposed into a product of some conditional distributions, then we build these kind of conditional probability models to model our overall joint probability.
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 ?????????????????????????????????????????????????????????????????
+
+ - __EX> Scalable BNN: Variational Dropout 
+ Compress NN, then fight severe overfitting on some complicated datasets. 
+ 
+ We first pick a fake? posterior `q(z|v)` as a **family of distributions** over the `latent variables` with **its own variational parameters**`v`. KL-divergence method helps us to minimize the distance between `P(z)` and `q(z)`, and in its optimization process, we can use `mini-batching` training strategy(since its likelihood can be split into many pieces of log sum), which means we don't need to compute the whole training of the likelihood. ELBO supports mini-batching.    
+   - We can use MonteCarlo estimates for computing stochastic gradient, which is especially useful when the reparameterization trick for `q(z|v)` is applicable. 
+ 
+????????????????????????????????????????????????????????????????? 
+
+
+
+
+
+
+
 
 
 
