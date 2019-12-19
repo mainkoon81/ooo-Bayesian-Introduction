@@ -194,7 +194,7 @@ how to scale Bayesian methods to `large datasets`? The situation has changed wit
    <img src="https://user-images.githubusercontent.com/31917400/71176720-6089bb80-2262-11ea-8632-7f0447c80f09.jpg"/>
  
      - How to get `w`?
-       - Find the distribution of the `latent variable "t"`, using **Variational Inference** ! 
+       - Before `w`, find the posterior of the `latent variable "t"`, using **Variational Inference** ! 
          - Bring up the "factorized" variational distribution `q(t)`.
            - Assuming each `q(t)` as the Exponential family function with new parameters - `m`vector, `s`vector. 
            - Maximizing the likelihood function of our model w.r.t `m`,`s`...but are they clear? too much?
