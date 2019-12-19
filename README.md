@@ -203,10 +203,10 @@ how to scale Bayesian methods to `large datasets`? The situation has changed wit
            
          - **2. Build an AutoEncoder**
            - We pass it through the `first neural network` with parameters`φ` to get the parameters `m`,`s` of the variational distribution `q(t)`. 
-           - We sample from this distribution`q(t)` one random data pt `t`!
+           - We MCMC sample from this distribution`q(t)` random data pt `t`!
            - We pass this sampled vector `T` into the `second neural network` with parameters`w` 
              - It outputs us the distribution that are as close to the input data as possible.
-           <img src="https://user-images.githubusercontent.com/31917400/71189932-896a7a80-227b-11ea-9511-e10dcafd9663.jpg"/>
+           <img src="https://user-images.githubusercontent.com/31917400/71190873-3f829400-227d-11ea-8d86-669a34da00e0.jpg"/>
 
 
 
