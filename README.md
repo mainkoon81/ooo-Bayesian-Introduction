@@ -169,6 +169,7 @@ how to scale Bayesian methods to `large datasets`? The situation has changed wit
 <img src="https://user-images.githubusercontent.com/31917400/69436481-5b0b8500-0d39-11ea-8e3d-1d565674042e.jpg"/>
 
 ### EX> Variational Autoencoder and Generative model: 
+In contrast to the plain autoencoders, it has sampling inside and has variational approximations. 
  - for Dimensionality Reduction
  - for Information Retrieval
    
