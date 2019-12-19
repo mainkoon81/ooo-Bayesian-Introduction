@@ -209,7 +209,7 @@ In contrast to the plain autoencoders, it has sampling inside and has variationa
              - It outputs us the distribution that are as close to the input data as possible.
            <img src="https://user-images.githubusercontent.com/31917400/71190873-3f829400-227d-11ea-8d86-669a34da00e0.jpg"/>
            
-     - What's the model likelihood function?
+     - What's the model likelihood function??????????????????????????????????????????????????
        <img src="https://user-images.githubusercontent.com/31917400/71192417-23ccbd00-2280-11ea-9b36-599d8e5f8dc0.jpg"/>
 
 
