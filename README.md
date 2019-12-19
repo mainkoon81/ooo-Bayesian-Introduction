@@ -168,7 +168,7 @@ If you additionally require that the **variational distribution factors complete
 how to scale Bayesian methods to `large datasets`? The situation has changed with the development of **stochastic Variational Inference**, trying to solve the inference problem exactly without the help of sampling. 
 <img src="https://user-images.githubusercontent.com/31917400/69436481-5b0b8500-0d39-11ea-8e3d-1d565674042e.jpg"/>
 
-### EX> Variational Autoencoder: 
+### EX> Variational Autoencoder and Generative model: 
  - for Dimensionality Reduction
  - for Information Retrieval
    
