@@ -201,7 +201,7 @@ how to scale Bayesian methods to `large datasets`? The situation has changed wit
          - We can make `q(t)` more flexible. If assume all `q(t)` share the same parameterization - func`m`, func`s`, depending on individual parameter `x` and `weight`.. then the training get easier. We have the original input data `x` so let's get some weight `φ` via CNN!
            <img src="https://user-images.githubusercontent.com/31917400/71183160-6043ed00-226f-11ea-8712-4312f41d8a04.jpg"/>
            
-         - 2. **Build an AutoEncoder**
+         - **2. Build an AutoEncoder**
            - We pass it through the `first neural network` with parameters`φ` to get the parameters `m`,`s` of the variational distribution `q(t)`. 
            - We sample from this distribution`q(t)` one random data pt `t`!
            - We pass this sampled vector `T` into the `second neural network` with parameters`w` 
