@@ -168,6 +168,17 @@ If you additionally require that the **variational distribution factors complete
 how to scale Bayesian methods to `large datasets`? The situation has changed with the development of **stochastic Variational Inference**, trying to solve the inference problem exactly without the help of sampling. 
 <img src="https://user-images.githubusercontent.com/31917400/69436481-5b0b8500-0d39-11ea-8e3d-1d565674042e.jpg"/>
 
+### > Background: General form of EM
+<img src="https://user-images.githubusercontent.com/31917400/71261648-d01cab00-2335-11ea-9bc9-d846f4d9cd93.jpg"/>
+When MLE does not work for the original margin of log-likelihood, then we try to get a **lower bound** with the function that we can easily optimize?  Instead of maximizing the original margin of log-likelihood, we can maximize its **lower bound**!!
+
+But it's just a lower bound.. there is no guarantee that it gives us the correct parameter estimation! Perhaps we can try...a `family of lower bounds`?? Treating `q(t)` as the `alpha coefficient` of the Jensen's inequality!
+<img src="https://user-images.githubusercontent.com/31917400/71264042-20e2d280-233b-11ea-9b2e-e33f3d275411.jpg"/>
+
+General EM-Algorithm
+<img src="https://user-images.githubusercontent.com/31917400/71264565-458b7a00-233c-11ea-88d6-e3316d5fef5b.jpg"/>
+We built a lower bound on the local likelihood which depends both on the theta to maximize the local likelihood and the parameter q which is the variational distribution value, and it suggests we can optimize this lower bound in iterations by repeating the two steps until convergence. On the E-step, fix theta and maximize the lower bound with respect to q. And on the M-step, fix q and maximize the lower bound with respect of theta. So this is the general view of the expectation maximization. 
+
 ### EX> Variational Autoencoder and Generative model: 
 In contrast to the plain autoencoders, it has sampling inside and has variational approximations. 
  - for Dimensionality Reduction
@@ -316,17 +327,7 @@ In the settings where data is scarce and precious and hard to obtain, it is diff
      - 3. Have a MCMC algorithm draw samples from the posterior distributions for the parameters. 
      
 
-### > Method
-Jensen's inequality & Kullback Leibler divergence & General form of EM
-<img src="https://user-images.githubusercontent.com/31917400/71261648-d01cab00-2335-11ea-9bc9-d846f4d9cd93.jpg"/>
-When MLE does not work for the original margin of log-likelihood, then we try to get a **lower bound** with the function that we can easily optimize?  Instead of maximizing the original margin of log-likelihood, we can maximize its **lower bound**!!
 
-But it's just a lower bound.. there is no guarantee that it gives us the correct parameter estimation! Perhaps we can try...a `family of lower bounds`?? Treating `q(t)` as the `alpha coefficient` of the Jensen's inequality!
-<img src="https://user-images.githubusercontent.com/31917400/71264042-20e2d280-233b-11ea-9b2e-e33f3d275411.jpg"/>
-
-General EM-Algorithm
-<img src="https://user-images.githubusercontent.com/31917400/71264565-458b7a00-233c-11ea-88d6-e3316d5fef5b.jpg"/>
-We built a lower bound on the local likelihood which depends both on the theta to maximize the local likelihood and the parameter q which is the variational distribution value, and it suggests we can optimize this lower bound in iterations by repeating the two steps until convergence. On the E-step, fix theta and maximize the lower bound with respect to q. And on the M-step, fix q and maximize the lower bound with respect of theta. So this is the general view of the expectation maximization. 
 
 
 
