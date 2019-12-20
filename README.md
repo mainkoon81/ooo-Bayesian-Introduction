@@ -316,8 +316,10 @@ In the settings where data is scarce and precious and hard to obtain, it is diff
      - 3. Have a MCMC algorithm draw samples from the posterior distributions for the parameters. 
      
 
-### > Model_02.
-
+### > Method
+Jensen's inequality & Kullback Leibler divergence & General form of EM
+<img src="https://user-images.githubusercontent.com/31917400/71261648-d01cab00-2335-11ea-9bc9-d846f4d9cd93.jpg"/>
+When MLE does not work for the original margin of log-likelihood, then we try to get a **lower bound** with the function that we can easily optimize?  Instead of maximizing the original margin of log-likelihood, we can maximize its **lower bound**!!
 
 
 
