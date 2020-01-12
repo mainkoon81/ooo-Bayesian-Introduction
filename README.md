@@ -226,7 +226,7 @@ In contrast to the plain autoencoders, it has sampling inside and has variationa
            
          - **Step 2. Build an AutoEncoder**
            - To get the Jensen's lower bound at the end, we pass our **initial dataset** through the `first neural network` encoder with parameters`φ` to get the parameters `m`,`s` of the variational distribution `q(t)` to get the **latent variable** disribution. 
-           - We MCMC sample from this distribution`q(t)` random data pt `t`!
+           - We MCMC sample from this distribution`q(t)` random data pt `t`.  
            - We pass this sampled vector `T` into the `second neural network` with parameters`w` 
              - It outputs us the distribution that are as close to the input data as possible.
            <img src="https://user-images.githubusercontent.com/31917400/71190873-3f829400-227d-11ea-8d86-669a34da00e0.jpg"/>
