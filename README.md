@@ -214,7 +214,7 @@ In contrast to the plain autoencoders, it has sampling inside and has variationa
          - using MCMC to sample from P(t ∣ X, w)...?
          - using **Variational Inference**...? YES, let's try! First, think **How "t" is distributed**? 
          - **1. Bring up the "factorized" variational distribution `q(t)`** and address a parameterization -`m`,`s`- via NN.
-           - Assuming each `q(t)` as the Exponential family function with new parameters - `m`vector, `s`vector. 
+           - Assuming each `q(t)` as the Exponential family function with new Gaussian parameters - `m`vector, `s`vector. 
            - Maximizing the likelihood function of our model w.r.t `m`,`s`...but are they clear? too much?
          - We can make `q(t)` more flexible. If assume all `q(t)` share the same parameterization - func`m`, func`s`, depending on individual parameter `x` and `weight`.. then the training get easier. We have the original input data `x` so let's get some weight `φ` via CNN!
            <img src="https://user-images.githubusercontent.com/31917400/71183160-6043ed00-226f-11ea-8712-4312f41d8a04.jpg"/>
