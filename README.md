@@ -212,7 +212,7 @@ In contrast to the plain autoencoders, it has sampling inside and has variationa
      - How to get `w`?
        - Before `w`, we need `P(t|x)`. Find the posterior of the `latent variable "t"`..How?
          - using MCMC to sample from P(t ∣ X, w)...?
-         - using **Variational Inference**...? YES, let's try
+         - using **Variational Inference**...? YES, let's try! First, think **How "t" is distributed**? 
          - **1. Bring up the "factorized" variational distribution `q(t)`** and address a parameterization -`m`,`s`- via NN.
            - Assuming each `q(t)` as the Exponential family function with new parameters - `m`vector, `s`vector. 
            - Maximizing the likelihood function of our model w.r.t `m`,`s`...but are they clear? too much?
