@@ -211,6 +211,7 @@ In contrast to the plain autoencoders, it has sampling inside and has variationa
    <img src="https://user-images.githubusercontent.com/31917400/72224392-18fd0380-3572-11ea-83cb-15313c96af6c.jpg"/>
  
      - ## How to get `w`?
+       - a. **Encoding**: Discover the memberships from our dataset -> b. **Decoding**: Generate new data based on the memberships
        - ## we need `t`...**You should deal with the latent variable first!**
        - Before `w`, we need `P(t|x)`. Find the posterior of the `latent variable "t"`
          - using MCMC to sample from P(t ∣ X, w)...?
