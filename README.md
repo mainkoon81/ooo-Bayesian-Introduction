@@ -209,10 +209,12 @@ In contrast to the plain autoencoders, it has sampling inside and has variationa
  - [3.CNN with Infinite continuous GMM]: We can try an **infinite mixture of Gaussians** which can represent any probability distribution! Each object (image X) has a corresponding latent variable "T", and the image X is caused by this "T", so we can marginalize out w.r.t "T". And the conditional distribution `P(X|T)` is Gaussian. We can have a mixture of infinitely many Gaussians, for each value of "T"(membership), there's `one Gaussian` and we mix them with weights.
    - ## overview
    <img src="https://user-images.githubusercontent.com/31917400/72224392-18fd0380-3572-11ea-83cb-15313c96af6c.jpg"/>
- 
-     - ## How to get `w`?
-       - a. **Encoding**: Discover the memberships from our dataset -> b. **Decoding**: Generate new data based on the memberships
-       - ## we need `t`...**You should deal with the latent variable first!**
+        
+   - Story: 
+     - a. **Encoding**: Discover the memberships from our dataset -> b. **Decoding**: Generate new data based on the memberships
+
+     - ## How to get `w` for Decoding? 
+       - ## we need `t` for Encoding...**You should deal with the latent variable first!**
        - Before `w`, we need `P(t|x)`. Find the posterior of the `latent variable "t"`
          - using MCMC to sample from P(t ∣ X, w)...?
          - using **Variational Inference**...? YES, let's try! First, think **How "t" is distributed**? 
