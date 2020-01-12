@@ -231,8 +231,8 @@ In contrast to the plain autoencoders, it has sampling inside and has variationa
              - It outputs us the distribution that are as close to the input data as possible.
            <img src="https://user-images.githubusercontent.com/31917400/72226599-d136a600-358a-11ea-9e13-69138c206a53.jpg"/>
            
-     - What's the model likelihood function??????????????????????????????????????????????????
-       <img src="https://user-images.githubusercontent.com/31917400/71192417-23ccbd00-2280-11ea-9b36-599d8e5f8dc0.jpg"/>
+ - ### Next, Jensen's Lower bound
+   <img src="https://user-images.githubusercontent.com/31917400/72226852-bca7dd00-358d-11ea-98d6-20965d0dce46.jpg"/>
 
 
 
