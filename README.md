@@ -174,8 +174,8 @@ When MLE does not work for the original margin of log-likelihood, then we try to
 
 But it's just a lower bound.. there is no guarantee that it gives us the correct parameter estimation! 
  - Perhaps we can try...a **family of lower bounds**?? i.e. try **many different lower bounds**!
- - ## Let me introduce `q(t)` as the variational distribution(prob of the membership `t`= c) of the `alpha coefficient` !
-   - They make the `different lower bound`!
+ - ## Let me introduce `q(t)` as the variational distribution of the `alpha coefficient` (probability of the hidden membership `t`= c)
+ - The `Hidden "t" value`, and 1.`Alpha Coefficient: q(t)`, 2.`p(x, t)/q(t)`... They make the `different lower bound`...
 <img src="https://user-images.githubusercontent.com/31917400/71264042-20e2d280-233b-11ea-9b2e-e33f3d275411.jpg"/>
 
 General EM-Algorithm
