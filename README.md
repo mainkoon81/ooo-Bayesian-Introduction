@@ -234,7 +234,7 @@ In contrast to the plain autoencoders, it has sampling inside and has variationa
  - ### Next, Jensen's Lower bound
    <img src="https://user-images.githubusercontent.com/31917400/72226852-bca7dd00-358d-11ea-98d6-20965d0dce46.jpg"/>
 
-   - ???? for a new image which the network never saw, of some suspicious behavior or something else, our conditional neural network of the encoder can output your **latent variable distribution** as far away from the Gaussian. By looking at the distance between the variational distribution `q(t)` and the standard Gaussian, you can understand how anomalistic a certain point is ... they are outliers.  
+   - ???? for a new image which the network never saw, of some suspicious behavior or something else, our conditional neural network of the encoder can output your **latent variable distribution** as far away from the Gaussian. By looking at the distance between the variational distribution `q(t)` and the standard Gaussian, you can understand how anomalistic a certain point is ... they are outliers.    <img src="https://user-images.githubusercontent.com/31917400/72227310-de579300-3592-11ea-9006-4e2b6e9bcbee.jpg"/>
 
 
 
