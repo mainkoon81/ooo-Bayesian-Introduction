@@ -211,7 +211,8 @@ In contrast to the plain autoencoders, it has sampling inside and has variationa
    <img src="https://user-images.githubusercontent.com/31917400/72224392-18fd0380-3572-11ea-83cb-15313c96af6c.jpg"/>
  
      - ## How to get `w`?
-       - Before `w`, we need `P(t|x)`. Find the posterior of the `latent variable "t"`..**You should deal with the latent variable first!**
+       - ## we need `t`...**You should deal with the latent variable first!**
+       - Before `w`, we need `P(t|x)`. Find the posterior of the `latent variable "t"`
          - using MCMC to sample from P(t ∣ X, w)...?
          - using **Variational Inference**...? YES, let's try! First, think **How "t" is distributed**? 
          - **Step 1. Bring up the "factorized" variational distribution `q(t)`** and address a parameterization -`m`,`s`- via NN.
