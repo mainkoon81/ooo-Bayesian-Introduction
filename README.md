@@ -209,17 +209,17 @@ In contrast to the plain autoencoders, it has sampling inside and has variationa
  - [3.CNN with Infinite continuous GMM]: We can try an **infinite mixture of Gaussians** which can represent any probability distribution! Each object (image X) has a corresponding latent variable "T", and the image X is caused by this "T", so we can marginalize out w.r.t "T". And the conditional distribution `P(X|T)` is Gaussian. We can have a mixture of infinitely many Gaussians, for each value of "T"(membership), there's `one Gaussian` and we mix them with weights.
    <img src="https://user-images.githubusercontent.com/31917400/72224392-18fd0380-3572-11ea-83cb-15313c96af6c.jpg"/>
  
-     - How to get `w`?
-       - Before `w`, we need `P(t|x)`. Find the posterior of the `latent variable "t"`..How?
+     - ## How to get `w`?
+       - Before `w`, we need `P(t|x)`. Find the posterior of the `latent variable "t"`..**You should deal with the latent variable first!**
          - using MCMC to sample from P(t ∣ X, w)...?
          - using **Variational Inference**...? YES, let's try! First, think **How "t" is distributed**? 
-         - **1. Bring up the "factorized" variational distribution `q(t)`** and address a parameterization -`m`,`s`- via NN.
+         - **Step 1. Bring up the "factorized" variational distribution `q(t)`** and address a parameterization -`m`,`s`- via NN.
            - Assuming each `q(t)` as the Exponential family function with new Gaussian parameters - `m`vector, `s`vector. 
            - Maximizing the likelihood function of our model w.r.t `m`,`s`...but are they clear? too much?
          - We can make `q(t)` more flexible. If assume all `q(t)` share the same parameterization - func`m`, func`s`, depending on individual parameter `x` and `weight`.. then the training get easier. We have the original input data `x` so let's get some weight `φ` via CNN!
-           <img src="https://user-images.githubusercontent.com/31917400/71183160-6043ed00-226f-11ea-8712-4312f41d8a04.jpg"/>
+           <img src="https://user-images.githubusercontent.com/31917400/72226055-8a45b200-3584-11ea-96ce-b6ad7d78de6f.jpg"/>
            
-         - **2. Build an AutoEncoder**
+         - **Step 2. Build an AutoEncoder**
            - We pass it through the `first neural network` with parameters`φ` to get the parameters `m`,`s` of the variational distribution `q(t)`. 
            - We MCMC sample from this distribution`q(t)` random data pt `t`!
            - We pass this sampled vector `T` into the `second neural network` with parameters`w` 
