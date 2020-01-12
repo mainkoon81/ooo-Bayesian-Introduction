@@ -172,7 +172,7 @@ how to scale Bayesian methods to `large datasets`? The situation has changed wit
 <img src="https://user-images.githubusercontent.com/31917400/71261648-d01cab00-2335-11ea-9bc9-d846f4d9cd93.jpg"/>
 When MLE does not work for the original margin of log-likelihood, then we try to get a **lower bound** with the function that we can easily optimize?  Instead of maximizing the original margin of log-likelihood, we can maximize its **lower bound**!!
 
-But it's just a lower bound.. there is no guarantee that it gives us the correct parameter estimation! Perhaps we can try...a `family of lower bounds`?? Treating `q(t)` as the `alpha coefficient` of the Jensen's inequality!
+But it's just a lower bound.. there is no guarantee that it gives us the correct parameter estimation! Perhaps we can try...a **family of lower bounds**?? Treating `q(t)` as the `alpha coefficient`(PROBABILITY) of the Jensen's inequality!
 <img src="https://user-images.githubusercontent.com/31917400/71264042-20e2d280-233b-11ea-9b2e-e33f3d275411.jpg"/>
 
 General EM-Algorithm
