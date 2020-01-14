@@ -148,7 +148,7 @@ Variational inference seeks to approximate the true posterior with an **approxim
 <img src="https://user-images.githubusercontent.com/31917400/67644689-9f169000-f91b-11e9-88e7-55bde74becbf.jpg"/>
 
 A> How KL-Divergence works? 
- - Step_01: Select the family distribution **Q** called a "variational family".
+ - Step_01: Select the family distribution **Q** called a "variational family": a pool of **Q**
  - Step_02: Try to approximate the **full posterior** `P*(z)` with some variational distribution `Q(z)` by searching the best matching distribution, minimizing "KL-divergence" value.
    - minimizing KL-divergence value(E[log Q over P]) between `Q(z)` and `P*(z)`
  - Kullback Leibler-Divergence measures the difference(distance) b/w two distributions, so we minimize this value between your **variational distribution choice** and the **un-normalized posterior** (not differ from normalized real posterior...coz the evidence would become a constant...in the end.)   
