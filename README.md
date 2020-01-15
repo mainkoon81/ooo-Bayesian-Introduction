@@ -238,11 +238,11 @@ In contrast to the plain autoencoders, it has sampling inside and has variationa
  - ### Next, two CNN for Φ and w: Maximize Jensen's Lower bound
    <img src="https://user-images.githubusercontent.com/31917400/72226852-bca7dd00-358d-11ea-98d6-20965d0dce46.jpg"/>
 
-   - __Outlier Detection__???? for a new image which the network never saw, of some suspicious behavior or something else, our conditional neural network of the encoder can output your **latent variable distribution** as far away from the Gaussian. By looking at the distance between the variational distribution `q(t)` and the standard Gaussian, you can understand how anomalistic a certain point is ... they are outliers.    
+   - __Encoder Story: Outlier Detection__???? for a new image which the network never saw, of some suspicious behavior or something else, our conditional neural network of the encoder can output your **latent variable distribution** as far away from the Gaussian. By looking at the distance between the variational distribution `q(t)` and the standard Gaussian, you can understand how anomalistic a certain point is ... they are outliers.    
    
    <img src="https://user-images.githubusercontent.com/31917400/72395569-d71abb80-3731-11ea-868c-3802ee6b151c.jpg"/>
 
-   - __Gradient of Decoder__???? we're passing our image through our Encoder, to get the parameters(v) of the variation distribution `q(t|v)`. Then we sample `t` from the variation distribution. And then we put this point as input to the Decoder with parameters `w`. And then we just compute the **usual gradient** of this second neural network with respect to its parameters `w`.  
+   - __Decoder Story: Gradient of Decoder__???? we're passing our image through our Encoder, to get the parameters(v) of the variation distribution `q(t|v)`. Then we sample `t` from the variation distribution. And then we put this point as input to the Decoder with parameters `w`. And then we just compute the **usual gradient** of this second neural network with respect to its parameters `w`.  
 
 
 
