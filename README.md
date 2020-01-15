@@ -211,7 +211,7 @@ In contrast to the plain autoencoders, it has sampling inside and has variationa
    Only if we have `hidden variables`...
    <img src="https://user-images.githubusercontent.com/31917400/72342676-f3344380-36c4-11ea-90a2-ea05caf2e11a.jpg"/>
  
-   - ## overview
+   - ## overview: get some `Q(latent variable)`
    <img src="https://user-images.githubusercontent.com/31917400/72385149-c27cfa00-3716-11ea-829a-921b67fa6595.jpeg"/>
         
    - Story: 
