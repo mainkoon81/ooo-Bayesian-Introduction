@@ -244,6 +244,8 @@ In contrast to the plain autoencoders, it has sampling inside and has variationa
    - __Gradient of Decoder:__ Make an Expected Value !
      - we sample `t` from the variation distribution `q(t|Φ)` and put this `point` as input to the Decoder with parameters `w`. And then we just compute the **usual gradient** of this second neural network with respect to its parameters `w`.  
    <img src="https://user-images.githubusercontent.com/31917400/72433990-7a9bb880-3792-11ea-8cfd-f3e6778fa8ad.jpg"/>
+   
+   - __Issues of gradient of Encoder:__ Reparameterization trick
 
 
 
