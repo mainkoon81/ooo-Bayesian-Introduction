@@ -219,7 +219,7 @@ In contrast to the plain autoencoders, it has sampling inside and has variationa
 
      - ## How to get `w` for Decoding? 
        - ## we need `t` for Encoding...**You should deal with the latent variable first!**
-       - Before `w`, we need `P(t|x)`. Find the posterior of the `latent variable "t"`
+       - Before `w`, we need `P(t|x)`. Find the posterior of the `continuous latent variable "t"`
          - using MCMC to sample from P(t ∣ X, w)...?
          - using **Variational Inference**...? YES, let's try! First, think **How "t" is distributed**? 
          - **Step 1. Bring up the "factorized" variational distribution `q(t)`** and address a parameterization -`m`,`s`- via NN.
