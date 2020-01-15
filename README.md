@@ -184,7 +184,9 @@ General EM-Algorithm
 We built a lower bound on the local likelihood which depends both on the theta to maximize the local likelihood and the parameter q which is the variational distribution value, and it suggests we can optimize this lower bound in iterations by repeating the two steps until convergence. On the E-step, fix theta and maximize the lower bound with respect to q. And on the M-step, fix q and maximize the lower bound with respect of theta. So this is the general view of the expectation maximization. 
 
 ### EX> Variational Autoencoder and Generative model: 
-In contrast to the plain autoencoders, it has sampling inside and has variational approximations. 
+How can we perform efficient inference and learning in directed probabilistic models, in the presence of **continuous latent variables** with **intractable posterior distributions**, and **large datasets**? 
+
+In contrast to the plain autoencoders, it has `sampling inside` and has `variational approximations`. 
  - for Dimensionality Reduction
  - for Information Retrieval
    
@@ -245,7 +247,7 @@ In contrast to the plain autoencoders, it has sampling inside and has variationa
      - we sample `t` from the variation distribution `q(t|Φ)` and put this `point` as input to the Decoder with parameters `w`. And then we just compute the **usual gradient** of this second neural network with respect to its parameters `w`.  
    <img src="https://user-images.githubusercontent.com/31917400/72433990-7a9bb880-3792-11ea-8cfd-f3e6778fa8ad.jpg"/>
    
-   - __Issues of gradient of Encoder:__ Reparameterization trick
+   - __Issues of gradient of Encoder:__ A reparameterization of the variational lower bound yields a lower bound estimator that can be straightforwardly optimized using standard stochastic gradient. 
 
 
 
