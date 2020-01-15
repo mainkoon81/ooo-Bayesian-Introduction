@@ -236,13 +236,14 @@ In contrast to the plain autoencoders, it has sampling inside and has variationa
            <img src="https://user-images.githubusercontent.com/31917400/72226599-d136a600-358a-11ea-9e13-69138c206a53.jpg"/>
            
  - ### Next, two CNN for Φ and w: Maximize Jensen's Lower bound
-   <img src="https://user-images.githubusercontent.com/31917400/72226852-bca7dd00-358d-11ea-98d6-20965d0dce46.jpg"/>
-
    - __Encoder Story: Outlier Detection__???? for a new image which the network never saw, of some suspicious behavior or something else, our conditional neural network of the encoder can output your **latent variable distribution** as far away from the Gaussian. By looking at the distance between the variational distribution `q(t)` and the standard Gaussian, you can understand how anomalistic a certain point is ... they are outliers.    
+   <img src="https://user-images.githubusercontent.com/31917400/72226852-bca7dd00-358d-11ea-98d6-20965d0dce46.jpg"/>
    
-   <img src="https://user-images.githubusercontent.com/31917400/72395569-d71abb80-3731-11ea-868c-3802ee6b151c.jpg"/>
-
-   - __Decoder Story: Gradient of Decoder__???? we're passing our image through our Encoder, to get the parameters(v) of the variation distribution `q(t|v)`. Then we sample `t` from the variation distribution. And then we put this point as input to the Decoder with parameters `w`. And then we just compute the **usual gradient** of this second neural network with respect to its parameters `w`.  
+   - __Gradient of Encoder:__ Make an Expected Value !
+     - we're passing our image through our Encoder, and compute the **usual gradient** of this first neural network with respect to its parameters `Φ` to get the parameters(Φ) of the variation distribution `q(t|Φ)`. But it has lots of problems..`the variance will be so high that you will have to use lots and lots of gradients to approximate this thing accurately`. How can we estimate this gradient with a much **smaller variance estimate**?  
+   - __Gradient of Decoder:__ Make an Expected Value !
+     - we sample `t` from the variation distribution `q(t|Φ)` and put this `point` as input to the Decoder with parameters `w`. And then we just compute the **usual gradient** of this second neural network with respect to its parameters `w`.  
+   <img src="https://user-images.githubusercontent.com/31917400/72433990-7a9bb880-3792-11ea-8cfd-f3e6778fa8ad.jpg"/>
 
 
 
