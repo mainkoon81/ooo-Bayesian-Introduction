@@ -214,7 +214,7 @@ In contrast to the plain autoencoders, it has `sampling inside` and has `variati
    <img src="https://user-images.githubusercontent.com/31917400/72342676-f3344380-36c4-11ea-90a2-ea05caf2e11a.jpg"/>
  
    - ## overview: get some `Q(latent variable)`
-   <img src="https://user-images.githubusercontent.com/31917400/72385149-c27cfa00-3716-11ea-829a-921b67fa6595.jpeg"/>
+   <img src="https://user-images.githubusercontent.com/31917400/73172457-fd116a00-40fa-11ea-879e-33e83d73730e.jpeg"/>
         
    - Story: 
      - a. **Encoding**: Discover the memberships from our dataset -> b. **Decoding**: Generate new data based on the memberships
@@ -247,7 +247,8 @@ In contrast to the plain autoencoders, it has `sampling inside` and has `variati
      - we sample `t` from the variation distribution `q(t|Φ)` and put this `point` as input to the Decoder with parameters `w`. And then we just compute the **usual gradient** of this second neural network with respect to its parameters `w`.  
    <img src="https://user-images.githubusercontent.com/31917400/72433990-7a9bb880-3792-11ea-8cfd-f3e6778fa8ad.jpg"/>
    
-   - __Issues of gradient of Encoder:__ A reparameterization of the variational lower bound yields a lower bound estimator that can be straightforwardly optimized using standard stochastic gradient. 
+   - __Issues of gradient of Encoder:__ How can we estimate this varying gradient with a much **smaller variance estimate**?  
+     - A **"reparameterization"** of the variational lower bound yields a lower bound estimator that can be straightforwardly optimized using standard stochastic gradient. 
 
 
 
