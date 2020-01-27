@@ -162,11 +162,10 @@ If you additionally require that the **variational distribution factors complete
    - minimizing KL-divergence value(E[log Q over P*]) between `Q(z)` and `P*(z)`
 <img src="https://user-images.githubusercontent.com/31917400/67224682-ab857f00-f429-11e9-9c21-af5503ea8c3a.jpg"/>
 
-### c-3) Variational Inference + Neural Network = Scalable VI
+## c-3) Variational Inference + Neural Network = Scalable VI
 10 years ago, people used to think that Bayesian methods are mostly suited for small datasets because it's computationally expensive. In the era of Big data, our Bayesian methods met deep learning, and people started to make some mixture models that has neural networks inside of a probabilistic model. 
 
-how to scale Bayesian methods to `large datasets`? The situation has changed with the development of **stochastic Variational Inference**, trying to solve the inference problem exactly without the help of sampling. 
-<img src="https://user-images.githubusercontent.com/31917400/69436481-5b0b8500-0d39-11ea-8e3d-1d565674042e.jpg"/>
+How to scale Bayesian methods to `large datasets`? The situation has changed with the development of **stochastic Variational Inference**, trying to solve the inference problem exactly without the help of sampling. 
 
 ### > Background: General form of EM
 <img src="https://user-images.githubusercontent.com/31917400/72221046-c78f4d00-354e-11ea-8512-b6c1546004ee.jpg"/>
@@ -254,7 +253,8 @@ In contrast to the plain autoencoders, it has `sampling inside` and has `variati
    <img src="https://user-images.githubusercontent.com/31917400/73176973-afe6c580-4105-11ea-8822-49b2d202c156.jpg"/>
 
 
-
+### Learning with priors
+<img src="https://user-images.githubusercontent.com/31917400/69436481-5b0b8500-0d39-11ea-8e3d-1d565674042e.jpg"/>
 
 
 
