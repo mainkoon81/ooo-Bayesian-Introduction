@@ -225,20 +225,20 @@ In contrast to the plain autoencoders, it has `sampling inside` and has `variati
          - using MCMC to sample from P(t ∣ X, w)...?
          - using **Variational Inference**...? YES, let's try! First, think **How "t" is distributed**? 
          - **Step 1. Bring up the "factorized" variational distribution `q(t)`** and address a parameterization -`m`,`s`- via NN.
-           - Assuming each `q(t)` as the Exponential family function with new Gaussian parameters - `m`vector, `s`vector. 
-           - Maximizing the likelihood function of our model w.r.t `m`,`s`...but are they clear? too much?
-         - We can make `q(t)` more flexible. If assume all `q(t)` share the same parameterization - func`m`, func`s`, depending on individual parameter `x` and `weight`.. then the training get easier. We have the original input data `x` so let's get some weight `φ` via CNN!
+           - Assuming each `q(t)` as the Exponential family function with new Gaussian parameters - `m`vector, `s^2`matrix. 
+           - Maximizing the likelihood function of our model w.r.t `m`,`s^2`...but are they clear? 
+         - We can make `q(t)` more flexible. If assume all `q(t)` share the same parameterization - func`m()`, func`s^2()`, depending on individual parameter `x` and `weight`.. then the training get easier. We have the original input data `x` so let's get some weight `φ` via CNN!
            <img src="https://user-images.githubusercontent.com/31917400/72226055-8a45b200-3584-11ea-96ce-b6ad7d78de6f.jpg"/>
            
          - **Step 2. Build an AutoEncoder**
-           - To get the Jensen's lower bound at the end, we pass our **initial dataset** through the `first neural network` encoder with parameters`φ` to get the parameters `m`,`s` of the variational distribution `q(t)` to get the **latent variable** disribution. 
-           - We MCMC sample from this distribution`q(t)` random data pt `t`.  
+           - To get the Jensen's lower bound at the end, we pass our **initial dataset** through the `first neural network` encoder with parameters`φ` to get the parameters `m`,`s^2` of the variational distribution `q(t)` to get the **latent variable** disribution. 
+           - We MC sample from this distribution`q(t)` random data pt `t`.  
            - We pass this sampled vector `T` into the `second neural network` with parameters`w` 
              - It outputs us the distribution that are as close to the input data as possible.
            <img src="https://user-images.githubusercontent.com/31917400/72226599-d136a600-358a-11ea-9e13-69138c206a53.jpg"/>
            
  - ### Next, two CNN for Φ and w: Maximize Jensen's Lower bound
-   - __Encoder Story: Outlier Detection__???? for a new image which the network never saw, of some suspicious behavior or something else, our conditional neural network of the encoder can output your **latent variable distribution** as far away from the Gaussian. By looking at the distance between the variational distribution `q(t)` and the standard Gaussian, you can understand how anomalistic a certain point is ... they are outliers.    
+   - __[Note in Encoder]: Outlier Detection__???? for a new image which the network never saw, of some suspicious behavior or something else, our conditional neural network of the encoder can output your **latent variable distribution** as far away from the Gaussian. By looking at the distance between the variational distribution `q(t)` and the standard Gaussian, you can understand how anomalistic a certain point is ... they are outliers.    
    <img src="https://user-images.githubusercontent.com/31917400/72226852-bca7dd00-358d-11ea-98d6-20965d0dce46.jpg"/>
    
    - __Gradient of Encoder:__ Make an Expected Value ?
@@ -247,9 +247,11 @@ In contrast to the plain autoencoders, it has `sampling inside` and has `variati
      - we sample `t` from the variation distribution `q(t|Φ)` and put this `point` as input to the Decoder with parameters `w`. And then we just compute the **usual gradient** of this second neural network with respect to its parameters `w`.  
    <img src="https://user-images.githubusercontent.com/31917400/72433990-7a9bb880-3792-11ea-8cfd-f3e6778fa8ad.jpg"/>
    
-   - __Issues of gradient of Encoder:__ How can we estimate this varying gradient with a much **smaller variance estimate**?  
-     - A **"reparameterization"** of the variational lower bound yields a lower bound estimator that can be straightforwardly optimized using standard stochastic gradient. 
-
+   - __Issues of gradient of Encoder:__ 허벌창 그라디언트여? How can we better estimate this varying gradient with a much **smaller variance estimate**?  
+     - 왜 허벌창? our input data (x) is 이미지니깐...
+     - when sampling `t`, **"reparameterization trick"** of our latent variable makes the a Jensen's lower bound estimator easy to be optimized using standard stochastic gradient.
+     - so..you just sample from a identity matrix...All works will be done by `m` and `s^2`..
+   <img src="https://user-images.githubusercontent.com/31917400/73176973-afe6c580-4105-11ea-8822-49b2d202c156.jpg"/>
 
 
 
