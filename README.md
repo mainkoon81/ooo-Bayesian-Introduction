@@ -284,11 +284,13 @@ We first pick a fake? posterior `q(z|v)` as a **family of distributions** over t
 # 2. Modeling
 In parametric method, we define a model that depends on some parameter "theta" and then we find optimal values for "theta" by taking MLE, or MAP. And as data becomes more and more complex, we need to add more and more parameters(think about LM's coefficients, linear? polynomial?) so we can say **the number of parameters are fixed**.
  - Fixed number of parameters => so the complexity is limited. 
- - **Fast Inference** coz you just simply feed the weights then the prediction would be just the scalar multiplication. 
+ - **Fast Inference** coz you just simply feed the weights then the prediction would be just the scalar multiplication.
+ - But training is complicated and takes time. 
 
 In Non-parametric method, **the number of parameters depend on the dataset size**. That is, as the number of data points increases, the decision boundary becomes more and more complex. 
  - Not Fixed number of parameters => so the complexity is arbitrary.
  - **Slow Inference** coz you have to process all the data points to make a prediction. 
+ - But training is simple coz it in most cases just remembers all points . 
 
 __[Parametric]__
  - **A. Bayesian Network as PGM**
