@@ -282,6 +282,9 @@ We first pick a fake? posterior `q(z|v)` as a **family of distributions** over t
 
 ---------------------------------------------------------------------------------------------------------
 # 2. Modeling
+In parametric method, we define a model that depends on some parameter "theta" and then we find optimal values for "theta" by taking MLE, or MAP. And as data becomes more and more complex, we need to add more and more parameters(think about LM's coefficients, linear? polynomial?) so we can say **the number of parameters are fixed**....In Non-parametric method, **the number of parameters depend on the dataset size**. That is, as the number of data points increases, the decision boundary becomes more and more complex. 
+
+__[Parametric]__
  - **A. Bayesian Network as PGM**
    - Bayesian Network is "Directed" and "Acyclic". It cannot have **interdependent** variables. 
    <img src="https://user-images.githubusercontent.com/31917400/66124100-7381dd80-e5db-11e9-9d5d-c37b07d2f447.jpg"/>
@@ -289,16 +292,17 @@ We first pick a fake? posterior `q(z|v)` as a **family of distributions** over t
 In the settings where data is scarce and precious and hard to obtain, it is difficult to conduct a large-scale controlled experiment, thus we cannot spare any effort to make the best use of available input. `With small data, it is important to **quantify uncertainty**` and that’s precisely what Bayesian approach is good at. In Bayesian Modeling, there are two main flavours:
  - **B. Statistical Modeling:** 
    - Multilevel/Hierarchical Modeling(Regression?)
- - **C. probabilistic Machine Learning approach and non-parametric approaches:** using data for a computer to learn automatically from it. It outputs probabilistic predictions...that's why probabilistic.. also these probabilities are only statements of belief from a classifier.
+ - **C. probabilistic Machine Learning approach:** using data for a computer to learn automatically from it. It outputs probabilistic predictions...that's why probabilistic.. also these probabilities are only statements of belief from a classifier.
    - __1) Generative modeling:__ One can sample or generate examples from it. Compare with classifiers(discriminative model to model `P(y|x)` to discriminate between classes based on x), **a generative model is concerned with joint distribution `P(y,x)`**. It’s more difficult to estimate that distribution, but **it allows sampling** and of course one can get `P(y|x)` from `P(y,x)`.
      - **LDA:** You start with a matrix where `rows` are **documents**, `columns` are **words** and `each element` is a **count of a given word** in a given document. LDA “factorizes” this matrix of size n x d into two matrices, documents/topics (n x k) and topics/words (k x d). you can’t multiply those two matrices to get the original, but since the appropriate rows/columns sum to one, **you can “generate” a document**. 
-   - __2) Bayesian non-parametrics Modeling:__ the number of parameters in a model can grow as more data become available. This is similar to SVM, for example, where the algorithm chooses support vectors from the training points. Nonparametrics include **Hierarchical Dirichlet Process** version of LDA(where the number of topics chooses itself automatically), and **Gaussian Processes**.
-     - **1.Gaussian Processes:** It is somewhat similar to SVM - both use **kernels** and have similar **scalability**(which has been vastly improved throughout the years by using approximations). 
-       - A natural formulation for GP is **`regression`**, with **classification** as an afterthought. For SVM, it’s the other way around. As most “normal” methods provide **point estimates**, Bayesian counterparts, like Gaussian processes, also output **uncertainty estimates** while SVM are not. Even a sophisticated method like GP normally operates on an **assumption of homoscedasticity**, that is, uniform noise levels. In reality, noise might differ across input space (be heteroscedastic). 
-       - Gaussian Distribution is ...
+     
+__[Non-Parametric]__
+ - **A. Bayesian non-parametrics Modeling:** the number of parameters in a model can grow as more data become available. This is similar to SVM, for example, where the algorithm chooses support vectors from the training points. Nonparametrics include **Hierarchical Dirichlet Process** version of LDA(where the number of topics chooses itself automatically), and **Gaussian Processes**.
+   - __1) Gaussian Processes:__ It is somewhat similar to SVM - both use **kernels** and have similar **scalability**(which has been vastly improved throughout the years by using approximations). 
+     - A natural formulation for GP is **`regression`**, with **classification** as an afterthought. For SVM, it’s the other way around. As most “normal” methods provide **point estimates**, Bayesian counterparts, like Gaussian processes, also output **uncertainty estimates** while SVM are not. Even a sophisticated method like GP normally operates on an **assumption of homoscedasticity**, that is, uniform noise levels. In reality, noise might differ across input space (be heteroscedastic). 
+     - Gaussian Distribution is ...
        
-       
-     - **2.Dirichlet Process:**  
+   - __2) Dirichlet Process:__  
 
 
 ### > Model_01. Bayesian LM
