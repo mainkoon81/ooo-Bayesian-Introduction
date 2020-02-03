@@ -307,10 +307,12 @@ In the settings where data is scarce and precious and hard to obtain, it is diff
 __[Non-Parametric]__
  - **A. Bayesian non-parametrics Modeling:** the number of parameters in a model can grow as more data become available. This is similar to SVM, for example, where the algorithm chooses support vectors from the training points. Nonparametrics include **Hierarchical Dirichlet Process** version of LDA(where the number of topics chooses itself automatically), and **Gaussian Processes**.
    - __1) Gaussian Processes:__ It is somewhat similar to SVM - both use **kernels** and have similar **scalability**(which has been vastly improved throughout the years by using approximations). 
-     - A natural formulation for GP is **`regression`**, with **classification** as an afterthought. For SVM, it’s the other way around. As most “normal” methods provide **point estimates**, Bayesian counterparts, like Gaussian processes, also output **uncertainty estimates** while SVM are not. Even a sophisticated method like GP normally operates on an **assumption of homoscedasticity**, that is, uniform noise levels. In reality, noise might differ across input space (be heteroscedastic). 
-     - Gaussian Distribution is ...
+     - A natural formulation for GP is **`regression`**, with **classification** as an afterthought. For SVM, it’s the other way around.
+     - As most "normal" methods provide **point estimates**, "Bayesian" counterparts like GP also output **uncertainty estimates** while SVM are not. 
+     - Even a sophisticated method like GP normally operates on an **assumption of homoscedasticity**, that is, "uniform noise" levels. In reality, noise might differ across input space (be heteroscedastic). 
+     - GP outputs a mean curve and CI(cov) curves.
        
-   - __2) Dirichlet Process:__  
+   - __2) Dirichlet Process:__ In short, the Dirichlet Process is a generalization of Dirichlet distributions where a sample from DP generates a Dirichlet distribution. Interestingly, the generalization allows the Dirichlet Process to have an infinite number of components (or clusters), which means that there is no limit on the number of Hyper-parameters. 
 
 
 ### > Model_01. Bayesian LM
