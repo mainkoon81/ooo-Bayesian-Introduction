@@ -312,7 +312,7 @@ __[Non-Parametric]__
      - Even a sophisticated method like GP normally operates on an **assumption of homoscedasticity**, that is, "uniform noise" levels. In reality, noise might differ across input space (be heteroscedastic). 
      - GP outputs a mean curve and CI(cov) curves.
        
-   - __2) Dirichlet Process:__ The infinite-dimensional generalization of the Dirichlet distribution is the Dirichlet process. In short, the Dirichlet Process is a generalization of Dirichlet distributions where a sample from DP generates a Dirichlet distribution. Interestingly, the generalization allows the Dirichlet Process to have an infinite number of components (or clusters), which means that there is no limit on the number of Hyper-parameters. 
+   - __2) Dirichlet Process:__ The infinite-dimensional generalization of the Dirichlet distribution is the Dirichlet process. In short, the Dirichlet Process is a generalization of Dirichlet distributions where a sample from DP generates a Dirichlet distribution. Interestingly, the generalization allows the Dirichlet Process to have an infinite number of components (or clusters), which means that there is no limit on the number of Hyper-parameters. Using DP, we sample proportion of each element in a vector or multinomial random variable from the undefined dimension that can go to infinity. 
 
 
 ### > Model_01. Bayesian LM
