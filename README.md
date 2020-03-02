@@ -129,7 +129,7 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
 [Note] Evidence is discussed in the process of inference. not the prediction...? 
 
 Let's train data points X and Y. We want predict the new Y at the end. In Bayesian Prediction, the predicted value is a **weighted average** of output of our model for all possible values of parameters. 
-<img src="https://user-images.githubusercontent.com/31917400/66065180-c0fc3d00-e53e-11e9-89ed-2dc98835b11b.jpg"/>
+<img src="https://user-images.githubusercontent.com/31917400/75678832-62babe00-5c86-11ea-8efa-0831cbc00227.jpg"/>
 
 ### c-2) Variational Inference
 Variational inference seeks to approximate the true posterior with an **approximate variational distribution**, which we can calculate more easily. The difference of EM-algorithm and Variational-Inference is the kind of results they provide; **`EM is just a point while VI is a distribution`.** However, they also have similarities. EM and VI can both be interpreted as minimizing some sort of **distance** between the true value and our estimate, which is the **`Kullback-Leibler divergence`**.
