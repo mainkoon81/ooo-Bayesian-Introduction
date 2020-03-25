@@ -126,7 +126,7 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
  - If you have a truly infinite computational budget, MCMC should give more accurate solution than Variational Inference that trades some accuracy for speed. With a finite budget (say 1 year of computation), Variational Inference can be more accurate for very large models, but if the budget is large enough MCMC should give a better solution for any model of reasonable size.
 
 ### *d) Bayesian `Prediction` (Data value Prediction) 
-[Note] Evidence is discussed in the process of inference. not the prediction...? 
+[Note] Evidence is discussed in the process of inference (not in the prediction...?) Bayesian methods are appealing for prediction problems thanks to their ability to naturally incorporate both **`sample variability`** and **`parameter uncertainty`** into a predictive distribution.
 
 Let's train data points X and Y. We want predict the new Y at the end. In Bayesian Prediction, the predicted value is a **weighted average** of output of our model for all possible values of parameters. 
 <img src="https://user-images.githubusercontent.com/31917400/75678832-62babe00-5c86-11ea-8efa-0831cbc00227.jpg"/>
