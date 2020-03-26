@@ -278,7 +278,9 @@ Alternative perspective on the prediction method is **Bayesian Prediction with C
    On the distribution function scale, the algorithm is a bit more transparent, that is, <img src="https://user-images.githubusercontent.com/31917400/77660719-96c98c00-6f71-11ea-8c28-c7c22ecf2ebe.jpg"/> 
    The take-away message is that there exists a recursive update of the predictive density fn in the Dirichlet process mixture model formulation, characterised by a copula density. 
    
-   
+ - ### Add them up: "Recursive Algorithm"
+   <img src="https://user-images.githubusercontent.com/31917400/77662844-469ff900-6f74-11ea-836a-04312d499d13.jpg"/>
+
 
 
 
