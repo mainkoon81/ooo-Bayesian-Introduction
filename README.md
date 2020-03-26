@@ -22,7 +22,7 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
 
 `P( θ | Data ) = P( Data | θ ) * P( θ ) / P( data )`
 
-### a) Prior
+### [a] `Prior`
  - `P( θ )` is a prior, our belief of what the model parameters might be. 
    - Prior is a weigth or regularizor. 
    - The final inference should converge to probable `θ` as long as it’s not zero in the prior.
@@ -93,7 +93,7 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
            - The parameter `ν` lets you state how large you believe this subpopulation to be.
          - `Laplace-distribution` as an interesting modification to the normal distribution(replacing `exp(L2-norm)` with `exp(L1-norm)` in the formula). A Laplace centered on 0 can be used to put a strong **sparsity prior** on a variable while leaving a heavy-tail for it if the value has strong support for another value. 
 
-### b) Likelihood: MLE (Parameter Point Estimation)
+### [b] `Likelihood`: MLE (Parameter Point Estimation)
  - `P( Data | θ )` is called likelihood of data given model parameters. The goal is to maximize the **likelihood function probability** `L(x,x,x,x..|θ)` to choose the best θ.
  <img src="https://user-images.githubusercontent.com/31917400/65486881-8c80e500-de9d-11e9-9d6b-e8d7b8af1d09.jpg"/>
   
@@ -101,7 +101,7 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
    - People often use likelihood for evaluation of models: a model that gives higher likelihood to real data is better.
    - If one also takes the prior into account, then it’s maximum a posteriori estimation (MAP). `P(Data|θ)` x `P(θ)`. What it means is that, the likelihood is now weighted with some weight coming from the prior. MLE and MAP are the same if the **prior is uniform**.
 
-### c) Posterior: MAP (Parameter Point Estimation) 
+## [c] `Posterior`: MAP (Parameter Point Estimation) 
  - `P( θ | Data )`, a posterior, is what we’re after. It’s a parametrized distribution over model parameters obtained from prior beliefs and data. The goal is to maximize the **posterior probability** `L(x,x,x,x..|θ)*P(θ)` that is the `value x Distribution` to choose the best θ.
  <img src="https://user-images.githubusercontent.com/31917400/66209863-49e6b600-e6b0-11e9-8668-aa2ccb4501e0.jpg"/>
 
@@ -110,7 +110,7 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
  - But we still anyhow prefer to obtain Full Distribution rather than just point estimate. We want to address the uncertainty.
  - They are similar, as they compute a single estimate, instead of a full distribution.
 
-### *c-1) Bayesian `Inference` (Parameter Full Distribution Estimation) 
+## *c-1) Bayesian `Inference` (Parameter Full Distribution Estimation) 
  - "Inference" refers to how you learn parameters of your model. Unlike MLE and MAP, **Bayesian inference** means that it fully calculates the posterior probability distribution, hence the output is not a `single value` but a `pdf or pmf`.   
  - It's complex since we now have to deal with the **Evidence**(with the integral computation). But if we are allowed to use conjugation method, we can do **Bayesian inference** since it's easy. However, it’s not always the case in real-world applications. We then need to use MCMC or other algorithms as a substitute for the direct integral computation.
  - There are three main flavours: 
@@ -125,13 +125,7 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
      - Obtain a posterior by appropriating other distribution.
  - If you have a truly infinite computational budget, MCMC should give more accurate solution than Variational Inference that trades some accuracy for speed. With a finite budget (say 1 year of computation), Variational Inference can be more accurate for very large models, but if the budget is large enough MCMC should give a better solution for any model of reasonable size.
 
-### *d) Bayesian `Prediction` (Data value Prediction) 
-[Note] Evidence is discussed in the process of inference (not in the prediction...?) Bayesian methods are appealing for prediction problems thanks to their ability to naturally incorporate both **`sample variability`** and **`parameter uncertainty`** into a predictive distribution.
-
-Let's train data points X and Y. We want predict the new Y at the end. In Bayesian Prediction, the predicted value is a **weighted average** of output of our model for all possible values of parameters. 
-<img src="https://user-images.githubusercontent.com/31917400/75678832-62babe00-5c86-11ea-8efa-0831cbc00227.jpg"/>
-
-### c-2) Variational Inference
+## c-2) Variational Inference
 Variational inference seeks to approximate the true posterior with an **approximate variational distribution**, which we can calculate more easily. The difference of EM-algorithm and Variational-Inference is the kind of results they provide; **`EM is just a point while VI is a distribution`.** However, they also have similarities. EM and VI can both be interpreted as minimizing some sort of **distance** between the true value and our estimate, which is the **`Kullback-Leibler divergence`**.
 
 > The term **variational** comes from the field of variational calculus. Variational calculus is just calculus over functionals instead of functions. Functionals are just a function of function(inputs a function and outputs a value). For example, the KL-divergence are functionals. The variational inference algorithms are simply optimizing functionals which is how they got the name "variational Bayes".
@@ -256,12 +250,6 @@ In contrast to the plain autoencoders, it has `sampling inside` and has `variati
 ### Learning with priors
 <img src="https://user-images.githubusercontent.com/31917400/69436481-5b0b8500-0d39-11ea-8e3d-1d565674042e.jpg"/>
 
-
-
-
-
-
-
 ### EX> Variational Dropout and Scalable BNN
 Compress NN, then fight severe overfitting on some complicated datasets. 
  
@@ -270,6 +258,15 @@ We first pick a fake? posterior `q(z|v)` as a **family of distributions** over t
  
 ????????????????????????????????????????????????????????????????? 
 
+
+
+### [d] Bayesian `Prediction` (Data value Prediction) 
+[Note] Evidence is discussed in the process of inference (not in the prediction...?) Bayesian methods are appealing for prediction problems thanks to their ability to naturally incorporate both **`sample variability`** and **`parameter uncertainty`** into a predictive distribution.
+
+Let's train data points X and Y. We want predict the new Y at the end. In Bayesian Prediction, the predicted value is a **weighted average** of output of our model for all possible values of parameters. 
+<img src="https://user-images.githubusercontent.com/31917400/75678832-62babe00-5c86-11ea-8efa-0831cbc00227.jpg"/>
+
+### Bayesian Prediction with Copulas
 
 
 
