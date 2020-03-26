@@ -264,13 +264,23 @@ Evidence is discussed in the process of inference (not in the prediction...?) Ba
 <img src="https://user-images.githubusercontent.com/31917400/75678832-62babe00-5c86-11ea-8efa-0831cbc00227.jpg"/>
 
 ### Real-time data? 
- Alternative perspective on the prediction method is **Bayesian Prediction with Copulas**. Handling **data arriving in real time** requires a flexible non-parametric model, and the Monte Carlo methods necessary to evaluate the predictive distribution in such cases can be too expensive to rerun each time new data arrives. With respect to this, Bayesian Prediction with Copulas' approach facilitates the prediction **`without computing a posterior`**. 
+Alternative perspective on the prediction method is **Bayesian Prediction with Copulas**. Handling **data arriving in real time** requires a flexible non-parametric model, and the Monte Carlo methods necessary to evaluate the predictive distribution in such cases can be too expensive to rerun each time new data arrives. With respect to this, Bayesian Prediction with Copulas' approach facilitates the prediction **`without computing a posterior`**. 
 
  - ### Concept 01> Recursive nature of the updates in predictive distribution
    <img src="https://user-images.githubusercontent.com/31917400/77644983-de441e00-6f59-11ea-8ce8-f25d4931b4c9.jpg"/> However, in cases where **it is not possible to work directly with the posterior**, this natural Bayesian updating formula is out of reach.
 
  - ### Concept 02> Work directly with the posterior: DPMixture of Gaussian? Gamma? some "kernel"? 
-   In our context of estimating the predictive distribution in real time, it is not possible to look at the entire dataset all at once, thus we seek the flexibility of a non-parametric model, largely to avoid potential model misspecification. That is, it is necessary to start with a sufficiently flexible model that can adapt to the shape of the distribution as they arrive. In these non-parametric cases, θ is not a finite-dimensional parameter, but it is an infinite-dimensional index - ![formula](https://render.githubusercontent.com/render/math?math=\mu_k?,\sigma_k?,\nu_k?) - of the distribution clusters(Gaussian, Gamma, whatever...)that explaining the dataset. The most common strategy, in the present context of modelling densities, is the so-called Dirichlet process mixture model. <img src="https://user-images.githubusercontent.com/31917400/77647494-6d533500-6f5e-11ea-9768-d5149655cab3.jpg"/> 
+   In our context of estimating the predictive distribution in real time, it is not possible to look at the entire dataset all at once, thus we seek the flexibility of a non-parametric model, largely to avoid potential model misspecification. That is, it is necessary to start with a sufficiently flexible model that can adapt to the shape of the distribution as they arrive. In these non-parametric cases, θ is not a finite-dimensional parameter, but it is an infinite-dimensional index - ![formula](https://render.githubusercontent.com/render/math?math=\mu_k?,\sigma_k?,\nu_k?) - of the distribution clusters(Gaussian, Gamma, whatever...)that explaining the dataset. The most common strategy, in the present context of modelling densities, is the so-called Dirichlet process mixture model. <img src="https://user-images.githubusercontent.com/31917400/77647494-6d533500-6f5e-11ea-9768-d5149655cab3.jpg"/> The problem is that given the posterior ![formula](https://render.githubusercontent.com/render/math?math=\pi_\n-1) based on the full data, when new data ![formula](https://render.githubusercontent.com/render/math?math=\x_n) arrives, the MCMC must be rerun on the full data to get the posterior ![formula](https://render.githubusercontent.com/render/math?math=\pi_n) or the predictive density ![formula](https://render.githubusercontent.com/render/math?math=\f_n). This can be prohibitively slow, thereby motivating a fast recursive approximation.
+
+ - ### Concept 03> Gaussian Copulas
+   To circumvent the aforementioned computational difficulties in Bayesian updating in the predictive models, we turn to a new strategy: A Recursive Approximation with Copulas. A Copula as a mathematical object captures the joint behavior of **two different Random Variables**, each of which follows different distribution, and returns a single bivariate distribution formula.   
+
+
+
+
+
+
+
 
 
 
