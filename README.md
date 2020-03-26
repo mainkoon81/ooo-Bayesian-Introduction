@@ -269,11 +269,13 @@ Alternative perspective on the prediction method is **Bayesian Prediction with C
  - ### Concept 01> Recursive nature of the updates in predictive distribution
    <img src="https://user-images.githubusercontent.com/31917400/77644983-de441e00-6f59-11ea-8ce8-f25d4931b4c9.jpg"/> However, in cases where **it is not possible to work directly with the posterior**, this natural Bayesian updating formula is out of reach.
 
- - ### Concept 02> Work directly with the posterior: DPMixture of Gaussian? Gamma? some "kernel"? 
+ - ### Concept 02> Let's work directly with the posterior: DPMixture of Gaussian? Gamma? some "kernel"? 
    In our context of estimating the predictive distribution in real time, it is not possible to look at the entire dataset all at once, thus we seek the flexibility of a non-parametric model, largely to avoid potential model misspecification. That is, it is necessary to start with a sufficiently flexible model that can adapt to the shape of the distribution as they arrive. In these non-parametric cases, θ is not a finite-dimensional parameter, but it is an infinite-dimensional index - ![formula](https://render.githubusercontent.com/render/math?math=\mu_k?,\sigma_k?,\nu_k?) - of the distribution clusters(Gaussian, Gamma, whatever...)that explaining the dataset. The most common strategy, in the present context of modelling densities, is the so-called Dirichlet process mixture model. <img src="https://user-images.githubusercontent.com/31917400/77647494-6d533500-6f5e-11ea-9768-d5149655cab3.jpg"/> The problem is that given the posterior ![formula](https://render.githubusercontent.com/render/math?math=\pi_\n-1) based on the full data, when new data ![formula](https://render.githubusercontent.com/render/math?math=\x_n) arrives, the MCMC must be rerun on the full data to get the posterior ![formula](https://render.githubusercontent.com/render/math?math=\pi_n) or the predictive density ![formula](https://render.githubusercontent.com/render/math?math=\f_n). This can be prohibitively slow, thereby motivating a fast recursive approximation.
 
  - ### Concept 03> Gaussian Copulas
-   To circumvent the aforementioned computational difficulties in Bayesian updating in the predictive models, we turn to a new strategy: A Recursive Approximation with Copulas. A Copula as a mathematical object captures the joint behavior of **two different Random Variables**, each of which follows different distribution, and returns a single bivariate distribution formula.   
+   To circumvent the aforementioned computational difficulties in Bayesian updating in the predictive models, we turn to a new strategy: A Recursive Approximation with Copulas. A Copula as a mathematical object captures the joint behavior of **two different Random Variables**, each of which follows different distribution, and returns a single bivariate distribution formula. Sklar theorem implies that there exists a symmetric copula density ![formula](https://render.githubusercontent.com/render/math?math=\C_n) such that <img src="https://user-images.githubusercontent.com/31917400/77655759-bc9f6280-6f6a-11ea-88f9-a10e7b7e7c38.jpg"/>
+   
+   
 
 
 
