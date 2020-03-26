@@ -260,20 +260,16 @@ We first pick a fake? posterior `q(z|v)` as a **family of distributions** over t
 
 
 ## [d] Data value `Prediction` 
-Evidence is discussed in the process of inference (not in the prediction...?) Bayesian methods are appealing for prediction problems thanks to their ability to naturally incorporate both **`sample variability`** and **`parameter uncertainty`** into a predictive distribution.
-
-Let's train data points X and Y. We want predict the new Y at the end. In Bayesian Prediction, the predicted value is a **weighted average** of output of our model for all possible values of parameters. 
+Evidence is discussed in the process of inference (not in the prediction...?) Bayesian methods are appealing for prediction problems thanks to their ability to naturally incorporate both **`sample variability`** and **`parameter uncertainty`** into a predictive distribution. Let's train data points X and Y. We want predict the new Y at the end. In Bayesian Prediction, the predicted value is a **weighted average** of output of our model for all possible values of parameters. 
 <img src="https://user-images.githubusercontent.com/31917400/75678832-62babe00-5c86-11ea-8efa-0831cbc00227.jpg"/>
 
-### > Alternative perspective on the prediction: Bayesian Prediction with Copulas
-Handling **data arriving in real time** requires a flexible non-parametric model, and the Monte Carlo methods necessary to evaluate the predictive distribution in such cases can be too expensive to rerun each time new data arrives. This approach facilitates the prediction **`without computing a posterior`**. 
+### Real-time data? 
+ Alternative perspective on the prediction method is **Bayesian Prediction with Copulas**. Handling **data arriving in real time** requires a flexible non-parametric model, and the Monte Carlo methods necessary to evaluate the predictive distribution in such cases can be too expensive to rerun each time new data arrives. With respect to this, Bayesian Prediction with Copulas' approach facilitates the prediction **`without computing a posterior`**. 
 
-Predictive distribution Update
-<img src="https://user-images.githubusercontent.com/31917400/77643903-1185ad80-6f58-11ea-9c8f-3e2d4dc9bb86.jpg"/>
+ - ### Concept 01> Recursive nature of the updates in predictive distribution
+   <img src="https://user-images.githubusercontent.com/31917400/77644983-de441e00-6f59-11ea-8ce8-f25d4931b4c9.jpg"/> However, in cases where **it is not possible to work directly with the posterior density**, this natural Bayesian updating formula is out of reach.
 
-
-
-
+ - ### Concept 02> 
 
 
 
