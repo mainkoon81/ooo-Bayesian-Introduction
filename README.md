@@ -279,7 +279,7 @@ Alternative perspective on the prediction method is **Bayesian Prediction with C
    The take-away message is that there exists a recursive update of the predictive density ![formula](https://render.githubusercontent.com/render/math?math=\f_n) in the Dirichlet process mixture model formulation, characterised by a copula density. 
    
  - ### Add them up> "Recursive Algorithm"
-   <img src="https://user-images.githubusercontent.com/31917400/77670548-460c6000-6f7e-11ea-832c-2822d7b9069a.jpg"/>
+   <img src="https://user-images.githubusercontent.com/31917400/77670548-460c6000-6f7e-11ea-832c-2822d7b9069a.jpg"/> The choice of `ρ` is entirely up to the discretion of the researcher, with values closer to 1 corresponding to less smoothing (ρ=0.90 is a reasonable choice?). For the weights, a choice like ![formula](https://render.githubusercontent.com/render/math?math=\alpha_i)=(i+1)^-r for r ∈ (0.5, 1]...as `i` grows, `α` decreases (r=1 as a default choice?). In choosing the initial guess of ![formula](https://render.githubusercontent.com/render/math?math=\F_0), try to capture the support of log-loss distribution? Since this likelihood  function is not known(if there is little or no data to use as a guide), go with the kernel density? such as t-distribution??    
 
 
 
