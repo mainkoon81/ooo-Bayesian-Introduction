@@ -279,7 +279,7 @@ Alternative perspective on the prediction method is **Bayesian Prediction with C
    The take-away message is that there exists a recursive update of the predictive density ![formula](https://render.githubusercontent.com/render/math?math=\f_n) in the Dirichlet process mixture model formulation, characterised by a copula density. 
    
  - ### Add them up> "Recursive Algorithm"
-   <img src="https://user-images.githubusercontent.com/31917400/77666300-b4e6ba80-6f78-11ea-87dc-9bb2e746828b.jpg"/>
+   <img src="https://user-images.githubusercontent.com/31917400/77670548-460c6000-6f7e-11ea-832c-2822d7b9069a.jpg"/>
 
 
 
