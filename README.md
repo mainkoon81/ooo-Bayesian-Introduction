@@ -9,11 +9,10 @@ We know the Bayes rule. How does it relate to machine learning? Bayesian inferen
    - Homoscedastic: model variance? you assumes identical observation noise for every input point x? Instead of having a variance being dependent on the input x, we must determine a so-called model precision **`τ`** and multiply it by the identity matrix I, such that all outputs y have the same variance and no co-variance among them exists. This model precision **`τ`** is the inverse observation standard deviation.
  - **Epistemic uncertainty** is the scientific uncertainty in the model of the process; it is supposedly **reducible** with better knowledge, since it is not inherent in the real-world process under consideration (due to lack of knowledge and limited data..This can be reduced in time, if more data are collected and new models are developed). 
 
-## [Inference & Prediction]
+---------------------------------------------------------------------------------------------------------
+# 1> Inference & Prediction
  - Inference for **θ** aims to understand the model.
  - Prediction for **Data** aims to utilize the model you discovered.
-
-# 1> Introduction
  - Frequentists' probability refers to **past events**..Do experiment and that's it.   
  - Bayesians' probability refers to **future events**..Do update !  
 
@@ -22,7 +21,7 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
 
 `P( θ | Data ) = P( Data | θ ) * P( θ ) / P( data )`
 
-### [a] `Prior`
+## [a] `Prior`
  - `P( θ )` is a prior, our belief of what the model parameters might be. 
    - Prior is a weigth or regularizor. 
    - The final inference should converge to probable `θ` as long as it’s not zero in the prior.
@@ -93,7 +92,7 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
            - The parameter `ν` lets you state how large you believe this subpopulation to be.
          - `Laplace-distribution` as an interesting modification to the normal distribution(replacing `exp(L2-norm)` with `exp(L1-norm)` in the formula). A Laplace centered on 0 can be used to put a strong **sparsity prior** on a variable while leaving a heavy-tail for it if the value has strong support for another value. 
 
-### [b] `Likelihood`: MLE (Parameter Point Estimation)
+## [b] `Likelihood`: MLE (Parameter Point Estimation)
  - `P( Data | θ )` is called likelihood of data given model parameters. The goal is to maximize the **likelihood function probability** `L(x,x,x,x..|θ)` to choose the best θ.
  <img src="https://user-images.githubusercontent.com/31917400/65486881-8c80e500-de9d-11e9-9d6b-e8d7b8af1d09.jpg"/>
   
@@ -110,7 +109,7 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
  - But we still anyhow prefer to obtain Full Distribution rather than just point estimate. We want to address the uncertainty.
  - They are similar, as they compute a single estimate, instead of a full distribution.
 
-## *c-1) Bayesian `Inference` (Parameter Full Distribution Estimation) 
+### *c-1) Bayesian `Inference` (Parameter Full Distribution Estimation) 
  - "Inference" refers to how you learn parameters of your model. Unlike MLE and MAP, **Bayesian inference** means that it fully calculates the posterior probability distribution, hence the output is not a `single value` but a `pdf or pmf`.   
  - It's complex since we now have to deal with the **Evidence**(with the integral computation). But if we are allowed to use conjugation method, we can do **Bayesian inference** since it's easy. However, it’s not always the case in real-world applications. We then need to use MCMC or other algorithms as a substitute for the direct integral computation.
  - There are three main flavours: 
@@ -125,12 +124,12 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
      - Obtain a posterior by appropriating other distribution.
  - If you have a truly infinite computational budget, MCMC should give more accurate solution than Variational Inference that trades some accuracy for speed. With a finite budget (say 1 year of computation), Variational Inference can be more accurate for very large models, but if the budget is large enough MCMC should give a better solution for any model of reasonable size.
 
-## c-2) Variational Inference
+### c-2) Variational Inference
 Variational inference seeks to approximate the true posterior with an **approximate variational distribution**, which we can calculate more easily. The difference of EM-algorithm and Variational-Inference is the kind of results they provide; **`EM is just a point while VI is a distribution`.** However, they also have similarities. EM and VI can both be interpreted as minimizing some sort of **distance** between the true value and our estimate, which is the **`Kullback-Leibler divergence`**.
 
 > The term **variational** comes from the field of variational calculus. Variational calculus is just calculus over functionals instead of functions. Functionals are just a function of function(inputs a function and outputs a value). For example, the KL-divergence are functionals. The variational inference algorithms are simply optimizing functionals which is how they got the name "variational Bayes".
 
-### Set up
+Set up
 <img src="https://user-images.githubusercontent.com/31917400/67643780-febc6d80-f912-11e9-9c2c-155158e79e86.jpg"/> 
 
  - We have perfect likelihood and prior. But we don't have Evidence. So the un-normalized posterior(joint) is always the starting point. 
@@ -156,12 +155,12 @@ If you additionally require that the **variational distribution factors complete
    - minimizing KL-divergence value(E[log Q over P*]) between `Q(z)` and `P*(z)`
 <img src="https://user-images.githubusercontent.com/31917400/67224682-ab857f00-f429-11e9-9c21-af5503ea8c3a.jpg"/>
 
-## c-3) Variational Inference + Neural Network = Scalable VI
+### c-3) Variational Inference + Neural Network = Scalable VI
 10 years ago, people used to think that Bayesian methods are mostly suited for small datasets because it's computationally expensive. In the era of Big data, our Bayesian methods met deep learning, and people started to make some mixture models that has neural networks inside of a probabilistic model. 
 
 How to scale Bayesian methods to `large datasets`? The situation has changed with the development of **stochastic Variational Inference**, trying to solve the inference problem exactly without the help of sampling. 
 
-### > Background: General form of EM
+> Background: General form of EM
 <img src="https://user-images.githubusercontent.com/31917400/72221046-c78f4d00-354e-11ea-8512-b6c1546004ee.jpg"/>
 When MLE does not work for the original margin of log-likelihood, then we try to get a **lower bound** with the function that we can easily optimize?  Instead of maximizing the original margin of log-likelihood, we can maximize its **lower bound**!!
 
@@ -260,13 +259,17 @@ We first pick a fake? posterior `q(z|v)` as a **family of distributions** over t
 
 
 
-### [d] Bayesian `Prediction` (Data value Prediction) 
-[Note] Evidence is discussed in the process of inference (not in the prediction...?) Bayesian methods are appealing for prediction problems thanks to their ability to naturally incorporate both **`sample variability`** and **`parameter uncertainty`** into a predictive distribution.
+## [d] Data value `Prediction` 
+Evidence is discussed in the process of inference (not in the prediction...?) Bayesian methods are appealing for prediction problems thanks to their ability to naturally incorporate both **`sample variability`** and **`parameter uncertainty`** into a predictive distribution.
 
 Let's train data points X and Y. We want predict the new Y at the end. In Bayesian Prediction, the predicted value is a **weighted average** of output of our model for all possible values of parameters. 
 <img src="https://user-images.githubusercontent.com/31917400/75678832-62babe00-5c86-11ea-8efa-0831cbc00227.jpg"/>
 
-### Bayesian Prediction with Copulas
+### > Alternative perspective on the prediction: Bayesian Prediction with Copulas
+Handling **data arriving in real time** requires a flexible non-parametric model, and the Monte Carlo methods necessary to evaluate the predictive distribution in such cases can be too expensive to rerun each time new data arrives. This approach facilitates the prediction **`without computing a posterior`**. 
+
+Predictive distribution Update
+<img src="https://user-images.githubusercontent.com/31917400/77643903-1185ad80-6f58-11ea-9c8f-3e2d4dc9bb86.jpg"/>
 
 
 
