@@ -324,7 +324,7 @@ __[Non-Parametric]__
    - __2) Dirichlet Process:__ The infinite-dimensional generalization of the Dirichlet distribution is the Dirichlet process. In short, the Dirichlet Process is a generalization of Dirichlet distributions where a sample from DP generates a Dirichlet distribution. Interestingly, the generalization allows the Dirichlet Process to have an infinite number of components (or clusters), which means that there is no limit on the number of Hyper-parameters. Using DP, we sample proportion of each element in a vector or multinomial random variable from the undefined dimension that can go to infinity. 
 
 
-### > Model_01. Bayesian LM
+### > Example 01. Linear Model..some different ways to address Coefficients and error!
  - a) Frequentist LM  
    - typically go through the process of checking the 1.`residuals against a set of assumptions`, 2.`adjusting/selecting features`, 3.`rerunning the model`, 4.`checking the assumptions again`.... 
      - Frequentist diagnose is based on the `fitted model` using **MLE** of the model parameters.
@@ -332,13 +332,14 @@ __[Non-Parametric]__
        - "likelihood function": `L(x,x,x,x|β)` by fitting a distribution to the certain **data** so...producting them, then **differentiating** to get the best `β`. But the result is just a **point estimate**(also subject to the overfitting issue)...it cannot address **`Uncertainty`**!
        - subject to overfitting!
      
- - b) Bayesian LM ??????????????
+ - b) Bayesian Hierarchical LM 
    - It allows a useful mechanism to deal with insufficient data, or poorly distributed data. If we have fewer data points, the posterior distribution will be more spread out. As the amount of data points increases, the likelihood washes out the prior.  
-   - It puts a prior on the coeffients and on the noise so that in the absence of data, the **priors can take over**??
+   - It puts a prior on the coeffients and on the noise so that in the absence of data, the **priors can take over !**
    - Once fitting it to our data, we can ask:
-     - What is the estimated `linear relationship`, what is the conﬁdence on that relation, and what is the full posterior distribution on that relation?
-     - What is the estimated `noise` and the full posterior distribution on that noise?
-     - What is the estimated `gradient` and the full posterior distribution on that gradient?
+     - What is the estimated `linear relationship`
+       - what is the **confidence on that relation**, and the **full posterior distribution on that relation**?
+     - What is the estimated `noise` and the **full posterior distribution on that noise**?
+     - What is the estimated `gradient` and the **full posterior distribution on that gradient**?
 
  - __Posterior Computation by Bayesian Inference:__ How to avoid computing the Evidence?
    - A> When we want to get the model parameter, the Evidence is always a trouble. There is a way to avoid `computing the **Evidence**`. In **MAP**, we don't need the "Evidence". But the problem is that we cannot use its result as a prior for the next step since the output is a single point estimate. 
