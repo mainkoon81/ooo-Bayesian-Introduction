@@ -119,14 +119,16 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
    - **1. MCMC:** a gold standard, but slow. We still need a prior? Yes! even fake prior because we still need the `joint`!
      - It implies the **integral of the `joint`** is an **open form**!
      - Obtain a posterior by sampling from the "Envelop".
-   - **2. Variational inference:** faster but less accurate. It’s drawback is that it’s model-specific..(use when likelihood & prior is `clear`)
+   - **2. Variational inference:** faster but less accurate. Its drawback is that it’s model-specific..(use when likelihood & prior is `clear`)
      - It implies the **integral of the `joint`** is an **open form**!
-     - Obtain a posterior by appropriating other distribution.
+     - Obtain a posterior by "appropriating other distribution".
  - If you have a truly infinite computational budget, MCMC should give more accurate solution than Variational Inference that trades some accuracy for speed. With a finite budget (say 1 year of computation), Variational Inference can be more accurate for very large models, but if the budget is large enough MCMC should give a better solution for any model of reasonable size.
 
 ### c-2) Variational Inference
-Variational inference seeks to approximate the true posterior with an **approximate variational distribution**, which we can calculate more easily. The difference of EM-algorithm and Variational-Inference is the kind of results they provide; **`EM is just a point while VI is a distribution`.** However, they also have similarities. EM and VI can both be interpreted as minimizing some sort of **distance** between the true value and our estimate, which is the **`Kullback-Leibler divergence`**.
-
+Variational inference seeks to approximate the true posterior with an **approximate variational distribution**, which we can calculate more easily. The difference of EM-algorithm and Variational-Inference is the kind of results they provide; **`EM is just a point while VI is a distribution`.** However, they also have similarities. EM and VI can both be interpreted as minimizing some sort of **distance** between the true value and our estimate. 
+ - For **EM:** which is the **`Maximum-Likelihood`**
+   - ...assign fake param -> develop soft fake village -> calculate weighted param from the village -> conclude the ML value of each village -> Repeat from the start until the ML value gets to the maximum...
+ - For **VI:** which is the **`Kullback-Leibler divergence`**.
 > The term **variational** comes from the field of variational calculus. Variational calculus is just calculus over functionals instead of functions. Functionals are just a function of function(inputs a function and outputs a value). For example, the KL-divergence are functionals. The variational inference algorithms are simply optimizing functionals which is how they got the name "variational Bayes".
 
 Set up
