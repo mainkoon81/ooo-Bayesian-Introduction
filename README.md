@@ -127,7 +127,7 @@ As Bayesians, we start with a belief, called a prior. Then we obtain some data a
 ### c-2) Variational Inference
 Variational inference seeks to approximate the true posterior with an **approximate variational distribution**, which we can calculate more easily. The difference of EM-algorithm and Variational-Inference is the kind of results they provide; **`EM is just a point while VI is a distribution`.** However, they also have similarities. EM and VI can both be interpreted as minimizing some sort of **distance** between the true value and our estimate. 
  - For **EM:** which is the **`Maximum-Likelihood`**
-   - ...assign fake param -> develop soft fake village -> calculate weighted param from the village -> conclude the ML value of each village -> Repeat from the start until the ML value gets to the maximum...
+   - ...assign fake param -> develop soft fake village -> calculate weighted param from the village -> conclude the ML value of each village -> Repeat from the start until the ML value gets to the maximum...Now, finally you obtain the best param. 
  - For **VI:** which is the **`Kullback-Leibler divergence`**.
 > The term **variational** comes from the field of variational calculus. Variational calculus is just calculus over functionals instead of functions. Functionals are just a function of function(inputs a function and outputs a value). For example, the KL-divergence are functionals. The variational inference algorithms are simply optimizing functionals which is how they got the name "variational Bayes".
 
