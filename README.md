@@ -171,7 +171,7 @@ When MLE does not work for the original margin of log-likelihood, then we try to
 ## Now, Let's find the Lower Bound to estimate the `MLE value`!
 > [note] But it's just a lower bound.. there is no guarantee that it gives us the correct parameter estimation! 
  - Perhaps we can try...a **family of lower bounds**?? i.e. try **many different lower bounds**!
- - ## Let me introduce `q(t)` as the variational distribution of the `alpha coefficient` (probability of the hidden membership `t`= c)
+ - ## Let me introduce `q(t)` as the variational distribution of the `alpha coefficient` (probability of the hidden membership `t`= c). These each fingers are the "lower boundsss"..
  - The `Hidden "t" value`, and 1.`Alpha Coefficient: q(t)`, 2. **log(**`p(x, t)/q(t)`**)**... They make the `different lower bound`...
  - `q(t)`*log[`p(x,t)/q(t)`] ...This is the Jensen's lower bound.
 <img src="https://user-images.githubusercontent.com/31917400/71264042-20e2d280-233b-11ea-9b2e-e33f3d275411.jpg"/>
