@@ -168,8 +168,8 @@ This is the useful story when you cannot calculate the MLE value in the EM algor
 <img src="https://user-images.githubusercontent.com/31917400/86510537-728b1000-bde8-11ea-99d6-6fd518cc346d.jpg"/>
 When MLE does not work for the original margin of log-likelihood, then we try to get a **lower bound** with the function that we can easily optimize?  Instead of maximizing the original margin of log-likelihood, we can maximize its **lower bound**!!
 
-## Now, Let's find the Lower Bound, using KL-Divergence?
-But it's just a lower bound.. there is no guarantee that it gives us the correct parameter estimation! 
+## Now, Let's find the Lower Bound to estimate the `MLE value`!
+> [note] But it's just a lower bound.. there is no guarantee that it gives us the correct parameter estimation! 
  - Perhaps we can try...a **family of lower bounds**?? i.e. try **many different lower bounds**!
  - ## Let me introduce `q(t)` as the variational distribution of the `alpha coefficient` (probability of the hidden membership `t`= c)
  - The `Hidden "t" value`, and 1.`Alpha Coefficient: q(t)`, 2. **log(**`p(x, t)/q(t)`**)**... They make the `different lower bound`...
