@@ -165,7 +165,7 @@ How to scale Bayesian methods to `large datasets`? The situation has changed wit
 ## > Background: Let's say we have a trouble with EM...
 
 This is the useful story when you cannot calculate the MLE value in the EM algorithm..
-<img src="https://user-images.githubusercontent.com/31917400/86510537-728b1000-bde8-11ea-99d6-6fd518cc346d.jpg"/>
+<img src="https://user-images.githubusercontent.com/31917400/86511068-6e152600-bded-11ea-87fa-6fe4c4a16910.jpg"/>
 When MLE does not work for the original margin of log-likelihood, then we try to get a **lower bound** with the function that we can easily optimize?  Instead of maximizing the original margin of log-likelihood, we can maximize its **lower bound**!!
 
 ## Now, Let's find the Lower Bound to estimate the `MLE value`!
