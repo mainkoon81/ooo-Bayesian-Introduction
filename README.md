@@ -170,9 +170,10 @@ When MLE does not work for the original margin of log-likelihood, then we try to
 > [note] But it's just a lower bound.. there is no guarantee that it gives us the correct parameter estimation! 
  - Perhaps we can try...a **family of lower bounds**?? i.e. try **many different lower bounds**!
  - ## Let me introduce `q(t)` as the variational distribution of the `alpha coefficient` (probability of the hidden membership `t`= c). These each fingers are the "lower boundsss"..Any distribution can be estimated by such "lower bounds"!!!
- - The `Hidden "t" value`, and 1.`Alpha Coefficient: q(t)`, 2. **log(**`p(x, t)/q(t)`**)**... They make the `different lower bound`...
- - `q(t)`*log[`p(x,t)/q(t)`] ...This is the Jensen's lower bound.
-<img src="https://user-images.githubusercontent.com/31917400/71264042-20e2d280-233b-11ea-9b2e-e33f3d275411.jpg"/>
+ - Make a bunch of different `lower bounds`:
+   - Use (0)`Hidden "t" value`, and (1)`Alpha Coefficient: q(t)`, (2) **log(**`p(x, t)/q(t)`**)**
+   - `q(t)`*log[`p(x,t)/q(t)`] ...This is the Jensen's lower bound.
+ <img src="https://user-images.githubusercontent.com/31917400/71264042-20e2d280-233b-11ea-9b2e-e33f3d275411.jpg"/>
 
 General EM-Algorithm
 <img src="https://user-images.githubusercontent.com/31917400/71264565-458b7a00-233c-11ea-88d6-e3316d5fef5b.jpg"/>
