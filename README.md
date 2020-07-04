@@ -142,15 +142,13 @@ Set up
  - We can easily pick each variational distribution(V_i) when measured by **Kullback Leibler (KL) divergence** because we compare this `Q(Z)` with our `un-normalized posterior` that we already have (KL divergence formula has a sum of terms involving V, which we can minimize...So the estimation procedure turns into an optimization problem). Once we arrive at the best `V*`, **we can use `Q(Z|V*)` as our best guess at the posterior**.  
 <img src="https://user-images.githubusercontent.com/31917400/67644689-9f169000-f91b-11e9-88e7-55bde74becbf.jpg"/>
 
-A> How KL-Divergence works? 
+## KL-Divergence helps estimate the `z` that minimizes the distance b/w `Q(z)` and `P*(z)`
  - Step_01: Select the family distribution **Q** called a "variational family": a pool of **Q**
  - Step_02: Try to approximate the **full posterior** `P*(z)` with some variational distribution `Q(z)` by searching the best matching distribution, minimizing "KL-divergence" value.
    - minimizing KL-divergence value(E[log Q over P]) between `Q(z)` and `P*(z)`
  - Kullback Leibler-Divergence measures the difference(distance) b/w two distributions, so we minimize this value between your **variational distribution choice** and the **un-normalized posterior** (not differ from normalized real posterior...coz the evidence would become a constant...in the end.)   
 <img src="https://user-images.githubusercontent.com/31917400/67668071-22110800-f967-11e9-8431-f424e819f18e.jpg"/>
  
-B> Mean field Approximation in practice
-
 If you additionally require that the **variational distribution factors completely over your parameters**, then this is called the variational mean-field approximation. 
  - Step_01: Select the family distribution **Q** called a "variational family" by **product of** `Q(z1)`, `Q(z2)`,...where z is the latent variable.  
  - Step_02: Try to approximate the **full posterior** `P*(z)` with some variational distribution `Q(z)` by searching the best matching distribution, minimizing "KL-divergence" value.
