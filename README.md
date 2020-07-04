@@ -162,12 +162,12 @@ If you additionally require that the **variational distribution factors complete
 
 How to scale Bayesian methods to `large datasets`? The situation has changed with the development of **stochastic Variational Inference**, trying to solve the inference problem exactly without the help of sampling. 
 
-> Background: General form of EM
+> Background: Let's say we have a trouble with EM...
 
 This is the useful story when you cannot calculate the MLE value in the EM algorithm..
 <img src="https://user-images.githubusercontent.com/31917400/86510537-728b1000-bde8-11ea-99d6-6fd518cc346d.jpg"/>
 When MLE does not work for the original margin of log-likelihood, then we try to get a **lower bound** with the function that we can easily optimize?  Instead of maximizing the original margin of log-likelihood, we can maximize its **lower bound**!!
-
+## Now, Let's find the Lower Bound!
 But it's just a lower bound.. there is no guarantee that it gives us the correct parameter estimation! 
  - Perhaps we can try...a **family of lower bounds**?? i.e. try **many different lower bounds**!
  - ## Let me introduce `q(t)` as the variational distribution of the `alpha coefficient` (probability of the hidden membership `t`= c)
