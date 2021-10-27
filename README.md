@@ -284,7 +284,8 @@ __[Non-Parametric]__
 ---------------------------------------------------------------------------------------------------------
 # 3> Model Comparison
 
-
+- What do you want the model to do well at? 
+- How both `regularizing priors`, and `information criteria` help you improve and estimate the "out-of-sample"(yet-to-be-observed) deviance of a model ? 
 
 
 
