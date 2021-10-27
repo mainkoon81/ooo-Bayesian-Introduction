@@ -285,10 +285,13 @@ __[Non-Parametric]__
 # 3> Model Comparison
 
 - What do you want the model to do well at? 
-- How both `regularizing priors`, and `information criteria` help you improve and estimate the "out-of-sample"(yet-to-be-observed) deviance of a model ? 
+- How both `regularizing priors`, and `information criteria` help you improve and estimate the "out-of-sample"(yet-to-be-observed) **deviance** of a model ? 
   - **deviance:** approximation of relative distance from "perfect accuracy". 
 
-
+### Information Theory
+- What it "information"? How much we have learned? It refers to the reduction in uncertainty when we learn an outcome.
+- How to measure such uncertainty? There is only one function: `Information Entropy`
+  <img src="https://user-images.githubusercontent.com/31917400/139084544-13f167c5-65b1-4067-a417-ebc4c36c5908.png"/>
 
 
 
