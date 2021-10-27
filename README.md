@@ -308,11 +308,12 @@ H <- -sum( p*log(p) )
 It gives...0.06: it's quite certain... Low Entropy..low disorder..very small uncertainty!
 
 #### 2) Entropy and Accuracy
-How to use Information Entropy to say how far a model is from the target? The key lies in: `Kullback-Leibler Divergence`. 
+How to use Information Entropy to say how far your model is from the target model? The key lies in: `Kullback-Leibler Divergence`. 
  - Suppose there is a true distribution (with `p1, p2,..`), but we only have a slightly different distribution (with `q1, q2,..`) to describe the true distribution. How much **additional uncertainty** we might introduce as a consequence?
- - The additional uncertainty introduced from using the distribution in our hand can be expressed as: `E[ log(p)-log(q) ]`  
+ - The additional uncertainty introduced from using the distribution in our hand can be expressed as: `E[ log(p)-log(q) ]` 
    <img src="https://user-images.githubusercontent.com/31917400/139109451-6dc0aa41-36ce-4ab5-ad9e-ba50b3dadd8b.png"/>
 
+## Since predictive models specify probabilities of events(obv), We can use KL Divergence to compare the accuracy of models. 
 
 
 
