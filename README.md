@@ -293,7 +293,10 @@ __[Non-Parametric]__
 - How to measure such uncertainty? There is only one function: `Information Entropy`
 - The uncertainty contained in a probability distribution = ![formula](https://render.githubusercontent.com/render/math?math=\E[)log-probability of an event ![formula](https://render.githubusercontent.com/render/math?math=]) `E[log(p)]`
   <img src="https://user-images.githubusercontent.com/31917400/139084544-13f167c5-65b1-4067-a417-ebc4c36c5908.png"/>
-
+```
+p <- c(0.3, 0.7)
+H <- -sum( p*log(p) )
+```
 
 
 
