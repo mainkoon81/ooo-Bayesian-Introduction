@@ -288,7 +288,7 @@ __[Non-Parametric]__
 - How both `regularizing priors`, and `information criteria` help you improve and estimate the "out-of-sample"(yet-to-be-observed) **deviance** of a model ? 
   - **deviance:** approximation of relative distance from "perfect accuracy". 
 
-## A. Information Theory
+## (A) Information Theory
 What is "information"? How much we have learned? It refers to the reduction in uncertainty when we learn an outcome.
 
 #### 1) Entropy and Uncertainty
@@ -315,6 +315,9 @@ How to use Information Entropy to say how far your model is from the target mode
 
 ## Since predictive models specify probabilities of events(obv), We can use KL Divergence to compare the accuracy of models. 
 
+#### 3) Divergence Estimation
+Then How to estimate the divergence? There is "no way" to access the target `p` directly. 
+Luckily, we simply compare the divergences of different candidates - `r` vs `q`, using 'deviance' (model fit measure).
 
 
 
@@ -337,7 +340,7 @@ How to use Information Entropy to say how far your model is from the target mode
 
 
 
-## B. Prior Regularization
+## (B) Prior Regularization
 
 
 
