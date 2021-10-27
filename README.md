@@ -297,9 +297,13 @@ __[Non-Parametric]__
 p <- c(0.3, 0.7)
 H <- -sum( p*log(p) )
 ```
+It gives...0.61: it's quite uncertain... very big uncertainty!
 
-
-
+```
+p <- c(0.01, 0.99)
+H <- -sum( p*log(p) )
+```
+It gives...0.06: it's quite certain... very small uncertainty!
 
 
 
