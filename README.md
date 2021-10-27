@@ -289,9 +289,11 @@ __[Non-Parametric]__
   - **deviance:** approximation of relative distance from "perfect accuracy". 
 
 ### Information Theory
-- What is "information"? How much we have learned? It refers to the reduction in uncertainty when we learn an outcome.
-- How to measure such uncertainty? There is only one function: `Information Entropy`
-- The uncertainty contained in a probability distribution = ![formula](https://render.githubusercontent.com/render/math?math=\E[)log-probability of an event ![formula](https://render.githubusercontent.com/render/math?math=]) `E[log(p)]`
+What is "information"? How much we have learned? It refers to the reduction in uncertainty when we learn an outcome.
+
+#### 1) Entropy and Uncertainty
+How to measure uncertainty? There is only one function: `Information Entropy`.
+- The uncertainty contained in a probability distribution can be expressed as: ![formula](https://render.githubusercontent.com/render/math?math=\E[)log-probability of an event ![formula](https://render.githubusercontent.com/render/math?math=]) `E[ log(p) ]`
   <img src="https://user-images.githubusercontent.com/31917400/139084544-13f167c5-65b1-4067-a417-ebc4c36c5908.png"/>
 ```
 p <- c(0.3, 0.7)
@@ -305,9 +307,11 @@ H <- -sum( p*log(p) )
 ```
 It gives...0.06: it's quite certain... Low Entropy..low disorder..very small uncertainty!
 
-
-
-
+#### 2) Entropy and Accuracy
+How to use Information Entropy to say how far a model is from the target? The key lies in: `Kullback-Leibler Divergence`. 
+ - Suppose there is a true distribution (with `p1, p2,..`), but we only have a slightly different distribution (with `q1, q2,..`) to describe the true distribution. How much **additional uncertainty** we might introduce as a consequence?
+ - The additional uncertainty introduced from using the distribution in our hand can be expressed as: `E[ log(p)-log(q) ]`  
+   <img src="https://user-images.githubusercontent.com/31917400/139109451-6dc0aa41-36ce-4ab5-ad9e-ba50b3dadd8b.png"/>
 
 
 
