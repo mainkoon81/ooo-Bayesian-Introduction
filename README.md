@@ -289,7 +289,7 @@ __[Non-Parametric]__
   - **deviance:** approximation of relative distance from "perfect accuracy". 
 
 ### Information Theory
-- What it "information"? How much we have learned? It refers to the reduction in uncertainty when we learn an outcome.
+- What is "information"? How much we have learned? It refers to the reduction in uncertainty when we learn an outcome.
 - How to measure such uncertainty? There is only one function: `Information Entropy`
 - The uncertainty contained in a probability distribution = ![formula](https://render.githubusercontent.com/render/math?math=\E[)log-probability of an event ![formula](https://render.githubusercontent.com/render/math?math=]) `E[log(p)]`
   <img src="https://user-images.githubusercontent.com/31917400/139084544-13f167c5-65b1-4067-a417-ebc4c36c5908.png"/>
@@ -297,13 +297,13 @@ __[Non-Parametric]__
 p <- c(0.3, 0.7)
 H <- -sum( p*log(p) )
 ```
-It gives...0.61: it's quite uncertain... very big uncertainty!
+It gives...0.61: it's quite uncertain... High Entropy..chaos..very big uncertainty!
 
 ```
 p <- c(0.01, 0.99)
 H <- -sum( p*log(p) )
 ```
-It gives...0.06: it's quite certain... very small uncertainty!
+It gives...0.06: it's quite certain... Low Entropy..very small uncertainty!
 
 
 
