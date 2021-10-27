@@ -288,7 +288,7 @@ __[Non-Parametric]__
 - How both `regularizing priors`, and `information criteria` help you improve and estimate the "out-of-sample"(yet-to-be-observed) **deviance** of a model ? 
   - **deviance:** approximation of relative distance from "perfect accuracy". 
 
-### Information Theory
+## A. Information Theory
 What is "information"? How much we have learned? It refers to the reduction in uncertainty when we learn an outcome.
 
 #### 1) Entropy and Uncertainty
@@ -337,7 +337,7 @@ How to use Information Entropy to say how far your model is from the target mode
 
 
 
-
+## B. Prior Regularization
 
 
 
