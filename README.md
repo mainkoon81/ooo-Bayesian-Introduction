@@ -286,6 +286,7 @@ __[Non-Parametric]__
 
 - What do you want the model to do well at? 
 - How both `regularizing priors`, and `information criteria` help you improve and estimate the "out-of-sample"(yet-to-be-observed) deviance of a model ? 
+  - deviance: approximation of relative distance from "perfect accuracy". 
 
 
 
