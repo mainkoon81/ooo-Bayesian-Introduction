@@ -324,6 +324,7 @@ Then How to estimate the divergence? There is "no way" to access the target `p` 
 ## `Deviance` is simply the "log pointwise predictive density" multiplied by `- 2`, with smaller values indicating higher accuracy.    
 
 However, jut like R^2,...it's a measure of **retrodictive accuracy** rather than **predictive accuracy**. It always improves as the model gets complex. So they are absurd!  
+   <img src="https://user-images.githubusercontent.com/31917400/139267710-5714b405-cb5e-49e3-ad99-648a7caf7760.png"/>
 
 
 
