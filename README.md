@@ -334,11 +334,14 @@ However, jut like R^2,...it's a measure of **retrodictive accuracy** rather than
 - DIC (Deviance IC)
   - 1) Ok.
   - 2) posterior should follow Gaussian
-  - 3) sample size should be greater than the No.of parameters - 
+  - 3) sample size should be greater than the No.of parameters  
 - **WAIC** (Widely Applicable IC)
-  - No Assumptions.... 
+  - No Assumptions....OK?
 
+`WAIC` is simply the "log pointwise predictive density" plus a "penalty proportional to the variance" in the prediction.  
+   <img src="https://user-images.githubusercontent.com/31917400/139337495-8997b559-b0b4-43a0-a7e1-5ca812f506be.png"/>
 
+The penalty term 
 
 
 
