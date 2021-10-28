@@ -316,8 +316,9 @@ How to use Information Entropy to say how far your model is from the target mode
 ## Since predictive models specify probabilities of events(obv), We can use KL Divergence to compare the accuracy of models. 
 
 #### 3) Divergence Estimation
-Then How to estimate the divergence? There is "no way" to access the target `p` directly. 
-Luckily, we simply compare the divergences of different candidates - `r` vs `q`, using 'deviance' (model fit measure).
+Then How to estimate the divergence? There is "no way" to access the target `p` directly. Luckily, we simply compare the divergences of different candidates - `r` vs `q` -, using 'deviance' (model fit measure). But we need to know `E[log(r)]` and `E[log(q)]`, which are exactly like what you've been using in MLE. Hence, summing the log probabilities of (`x`,`r`) or (`x`,`q`) gives an approximation of `E[log(r)]` or `E[log(q)]`, but we don't have to know the real parameter `p` inside the expectation terms. So we can compare `E[log(r)]` VS `E[log(q)]` to get an estimate of the relative distance of each model from the target. (Having said that, however, the absolute magnitude of `E[log(r)]` or `E[log(q)]` cannot be known, we do not know they are good model or bad model. Only the difference `E[log(r)] - E[log(q)]` informs about divergence from the target `p`. 
+
+`SUM( log(θ) )` (total log probability score) is the gold standard way to compare the predictive accuracy of different models. It is an estimate of the cross entropy: `E[log(θ)]` w/o multiplying the probability term. To compute this, we need the full posterior distribution. To get `log(θ)`, we need to find `log( E[probability of obv] )` where the `E[.]` is taken over the full posterior distribution of `θ`.    
 
 
 
