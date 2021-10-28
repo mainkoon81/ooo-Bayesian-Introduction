@@ -321,8 +321,9 @@ Then How to estimate the divergence? There is "no way" to access the target `p` 
 `SUM( log(θ) )` (total log probability score) is the gold standard way to compare the predictive accuracy of different models. It is an estimate of the cross entropy: `E[log(θ)]` w/o multiplying the probability term. To compute this, we need the full posterior distribution because in order to get `log(θ)`, we need to find `log( E[probability of obv] )` where the `E[.]` is taken over the full posterior distribution of `θ`...This is called total "Log-point wise predictive density" a.k.a "total log probability score".
    <img src="https://user-images.githubusercontent.com/31917400/139259875-4d7eedee-85e6-4b77-9569-19998af2c38e.png"/>
 
-**Deviance** is simply the "log pointwise predictive density" multiplied by `- 2`, with smaller values indicating higher accuracy.    
+## `Deviance` is simply the "log pointwise predictive density" multiplied by `- 2`, with smaller values indicating higher accuracy.    
 
+However, jut like R^2,...it's a measure of **retrodictive accuracy** rather than **predictive accuracy**. It always improves as the model gets complex. So they are absurd!  
 
 
 
