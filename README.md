@@ -339,7 +339,7 @@ However, jut like R^2,...it's a measure of **retrodictive accuracy** rather than
   - No Assumptions....OK?
 
 `WAIC` is simply the "log pointwise predictive density" plus a "penalty proportional to the variance" in the prediction.  
-   <img src="https://user-images.githubusercontent.com/31917400/139337495-8997b559-b0b4-43a0-a7e1-5ca812f506be.png"/>
+   <img src="https://user-images.githubusercontent.com/31917400/139337858-706f1227-6bf9-4597-acd8-ab1fc3b93bff.png"/>
 
 The penalty term 
 
