@@ -327,7 +327,16 @@ However, jut like R^2,...it's a measure of **retrodictive accuracy** rather than
    <img src="https://user-images.githubusercontent.com/31917400/139267710-5714b405-cb5e-49e3-ad99-648a7caf7760.png"/>
 
 #### 4) Information Criteria
-
+- AIC (Akaike IC) is shit coz...
+  - 1) prior should be flat
+  - 2) posterior should follow Gaussian
+  - 3) sample size should be greater than the No.of parameters  
+- DIC (Deviance IC)
+  - 1) Ok.
+  - 2) posterior should follow Gaussian
+  - 3) sample size should be greater than the No.of parameters - 
+- **WAIC** (Widely Applicable IC)
+  - No Assumptions.... 
 
 
 
