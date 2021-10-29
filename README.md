@@ -370,7 +370,7 @@ Regularizing priors and CV / PSIS-CV / WAIC are complementary. Regularization re
 
 
 
-
+## (C) Empirical Bayes Prior
 
 
 
