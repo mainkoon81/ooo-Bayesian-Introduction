@@ -342,7 +342,7 @@ Then...what **predictive criteria** are available?
 `WAIC` is simply the "log pointwise predictive density" plus a "penalty proportional to the variance" in the prediction.  
    <img src="https://user-images.githubusercontent.com/31917400/139337858-706f1227-6bf9-4597-acd8-ab1fc3b93bff.png"/>
 
-The penalty term 
+The penalty term means the summation of the variance in log probability(likelihood) for each obv. Each obv has its own penalty score that measures overfitting risk (we are assessing overfitting risk at th level of each obv). FYI, this penalty term, in the analogy of AIC, is the number of parameters.     
 
 
 
