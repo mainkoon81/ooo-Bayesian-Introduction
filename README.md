@@ -344,11 +344,15 @@ Then...what **predictive criteria** are available?
 
 The penalty term means the summation of the variance in log probability(likelihood) for each obv. Each obv has its own penalty score that measures overfitting risk (we are assessing overfitting risk at th level of each obv). FYI, this penalty term, in the analogy of AIC, is the number of parameters.     
 
+Q. Which observed data point contribute to overfitting the most? 
+Q. WAIC computation on train/test gives different value because...the `sample size` scales the **deviance**. It is the distance b/w models that is useful, not the absolute value of the deviance.   
 
+#### 5) Comparison
+When there are several plausible (and hopefully un-confounded) models for the same set of observations, how should we compare the accuracy of these models? Following the fit to the sample is no good, because fit will always favor more complex models. Information divergence is the right measure of model accuracy, but even it will just lead us to choose more and more complex and wrong models. We need to somehow evaluate models out-of-sample. How can we do that? A meta-model of forecasting tells us two important things.  - First, flat priors produce bad predictions. Regularizing priors—priors which are skeptical of extreme parameter values—reduce fit to sample
+but tend to improve predictive accuracy. 
+- Second, we can get a useful guess of predictive accuracy with the criteria CV, Pareto Smoothed Importanmt Sampling-CV, and WAIC. 
 
-
-
-
+Regularizing priors and CV/PSIS/WAIC are complementary. Regularization reduces overfitting, and predictive criteria measure overfitting...
 
 
 
