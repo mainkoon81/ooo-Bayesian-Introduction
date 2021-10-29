@@ -352,9 +352,9 @@ When there are several plausible (and hopefully un-confounded) models for the sa
 
 - First, flat priors produce bad predictions. Regularizing priors—priors which are skeptical of extreme parameter values—reduce fit to sample
 but tend to improve predictive accuracy. 
-- Second, we can get a useful guess of predictive accuracy with the criteria CV, Pareto Smoothed Importanmt Sampling-CV, and WAIC. 
+- Second, we can get a useful guess of predictive accuracy with the criteria: CV, Pareto Smoothed Importanmt Sampling-CV, and WAIC. 
 
-Regularizing priors and CV/PSIS/WAIC are complementary. Regularization reduces overfitting, and predictive criteria measure overfitting...
+Regularizing priors and CV / PSIS-CV / WAIC are complementary. Regularization reduces overfitting, and predictive criteria measure overfitting...
 
 
 
