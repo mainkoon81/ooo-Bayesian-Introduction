@@ -355,7 +355,7 @@ but tend to improve predictive accuracy.
 - Second, we can get a useful guess of predictive accuracy with the criteria: CV, Pareto Smoothed Importanmt Sampling-CV, and WAIC. 
 
 Regularizing priors and CV / PSIS-CV / WAIC are complementary. Regularization reduces overfitting, and predictive criteria measure overfitting...
-
+....T.B.D
 
 
 
