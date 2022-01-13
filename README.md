@@ -305,7 +305,7 @@ It gives...0.61: it's quite uncertain... **High Entropy..Chaos**..high disorder.
 p <- c(0.01, 0.99)
 H <- -sum( p*log(p) )
 ```
-It gives...0.06: it's quite certain... Low Entropy..low disorder..very small uncertainty!
+It gives...0.06: That's nice! it's quite certain... Low Entropy..low disorder..very small uncertainty!
 
 #### 2) Entropy and Accuracy
 How to use Information Entropy to say how far your model is from the target model? The key lies in: `Kullback-Leibler Divergence`. 
