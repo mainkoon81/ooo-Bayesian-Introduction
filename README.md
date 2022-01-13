@@ -323,7 +323,9 @@ Then How to estimate the divergence? There is "no way" to access the target `p` 
 
 ## `Deviance` is simply the "log pointwise predictive density" multiplied by `- 2`. The model with a "smaller deviance value" is expected to show higher accuracy.    
 
-However, jut like R^2,...it's a measure of **retrodictive accuracy** rather than **predictive accuracy**. It always improves as the model gets complex. So they are absurd!  
+However, just like R^2,...it's a measure of **retrodictive accuracy** rather than **predictive accuracy**. It always improves as the model gets complex. So they are absurd!
+ - In-sample (with training set)
+ - Out-of-sample (with testing set)
    <img src="https://user-images.githubusercontent.com/31917400/139267710-5714b405-cb5e-49e3-ad99-648a7caf7760.png"/>
 
 Then...what **predictive criteria** are available? 
